@@ -440,3 +440,374 @@
 
 // *********** DISASSEMBLY COMPLETE ***********************
 // WARNING: Created Win32 resource file C:\Users\thadh\Documents\GitHub\ThadHouse\NetworkTablesIL\src\FRC.NetworkTables.Core.Interop\obj\temp\FRC.NetworkTables.Core.Interop.dll.res
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_WarnFunc
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_WarnFunc::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(native uint line,
+                                uint8* msg) runtime managed
+  {
+  } // end of method NT_WarnFunc::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(native uint line,
+                      uint8* msg,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_WarnFunc::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_WarnFunc::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_WarnFunc
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_LogFunc
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_LogFunc::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(uint32 level,
+                                uint8* file,
+                                uint32 line,
+                                uint8* msg) runtime managed
+  {
+  } // end of method NT_LogFunc::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(uint32 level,
+                      uint8* file,
+                      uint32 line,
+                      uint8* msg,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_LogFunc::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_LogFunc::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_LogFunc
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_OnStart
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_OnStart::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(void* data) runtime managed
+  {
+  } // end of method NT_OnStart::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(void* data,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_OnStart::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_OnStart::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_OnStart
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_OnExit
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_OnExit::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(void* data) runtime managed
+  {
+  } // end of method NT_OnExit::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(void* data,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_OnExit::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_OnExit::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_OnExit
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_RpcCallback
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_RpcCallback::.ctor
+
+  .method public hidebysig newslot virtual
+          instance uint8*  Invoke(void* data,
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+                                  uint8* name,
+                                  native uint name_len,
+                                  uint8* param,
+                                  native uint param_len,
+                                  native uint* result_len,
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo* conn_info) runtime managed
+  {
+  } // end of method NT_RpcCallback::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(void* data,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+                      uint8* name,
+                      native uint name_len,
+                      uint8* param,
+                      native uint param_len,
+                      native uint* result_len,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo* conn_info,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_RpcCallback::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance uint8*  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_RpcCallback::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_RpcCallback
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener,
+                                void* data,
+                                uint8* name,
+                                native uint name_len,
+                                valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+                                uint32 'flags') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener,
+                      void* data,
+                      uint8* name,
+                      native uint name_len,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+                      uint32 'flags',
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_EntryListenerCallback::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback2::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener,
+                                void* data,
+                                valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+                                uint8* name,
+                                native uint name_len,
+                                valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+                                uint32 'flags') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback2::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener,
+                      void* data,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+                      uint8* name,
+                      native uint name_len,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+                      uint32 'flags',
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_EntryListenerCallback2::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_EntryListenerCallback2::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2
+
+.class public auto ansi sealed FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback
+       extends [System.Runtime]System.MulticastDelegate
+{
+  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute::.ctor(valuetype [System.Runtime.InteropServices]System.Runtime.InteropServices.CallingConvention) = ( 01 00 02 00 00 00 00 00 )
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  {
+  } // end of method NT_ConnectionListenerCallback::.ctor
+
+  .method public hidebysig newslot virtual
+          instance void  Invoke(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener conn_listener,
+                                void* data,
+                                valuetype FRC.NetworkTables.Core.Interop.NT_Bool connected,
+                                valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo conn) runtime managed
+  {
+  } // end of method NT_ConnectionListenerCallback::Invoke
+
+  .method public hidebysig newslot virtual
+          instance class [System.Runtime]System.IAsyncResult
+          BeginInvoke(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener conn_listener,
+                      void* data,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_Bool connected,
+                      valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo conn,
+                      class [System.Runtime]System.AsyncCallback callback,
+                      object 'object') runtime managed
+  {
+  } // end of method NT_ConnectionListenerCallback::BeginInvoke
+
+  .method public hidebysig newslot virtual
+          instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+  {
+  } // end of method NT_ConnectionListenerCallback::EndInvoke
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback
+
+.class public sequential ansi sealed beforefieldinit FRC.NetworkTables.Core.Interop.NT_EntryListener
+       extends [System.Runtime]System.ValueType
+{
+  .field private valuetype FRC.NetworkTables.Core.Interop.NT_Handle m_value
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(int32 'value') cil managed
+  {
+    // Code size       13 (0xd)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  newobj     instance void FRC.NetworkTables.Core.Interop.NT_Handle::.ctor(int32)
+    IL_0007:  stfld      valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_EntryListener::m_value
+    IL_000c:  ret
+  } // end of method NT_EntryListener::.ctor
+
+  .method public hidebysig instance int32
+          Get() cil managed
+  {
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldflda     valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_EntryListener::m_value
+    IL_0006:  call       instance int32 FRC.NetworkTables.Core.Interop.NT_Handle::Get()
+    IL_000b:  ret
+  } // end of method NT_EntryListener::Get
+
+  .method public hidebysig specialname static
+          valuetype FRC.NetworkTables.Core.Interop.NT_Handle
+          op_Implicit(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener 'value') cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_EntryListener::m_value
+    IL_0006:  ret
+  } // end of method NT_EntryListener::op_Implicit
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_EntryListener
+
+.class public sequential ansi sealed beforefieldinit FRC.NetworkTables.Core.Interop.NT_ConnectionListener
+       extends [System.Runtime]System.ValueType
+{
+  .field private valuetype FRC.NetworkTables.Core.Interop.NT_Handle m_value
+  .method public hidebysig specialname rtspecialname
+          instance void  .ctor(int32 'value') cil managed
+  {
+    // Code size       13 (0xd)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  newobj     instance void FRC.NetworkTables.Core.Interop.NT_Handle::.ctor(int32)
+    IL_0007:  stfld      valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_ConnectionListener::m_value
+    IL_000c:  ret
+  } // end of method NT_ConnectionListener::.ctor
+
+  .method public hidebysig instance int32
+          Get() cil managed
+  {
+    // Code size       12 (0xc)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldflda     valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_ConnectionListener::m_value
+    IL_0006:  call       instance int32 FRC.NetworkTables.Core.Interop.NT_Handle::Get()
+    IL_000b:  ret
+  } // end of method NT_ConnectionListener::Get
+
+  .method public hidebysig specialname static
+          valuetype FRC.NetworkTables.Core.Interop.NT_Handle
+          op_Implicit(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener 'value') cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      valuetype FRC.NetworkTables.Core.Interop.NT_Handle FRC.NetworkTables.Core.Interop.NT_ConnectionListener::m_value
+    IL_0006:  ret
+  } // end of method NT_ConnectionListener::op_Implicit
+
+} // end of class FRC.NetworkTables.Core.Interop.NT_ConnectionListener
+

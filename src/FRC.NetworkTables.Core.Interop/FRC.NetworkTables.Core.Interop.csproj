@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="dotnet restore $(ProjectDir)\..\..\tools\ILRewriter\ILRewriter.csproj" />
+      <Exec Command="dotnet run -p $(ProjectDir)\..\..\tools\ILRewriter\ILRewriter.csproj $(ProjectDir) $(ProjectDir)$(OutDir) $(TargetFileName)" />
+    </Target>
+</Project>

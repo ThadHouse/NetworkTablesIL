@@ -1,0 +1,2567 @@
+[
+  {
+    "name": "NT_GetDefaultInstance",
+    "retType": "NT_Inst",
+    "params": []
+  },
+  {
+    "name": "NT_CreateInstance",
+    "retType": "NT_Inst",
+    "params": []
+  },
+  {
+    "name": "NT_DestroyInstance",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetInstanceFromHandle",
+    "retType": "NT_Inst",
+    "params": [
+      {
+        "name": "handle",
+        "type": "NT_Handle"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntry",
+    "retType": "NT_Entry",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntries",
+    "retType": "NT_Entry",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "prefix",
+        "type": "byte *"
+      },
+      {
+        "name": "prefix_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "types",
+        "type": "uint"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryName",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryLastChange",
+    "retType": "ulong",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryValue",
+    "retType": "void",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryValue2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryValue",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryValue2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryValue",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryValue2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryTypeValue",
+    "retType": "void",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryTypeValue2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryFlags",
+    "retType": "void",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "flags",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryFlags2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "flags",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryFlags",
+    "retType": "uint",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryFlags2",
+    "retType": "uint",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      }
+    ]
+  },
+  {
+    "name": "NT_DeleteEntry",
+    "retType": "void",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_DeleteEntry2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      }
+    ]
+  },
+  {
+    "name": "NT_DeleteAllEntries",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_DeleteAllEntries2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryInfo",
+    "retType": "NT_EntryInfo",
+    "params": [
+      {
+        "name": "prefix",
+        "type": "byte *"
+      },
+      {
+        "name": "prefix_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "types",
+        "type": "uint"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryInfo2",
+    "retType": "NT_EntryInfo2",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "prefix",
+        "type": "byte *"
+      },
+      {
+        "name": "prefix_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "types",
+        "type": "uint"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryInfoHandle",
+    "retType": "NT_EntryInfo2",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      }
+    ]
+  },
+  {
+    "name": "NT_Flush",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_Flush2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetListenerOnStart",
+    "retType": "void",
+    "params": [
+      {
+        "name": "onStart",
+        "type": "NT_OnStart"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetListenerOnStart2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "onStart",
+        "type": "NT_OnStart"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetListenerOnExit",
+    "retType": "void",
+    "params": [
+      {
+        "name": "onExit",
+        "type": "NT_OnExit"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetListenerOnExit2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "onExit",
+        "type": "NT_OnExit"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_AddEntryListener",
+    "retType": "NT_EntryListener",
+    "params": [
+      {
+        "name": "prefix",
+        "type": "byte *"
+      },
+      {
+        "name": "prefix_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_EntryListenerCallback"
+      },
+      {
+        "name": "flags",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_AddEntryListener2",
+    "retType": "NT_EntryListener",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "prefix",
+        "type": "byte *"
+      },
+      {
+        "name": "prefix_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_EntryListenerCallback2"
+      },
+      {
+        "name": "flags",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_AddEntryListenerSingle",
+    "retType": "NT_EntryListener",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_EntryListenerCallback2"
+      },
+      {
+        "name": "flags",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_RemoveEntryListener",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry_listener",
+        "type": "NT_EntryListener"
+      }
+    ]
+  },
+  {
+    "name": "NT_AddConnectionListener",
+    "retType": "NT_ConnectionListener",
+    "params": [
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_ConnectionListenerCallback"
+      },
+      {
+        "name": "immediate_notify",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_AddConnectionListener2",
+    "retType": "NT_ConnectionListener",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_ConnectionListenerCallback"
+      },
+      {
+        "name": "immediate_notify",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_RemoveConnectionListener",
+    "retType": "void",
+    "params": [
+      {
+        "name": "conn_listener",
+        "type": "NT_ConnectionListener"
+      }
+    ]
+  },
+  {
+    "name": "NT_NotifierDestroyed",
+    "retType": "NT_Bool",
+    "params": []
+  },
+  {
+    "name": "NT_NotifierDestroyed2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetRpcServerOnStart",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "onStart",
+        "type": "NT_OnStart"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetRpcServerOnExit",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "onExit",
+        "type": "NT_OnExit"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      }
+    ]
+  },
+  {
+    "name": "NT_CreateRpc",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "def",
+        "type": "byte *"
+      },
+      {
+        "name": "def_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "data",
+        "type": "void *"
+      },
+      {
+        "name": "callback",
+        "type": "NT_RpcCallback"
+      }
+    ]
+  },
+  {
+    "name": "NT_CreatePolledRpc",
+    "retType": "void",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "def",
+        "type": "byte *"
+      },
+      {
+        "name": "def_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_PollRpc",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "call_info",
+        "type": "NT_RpcCallInfo *"
+      }
+    ]
+  },
+  {
+    "name": "NT_PollRpcTimeout",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "call_info",
+        "type": "NT_RpcCallInfo *"
+      },
+      {
+        "name": "time_out",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_PostRpcResponse",
+    "retType": "void",
+    "params": [
+      {
+        "name": "rpc",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "call",
+        "type": "NT_RpcCall"
+      },
+      {
+        "name": "result",
+        "type": "byte *"
+      },
+      {
+        "name": "result_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_CallRpc",
+    "retType": "NT_RpcCall",
+    "params": [
+      {
+        "name": "rpc",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "@params",
+        "type": "byte *"
+      },
+      {
+        "name": "params_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetRpcResult",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "rpc",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "call",
+        "type": "NT_RpcCall"
+      },
+      {
+        "name": "result_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetRpcResultTimeout",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "rpc",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "call",
+        "type": "NT_RpcCall"
+      },
+      {
+        "name": "result_len",
+        "type": "UIntPtr *"
+      },
+      {
+        "name": "time_out",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_CancelRpcResult",
+    "retType": "void",
+    "params": [
+      {
+        "name": "rpc",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "call",
+        "type": "NT_RpcCall"
+      }
+    ]
+  },
+  {
+    "name": "NT_PackRpcDefinition",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "def",
+        "type": "NT_RpcDefinition *"
+      },
+      {
+        "name": "packed_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_UnpackRpcDefinition",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "packed",
+        "type": "byte *"
+      },
+      {
+        "name": "packed_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "def",
+        "type": "NT_RpcDefinition *"
+      }
+    ]
+  },
+  {
+    "name": "NT_PackRpcValues",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "values",
+        "type": "NT_Value * *"
+      },
+      {
+        "name": "values_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "packed_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_UnpackRpcValues",
+    "retType": "NT_Value",
+    "params": [
+      {
+        "name": "packed",
+        "type": "byte *"
+      },
+      {
+        "name": "packed_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "types",
+        "type": "NT_Type *"
+      },
+      {
+        "name": "types_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetNetworkIdentity",
+    "retType": "void",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetNetworkIdentity2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetNetworkMode",
+    "retType": "uint",
+    "params": []
+  },
+  {
+    "name": "NT_GetNetworkMode2",
+    "retType": "uint",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartServer",
+    "retType": "void",
+    "params": [
+      {
+        "name": "persist_filename",
+        "type": "byte *"
+      },
+      {
+        "name": "listen_address",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartServer2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "persist_filename",
+        "type": "byte *"
+      },
+      {
+        "name": "listen_address",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StopServer",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StopServer2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartClientNone",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StartClientNone2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartClient",
+    "retType": "void",
+    "params": [
+      {
+        "name": "server_name",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartClient2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "server_name",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartClientMulti",
+    "retType": "void",
+    "params": [
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "server_names",
+        "type": "byte * *"
+      },
+      {
+        "name": "ports",
+        "type": "uint *"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartClientMulti2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "server_names",
+        "type": "byte * *"
+      },
+      {
+        "name": "ports",
+        "type": "uint *"
+      }
+    ]
+  },
+  {
+    "name": "NT_StopClient",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StopClient2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetServer",
+    "retType": "void",
+    "params": [
+      {
+        "name": "server_name",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetServer2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "server_name",
+        "type": "byte *"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetServerMulti",
+    "retType": "void",
+    "params": [
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "server_names",
+        "type": "byte * *"
+      },
+      {
+        "name": "ports",
+        "type": "uint *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetServerMulti2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "server_names",
+        "type": "byte * *"
+      },
+      {
+        "name": "ports",
+        "type": "uint *"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartDSClient",
+    "retType": "void",
+    "params": [
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StartDSClient2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "port",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_StopDSClient",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StopDSClient2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_StopRpcServer",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StopRpcServer2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_StopNotifier",
+    "retType": "void",
+    "params": []
+  },
+  {
+    "name": "NT_StopNotifier2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetUpdateRate",
+    "retType": "void",
+    "params": [
+      {
+        "name": "interval",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetUpdateRate2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "interval",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetConnections",
+    "retType": "NT_ConnectionInfo",
+    "params": [
+      {
+        "name": "count",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetConnections2",
+    "retType": "NT_ConnectionInfo",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SavePersistent",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "filename",
+        "type": "byte *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SavePersistent2",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "filename",
+        "type": "byte *"
+      }
+    ]
+  },
+  {
+    "name": "NT_LoadPersistent",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "filename",
+        "type": "byte *"
+      },
+      {
+        "name": "warn",
+        "type": "NT_WarnFunc"
+      }
+    ]
+  },
+  {
+    "name": "NT_LoadPersistent2",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "filename",
+        "type": "byte *"
+      },
+      {
+        "name": "warn",
+        "type": "NT_WarnFunc"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeValue",
+    "retType": "void",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_InitValue",
+    "retType": "void",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeString",
+    "retType": "void",
+    "params": [
+      {
+        "name": "str",
+        "type": "NT_String *"
+      }
+    ]
+  },
+  {
+    "name": "NT_InitString",
+    "retType": "void",
+    "params": [
+      {
+        "name": "str",
+        "type": "NT_String *"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeEntryArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "arr",
+        "type": "NT_Entry *"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeConnectionInfoArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "arr",
+        "type": "NT_ConnectionInfo *"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeEntryInfoArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "arr",
+        "type": "NT_EntryInfo *"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeEntryInfoArray2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "arr",
+        "type": "NT_EntryInfo2 *"
+      },
+      {
+        "name": "count",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeRpcDefinition",
+    "retType": "void",
+    "params": [
+      {
+        "name": "def",
+        "type": "NT_RpcDefinition *"
+      }
+    ]
+  },
+  {
+    "name": "NT_DisposeRpcCallInfo",
+    "retType": "void",
+    "params": [
+      {
+        "name": "call_info",
+        "type": "NT_RpcCallInfo *"
+      }
+    ]
+  },
+  {
+    "name": "NT_Now",
+    "retType": "ulong",
+    "params": []
+  },
+  {
+    "name": "NT_SetLogger",
+    "retType": "void",
+    "params": [
+      {
+        "name": "func",
+        "type": "NT_LogFunc"
+      },
+      {
+        "name": "min_level",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetLogger2",
+    "retType": "void",
+    "params": [
+      {
+        "name": "inst",
+        "type": "NT_Inst"
+      },
+      {
+        "name": "func",
+        "type": "NT_LogFunc"
+      },
+      {
+        "name": "min_level",
+        "type": "uint"
+      }
+    ]
+  },
+  {
+    "name": "NT_AllocateCharArray",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_AllocateBooleanArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_AllocateDoubleArray",
+    "retType": "double",
+    "params": [
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_AllocateStringArray",
+    "retType": "NT_String",
+    "params": [
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_FreeCharArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "v_char",
+        "type": "byte *"
+      }
+    ]
+  },
+  {
+    "name": "NT_FreeDoubleArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "v_double",
+        "type": "double *"
+      }
+    ]
+  },
+  {
+    "name": "NT_FreeBooleanArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool *"
+      }
+    ]
+  },
+  {
+    "name": "NT_FreeStringArray",
+    "retType": "void",
+    "params": [
+      {
+        "name": "v_string",
+        "type": "NT_String *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueBoolean",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueDouble",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_double",
+        "type": "double *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueString",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "str_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueRaw",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "raw_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueBooleanArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueDoubleArray",
+    "retType": "double",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetValueStringArray",
+    "retType": "NT_String",
+    "params": [
+      {
+        "name": "value",
+        "type": "NT_Value *"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryBoolean",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryBoolean2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryDouble",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_double",
+        "type": "double *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryDouble2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "v_double",
+        "type": "double *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryString",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "str_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryString2",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "str_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryRaw",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "raw_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryRaw2",
+    "retType": "byte",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "raw_len",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryBooleanArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryBooleanArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryDoubleArray",
+    "retType": "double",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryDoubleArray2",
+    "retType": "double",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryStringArray",
+    "retType": "NT_String",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_GetEntryStringArray2",
+    "retType": "NT_String",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "last_change",
+        "type": "ulong *"
+      },
+      {
+        "name": "arr_size",
+        "type": "UIntPtr *"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryBoolean",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_boolean",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryBoolean2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_boolean",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryDouble",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_double",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryDouble2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_double",
+        "type": "double"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryString",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "byte *"
+      },
+      {
+        "name": "default_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryString2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "byte *"
+      },
+      {
+        "name": "default_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryRaw",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "byte *"
+      },
+      {
+        "name": "default_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryRaw2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "byte *"
+      },
+      {
+        "name": "default_len",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryBooleanArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "int *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryBooleanArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "int *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryDoubleArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "double *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryDoubleArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "double *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryStringArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "default_value",
+        "type": "NT_String *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetDefaultEntryStringArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "default_value",
+        "type": "NT_String *"
+      },
+      {
+        "name": "default_size",
+        "type": "UIntPtr"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryBoolean",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryBoolean2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "v_boolean",
+        "type": "NT_Bool"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryDouble",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "v_double",
+        "type": "double"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryDouble2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "v_double",
+        "type": "double"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryString",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "str",
+        "type": "byte *"
+      },
+      {
+        "name": "str_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryString2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "str",
+        "type": "byte *"
+      },
+      {
+        "name": "str_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryRaw",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "raw",
+        "type": "byte *"
+      },
+      {
+        "name": "raw_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryRaw2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "raw",
+        "type": "byte *"
+      },
+      {
+        "name": "raw_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryBooleanArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "arr",
+        "type": "int *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryBooleanArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "arr",
+        "type": "int *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryDoubleArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "arr",
+        "type": "double *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryDoubleArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "arr",
+        "type": "double *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryStringArray",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "name",
+        "type": "byte *"
+      },
+      {
+        "name": "name_len",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "arr",
+        "type": "NT_String *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  },
+  {
+    "name": "NT_SetEntryStringArray2",
+    "retType": "NT_Bool",
+    "params": [
+      {
+        "name": "entry",
+        "type": "NT_Entry"
+      },
+      {
+        "name": "arr",
+        "type": "NT_String *"
+      },
+      {
+        "name": "size",
+        "type": "UIntPtr"
+      },
+      {
+        "name": "force",
+        "type": "NT_Bool"
+      }
+    ]
+  }
+]

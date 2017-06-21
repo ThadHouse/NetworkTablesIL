@@ -45,7 +45,6 @@ artifacts/
 
 buildTemp/
 
-tools/
 Artifacts/
 
 *_i.c

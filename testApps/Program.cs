@@ -21,7 +21,16 @@ namespace testApps
             var ptr = Marshal.GetFunctionPointerForDelegate(instFunc);
             Functions.NT_GetDefaultInstanceFunctionPointer = ptr;
 
-            var inst = Functions.NT_GetDefaultInstance();
+            try
+            {
+                var inst = Functions.NT_GetDefaultInstance();
+            }
+            catch(Exception ex)
+            {
+                ;
+            }
+
+            new TestFunctions().TestNT_GetValueString();
 
             Console.WriteLine(val.Get());
             Console.WriteLine("Hello World!");

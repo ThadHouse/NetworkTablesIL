@@ -83,12 +83,10 @@ namespace ILRewriter
                     otherIlFiles += " ";
                 }
 
-                Console.WriteLine($"/dll /pdb /output:{dllName} {ilFilePath} {otherIlFiles}");
-
                 ProcessStartInfo ilAsmInfo = new ProcessStartInfo()
                 {
                     FileName = ilAsmPath,
-                    Arguments = $"/dll /optimize /output:{dllName} {ilFilePath} {otherIlFiles}",
+                    Arguments = $"/dll /optimize /quiet /output:{dllName} {ilFilePath} {otherIlFiles}",
                 };
 
                 Process.Start(ilAsmInfo).WaitForExit();

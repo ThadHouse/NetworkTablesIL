@@ -2,176 +2,176 @@
        extends [System.Runtime]System.Object
 {
 
-  .field public int32 NT_GetDefaultInstanceFunctionPointer
-  .field public int32 NT_CreateInstanceFunctionPointer
-  .field public int32 NT_DestroyInstanceFunctionPointer
-  .field public int32 NT_GetInstanceFromHandleFunctionPointer
-  .field public int32 NT_GetEntryFunctionPointer
-  .field public int32 NT_GetEntriesFunctionPointer
-  .field public int32 NT_GetEntryNameFunctionPointer
-  .field public int32 NT_GetEntryLastChangeFunctionPointer
-  .field public int32 NT_GetEntryValueFunctionPointer
-  .field public int32 NT_GetEntryValue2FunctionPointer
-  .field public int32 NT_SetDefaultEntryValueFunctionPointer
-  .field public int32 NT_SetDefaultEntryValue2FunctionPointer
-  .field public int32 NT_SetEntryValueFunctionPointer
-  .field public int32 NT_SetEntryValue2FunctionPointer
-  .field public int32 NT_SetEntryTypeValueFunctionPointer
-  .field public int32 NT_SetEntryTypeValue2FunctionPointer
-  .field public int32 NT_SetEntryFlagsFunctionPointer
-  .field public int32 NT_SetEntryFlags2FunctionPointer
-  .field public int32 NT_GetEntryFlagsFunctionPointer
-  .field public int32 NT_GetEntryFlags2FunctionPointer
-  .field public int32 NT_DeleteEntryFunctionPointer
-  .field public int32 NT_DeleteEntry2FunctionPointer
-  .field public int32 NT_DeleteAllEntriesFunctionPointer
-  .field public int32 NT_DeleteAllEntries2FunctionPointer
-  .field public int32 NT_GetEntryInfoFunctionPointer
-  .field public int32 NT_GetEntryInfo2FunctionPointer
-  .field public int32 NT_GetEntryInfoHandleFunctionPointer
-  .field public int32 NT_FlushFunctionPointer
-  .field public int32 NT_Flush2FunctionPointer
-  .field public int32 NT_SetListenerOnStartFunctionPointer
-  .field public int32 NT_SetListenerOnStart2FunctionPointer
-  .field public int32 NT_SetListenerOnExitFunctionPointer
-  .field public int32 NT_SetListenerOnExit2FunctionPointer
-  .field public int32 NT_AddEntryListenerFunctionPointer
-  .field public int32 NT_AddEntryListener2FunctionPointer
-  .field public int32 NT_AddEntryListenerSingleFunctionPointer
-  .field public int32 NT_RemoveEntryListenerFunctionPointer
-  .field public int32 NT_AddConnectionListenerFunctionPointer
-  .field public int32 NT_AddConnectionListener2FunctionPointer
-  .field public int32 NT_RemoveConnectionListenerFunctionPointer
-  .field public int32 NT_NotifierDestroyedFunctionPointer
-  .field public int32 NT_NotifierDestroyed2FunctionPointer
-  .field public int32 NT_SetRpcServerOnStartFunctionPointer
-  .field public int32 NT_SetRpcServerOnExitFunctionPointer
-  .field public int32 NT_CreateRpcFunctionPointer
-  .field public int32 NT_CreatePolledRpcFunctionPointer
-  .field public int32 NT_PollRpcFunctionPointer
-  .field public int32 NT_PollRpcTimeoutFunctionPointer
-  .field public int32 NT_PostRpcResponseFunctionPointer
-  .field public int32 NT_CallRpcFunctionPointer
-  .field public int32 NT_GetRpcResultFunctionPointer
-  .field public int32 NT_GetRpcResultTimeoutFunctionPointer
-  .field public int32 NT_CancelRpcResultFunctionPointer
-  .field public int32 NT_PackRpcDefinitionFunctionPointer
-  .field public int32 NT_UnpackRpcDefinitionFunctionPointer
-  .field public int32 NT_PackRpcValuesFunctionPointer
-  .field public int32 NT_UnpackRpcValuesFunctionPointer
-  .field public int32 NT_SetNetworkIdentityFunctionPointer
-  .field public int32 NT_SetNetworkIdentity2FunctionPointer
-  .field public int32 NT_GetNetworkModeFunctionPointer
-  .field public int32 NT_GetNetworkMode2FunctionPointer
-  .field public int32 NT_StartServerFunctionPointer
-  .field public int32 NT_StartServer2FunctionPointer
-  .field public int32 NT_StopServerFunctionPointer
-  .field public int32 NT_StopServer2FunctionPointer
-  .field public int32 NT_StartClientNoneFunctionPointer
-  .field public int32 NT_StartClientNone2FunctionPointer
-  .field public int32 NT_StartClientFunctionPointer
-  .field public int32 NT_StartClient2FunctionPointer
-  .field public int32 NT_StartClientMultiFunctionPointer
-  .field public int32 NT_StartClientMulti2FunctionPointer
-  .field public int32 NT_StopClientFunctionPointer
-  .field public int32 NT_StopClient2FunctionPointer
-  .field public int32 NT_SetServerFunctionPointer
-  .field public int32 NT_SetServer2FunctionPointer
-  .field public int32 NT_SetServerMultiFunctionPointer
-  .field public int32 NT_SetServerMulti2FunctionPointer
-  .field public int32 NT_StartDSClientFunctionPointer
-  .field public int32 NT_StartDSClient2FunctionPointer
-  .field public int32 NT_StopDSClientFunctionPointer
-  .field public int32 NT_StopDSClient2FunctionPointer
-  .field public int32 NT_StopRpcServerFunctionPointer
-  .field public int32 NT_StopRpcServer2FunctionPointer
-  .field public int32 NT_StopNotifierFunctionPointer
-  .field public int32 NT_StopNotifier2FunctionPointer
-  .field public int32 NT_SetUpdateRateFunctionPointer
-  .field public int32 NT_SetUpdateRate2FunctionPointer
-  .field public int32 NT_GetConnectionsFunctionPointer
-  .field public int32 NT_GetConnections2FunctionPointer
-  .field public int32 NT_SavePersistentFunctionPointer
-  .field public int32 NT_SavePersistent2FunctionPointer
-  .field public int32 NT_LoadPersistentFunctionPointer
-  .field public int32 NT_LoadPersistent2FunctionPointer
-  .field public int32 NT_DisposeValueFunctionPointer
-  .field public int32 NT_InitValueFunctionPointer
-  .field public int32 NT_DisposeStringFunctionPointer
-  .field public int32 NT_InitStringFunctionPointer
-  .field public int32 NT_DisposeEntryArrayFunctionPointer
-  .field public int32 NT_DisposeConnectionInfoArrayFunctionPointer
-  .field public int32 NT_DisposeEntryInfoArrayFunctionPointer
-  .field public int32 NT_DisposeEntryInfoArray2FunctionPointer
-  .field public int32 NT_DisposeRpcDefinitionFunctionPointer
-  .field public int32 NT_DisposeRpcCallInfoFunctionPointer
-  .field public int32 NT_NowFunctionPointer
-  .field public int32 NT_SetLoggerFunctionPointer
-  .field public int32 NT_SetLogger2FunctionPointer
-  .field public int32 NT_AllocateCharArrayFunctionPointer
-  .field public int32 NT_AllocateBooleanArrayFunctionPointer
-  .field public int32 NT_AllocateDoubleArrayFunctionPointer
-  .field public int32 NT_AllocateStringArrayFunctionPointer
-  .field public int32 NT_FreeCharArrayFunctionPointer
-  .field public int32 NT_FreeDoubleArrayFunctionPointer
-  .field public int32 NT_FreeBooleanArrayFunctionPointer
-  .field public int32 NT_FreeStringArrayFunctionPointer
-  .field public int32 NT_GetValueBooleanFunctionPointer
-  .field public int32 NT_GetValueDoubleFunctionPointer
-  .field public int32 NT_GetValueStringFunctionPointer
-  .field public int32 NT_GetValueRawFunctionPointer
-  .field public int32 NT_GetValueBooleanArrayFunctionPointer
-  .field public int32 NT_GetValueDoubleArrayFunctionPointer
-  .field public int32 NT_GetValueStringArrayFunctionPointer
-  .field public int32 NT_GetEntryBooleanFunctionPointer
-  .field public int32 NT_GetEntryBoolean2FunctionPointer
-  .field public int32 NT_GetEntryDoubleFunctionPointer
-  .field public int32 NT_GetEntryDouble2FunctionPointer
-  .field public int32 NT_GetEntryStringFunctionPointer
-  .field public int32 NT_GetEntryString2FunctionPointer
-  .field public int32 NT_GetEntryRawFunctionPointer
-  .field public int32 NT_GetEntryRaw2FunctionPointer
-  .field public int32 NT_GetEntryBooleanArrayFunctionPointer
-  .field public int32 NT_GetEntryBooleanArray2FunctionPointer
-  .field public int32 NT_GetEntryDoubleArrayFunctionPointer
-  .field public int32 NT_GetEntryDoubleArray2FunctionPointer
-  .field public int32 NT_GetEntryStringArrayFunctionPointer
-  .field public int32 NT_GetEntryStringArray2FunctionPointer
-  .field public int32 NT_SetDefaultEntryBooleanFunctionPointer
-  .field public int32 NT_SetDefaultEntryBoolean2FunctionPointer
-  .field public int32 NT_SetDefaultEntryDoubleFunctionPointer
-  .field public int32 NT_SetDefaultEntryDouble2FunctionPointer
-  .field public int32 NT_SetDefaultEntryStringFunctionPointer
-  .field public int32 NT_SetDefaultEntryString2FunctionPointer
-  .field public int32 NT_SetDefaultEntryRawFunctionPointer
-  .field public int32 NT_SetDefaultEntryRaw2FunctionPointer
-  .field public int32 NT_SetDefaultEntryBooleanArrayFunctionPointer
-  .field public int32 NT_SetDefaultEntryBooleanArray2FunctionPointer
-  .field public int32 NT_SetDefaultEntryDoubleArrayFunctionPointer
-  .field public int32 NT_SetDefaultEntryDoubleArray2FunctionPointer
-  .field public int32 NT_SetDefaultEntryStringArrayFunctionPointer
-  .field public int32 NT_SetDefaultEntryStringArray2FunctionPointer
-  .field public int32 NT_SetEntryBooleanFunctionPointer
-  .field public int32 NT_SetEntryBoolean2FunctionPointer
-  .field public int32 NT_SetEntryDoubleFunctionPointer
-  .field public int32 NT_SetEntryDouble2FunctionPointer
-  .field public int32 NT_SetEntryStringFunctionPointer
-  .field public int32 NT_SetEntryString2FunctionPointer
-  .field public int32 NT_SetEntryRawFunctionPointer
-  .field public int32 NT_SetEntryRaw2FunctionPointer
-  .field public int32 NT_SetEntryBooleanArrayFunctionPointer
-  .field public int32 NT_SetEntryBooleanArray2FunctionPointer
-  .field public int32 NT_SetEntryDoubleArrayFunctionPointer
-  .field public int32 NT_SetEntryDoubleArray2FunctionPointer
-  .field public int32 NT_SetEntryStringArrayFunctionPointer
-  .field public int32 NT_SetEntryStringArray2FunctionPointer
+  .field public static native int NT_GetDefaultInstanceFunctionPointer
+  .field public static native int NT_CreateInstanceFunctionPointer
+  .field public static native int NT_DestroyInstanceFunctionPointer
+  .field public static native int NT_GetInstanceFromHandleFunctionPointer
+  .field public static native int NT_GetEntryFunctionPointer
+  .field public static native int NT_GetEntriesFunctionPointer
+  .field public static native int NT_GetEntryNameFunctionPointer
+  .field public static native int NT_GetEntryLastChangeFunctionPointer
+  .field public static native int NT_GetEntryValueFunctionPointer
+  .field public static native int NT_GetEntryValue2FunctionPointer
+  .field public static native int NT_SetDefaultEntryValueFunctionPointer
+  .field public static native int NT_SetDefaultEntryValue2FunctionPointer
+  .field public static native int NT_SetEntryValueFunctionPointer
+  .field public static native int NT_SetEntryValue2FunctionPointer
+  .field public static native int NT_SetEntryTypeValueFunctionPointer
+  .field public static native int NT_SetEntryTypeValue2FunctionPointer
+  .field public static native int NT_SetEntryFlagsFunctionPointer
+  .field public static native int NT_SetEntryFlags2FunctionPointer
+  .field public static native int NT_GetEntryFlagsFunctionPointer
+  .field public static native int NT_GetEntryFlags2FunctionPointer
+  .field public static native int NT_DeleteEntryFunctionPointer
+  .field public static native int NT_DeleteEntry2FunctionPointer
+  .field public static native int NT_DeleteAllEntriesFunctionPointer
+  .field public static native int NT_DeleteAllEntries2FunctionPointer
+  .field public static native int NT_GetEntryInfoFunctionPointer
+  .field public static native int NT_GetEntryInfo2FunctionPointer
+  .field public static native int NT_GetEntryInfoHandleFunctionPointer
+  .field public static native int NT_FlushFunctionPointer
+  .field public static native int NT_Flush2FunctionPointer
+  .field public static native int NT_SetListenerOnStartFunctionPointer
+  .field public static native int NT_SetListenerOnStart2FunctionPointer
+  .field public static native int NT_SetListenerOnExitFunctionPointer
+  .field public static native int NT_SetListenerOnExit2FunctionPointer
+  .field public static native int NT_AddEntryListenerFunctionPointer
+  .field public static native int NT_AddEntryListener2FunctionPointer
+  .field public static native int NT_AddEntryListenerSingleFunctionPointer
+  .field public static native int NT_RemoveEntryListenerFunctionPointer
+  .field public static native int NT_AddConnectionListenerFunctionPointer
+  .field public static native int NT_AddConnectionListener2FunctionPointer
+  .field public static native int NT_RemoveConnectionListenerFunctionPointer
+  .field public static native int NT_NotifierDestroyedFunctionPointer
+  .field public static native int NT_NotifierDestroyed2FunctionPointer
+  .field public static native int NT_SetRpcServerOnStartFunctionPointer
+  .field public static native int NT_SetRpcServerOnExitFunctionPointer
+  .field public static native int NT_CreateRpcFunctionPointer
+  .field public static native int NT_CreatePolledRpcFunctionPointer
+  .field public static native int NT_PollRpcFunctionPointer
+  .field public static native int NT_PollRpcTimeoutFunctionPointer
+  .field public static native int NT_PostRpcResponseFunctionPointer
+  .field public static native int NT_CallRpcFunctionPointer
+  .field public static native int NT_GetRpcResultFunctionPointer
+  .field public static native int NT_GetRpcResultTimeoutFunctionPointer
+  .field public static native int NT_CancelRpcResultFunctionPointer
+  .field public static native int NT_PackRpcDefinitionFunctionPointer
+  .field public static native int NT_UnpackRpcDefinitionFunctionPointer
+  .field public static native int NT_PackRpcValuesFunctionPointer
+  .field public static native int NT_UnpackRpcValuesFunctionPointer
+  .field public static native int NT_SetNetworkIdentityFunctionPointer
+  .field public static native int NT_SetNetworkIdentity2FunctionPointer
+  .field public static native int NT_GetNetworkModeFunctionPointer
+  .field public static native int NT_GetNetworkMode2FunctionPointer
+  .field public static native int NT_StartServerFunctionPointer
+  .field public static native int NT_StartServer2FunctionPointer
+  .field public static native int NT_StopServerFunctionPointer
+  .field public static native int NT_StopServer2FunctionPointer
+  .field public static native int NT_StartClientNoneFunctionPointer
+  .field public static native int NT_StartClientNone2FunctionPointer
+  .field public static native int NT_StartClientFunctionPointer
+  .field public static native int NT_StartClient2FunctionPointer
+  .field public static native int NT_StartClientMultiFunctionPointer
+  .field public static native int NT_StartClientMulti2FunctionPointer
+  .field public static native int NT_StopClientFunctionPointer
+  .field public static native int NT_StopClient2FunctionPointer
+  .field public static native int NT_SetServerFunctionPointer
+  .field public static native int NT_SetServer2FunctionPointer
+  .field public static native int NT_SetServerMultiFunctionPointer
+  .field public static native int NT_SetServerMulti2FunctionPointer
+  .field public static native int NT_StartDSClientFunctionPointer
+  .field public static native int NT_StartDSClient2FunctionPointer
+  .field public static native int NT_StopDSClientFunctionPointer
+  .field public static native int NT_StopDSClient2FunctionPointer
+  .field public static native int NT_StopRpcServerFunctionPointer
+  .field public static native int NT_StopRpcServer2FunctionPointer
+  .field public static native int NT_StopNotifierFunctionPointer
+  .field public static native int NT_StopNotifier2FunctionPointer
+  .field public static native int NT_SetUpdateRateFunctionPointer
+  .field public static native int NT_SetUpdateRate2FunctionPointer
+  .field public static native int NT_GetConnectionsFunctionPointer
+  .field public static native int NT_GetConnections2FunctionPointer
+  .field public static native int NT_SavePersistentFunctionPointer
+  .field public static native int NT_SavePersistent2FunctionPointer
+  .field public static native int NT_LoadPersistentFunctionPointer
+  .field public static native int NT_LoadPersistent2FunctionPointer
+  .field public static native int NT_DisposeValueFunctionPointer
+  .field public static native int NT_InitValueFunctionPointer
+  .field public static native int NT_DisposeStringFunctionPointer
+  .field public static native int NT_InitStringFunctionPointer
+  .field public static native int NT_DisposeEntryArrayFunctionPointer
+  .field public static native int NT_DisposeConnectionInfoArrayFunctionPointer
+  .field public static native int NT_DisposeEntryInfoArrayFunctionPointer
+  .field public static native int NT_DisposeEntryInfoArray2FunctionPointer
+  .field public static native int NT_DisposeRpcDefinitionFunctionPointer
+  .field public static native int NT_DisposeRpcCallInfoFunctionPointer
+  .field public static native int NT_NowFunctionPointer
+  .field public static native int NT_SetLoggerFunctionPointer
+  .field public static native int NT_SetLogger2FunctionPointer
+  .field public static native int NT_AllocateCharArrayFunctionPointer
+  .field public static native int NT_AllocateBooleanArrayFunctionPointer
+  .field public static native int NT_AllocateDoubleArrayFunctionPointer
+  .field public static native int NT_AllocateStringArrayFunctionPointer
+  .field public static native int NT_FreeCharArrayFunctionPointer
+  .field public static native int NT_FreeDoubleArrayFunctionPointer
+  .field public static native int NT_FreeBooleanArrayFunctionPointer
+  .field public static native int NT_FreeStringArrayFunctionPointer
+  .field public static native int NT_GetValueBooleanFunctionPointer
+  .field public static native int NT_GetValueDoubleFunctionPointer
+  .field public static native int NT_GetValueStringFunctionPointer
+  .field public static native int NT_GetValueRawFunctionPointer
+  .field public static native int NT_GetValueBooleanArrayFunctionPointer
+  .field public static native int NT_GetValueDoubleArrayFunctionPointer
+  .field public static native int NT_GetValueStringArrayFunctionPointer
+  .field public static native int NT_GetEntryBooleanFunctionPointer
+  .field public static native int NT_GetEntryBoolean2FunctionPointer
+  .field public static native int NT_GetEntryDoubleFunctionPointer
+  .field public static native int NT_GetEntryDouble2FunctionPointer
+  .field public static native int NT_GetEntryStringFunctionPointer
+  .field public static native int NT_GetEntryString2FunctionPointer
+  .field public static native int NT_GetEntryRawFunctionPointer
+  .field public static native int NT_GetEntryRaw2FunctionPointer
+  .field public static native int NT_GetEntryBooleanArrayFunctionPointer
+  .field public static native int NT_GetEntryBooleanArray2FunctionPointer
+  .field public static native int NT_GetEntryDoubleArrayFunctionPointer
+  .field public static native int NT_GetEntryDoubleArray2FunctionPointer
+  .field public static native int NT_GetEntryStringArrayFunctionPointer
+  .field public static native int NT_GetEntryStringArray2FunctionPointer
+  .field public static native int NT_SetDefaultEntryBooleanFunctionPointer
+  .field public static native int NT_SetDefaultEntryBoolean2FunctionPointer
+  .field public static native int NT_SetDefaultEntryDoubleFunctionPointer
+  .field public static native int NT_SetDefaultEntryDouble2FunctionPointer
+  .field public static native int NT_SetDefaultEntryStringFunctionPointer
+  .field public static native int NT_SetDefaultEntryString2FunctionPointer
+  .field public static native int NT_SetDefaultEntryRawFunctionPointer
+  .field public static native int NT_SetDefaultEntryRaw2FunctionPointer
+  .field public static native int NT_SetDefaultEntryBooleanArrayFunctionPointer
+  .field public static native int NT_SetDefaultEntryBooleanArray2FunctionPointer
+  .field public static native int NT_SetDefaultEntryDoubleArrayFunctionPointer
+  .field public static native int NT_SetDefaultEntryDoubleArray2FunctionPointer
+  .field public static native int NT_SetDefaultEntryStringArrayFunctionPointer
+  .field public static native int NT_SetDefaultEntryStringArray2FunctionPointer
+  .field public static native int NT_SetEntryBooleanFunctionPointer
+  .field public static native int NT_SetEntryBoolean2FunctionPointer
+  .field public static native int NT_SetEntryDoubleFunctionPointer
+  .field public static native int NT_SetEntryDouble2FunctionPointer
+  .field public static native int NT_SetEntryStringFunctionPointer
+  .field public static native int NT_SetEntryString2FunctionPointer
+  .field public static native int NT_SetEntryRawFunctionPointer
+  .field public static native int NT_SetEntryRaw2FunctionPointer
+  .field public static native int NT_SetEntryBooleanArrayFunctionPointer
+  .field public static native int NT_SetEntryBooleanArray2FunctionPointer
+  .field public static native int NT_SetEntryDoubleArrayFunctionPointer
+  .field public static native int NT_SetEntryDoubleArray2FunctionPointer
+  .field public static native int NT_SetEntryStringArrayFunctionPointer
+  .field public static native int NT_SetEntryStringArray2FunctionPointer
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Inst
           NT_GetDefaultInstance() cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetDefaultInstanceFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetDefaultInstanceFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Inst()
       ret
   } // end of method Functions::NT_GetDefaultInstance
@@ -181,7 +181,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_CreateInstanceFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_CreateInstanceFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Inst()
       ret
   } // end of method Functions::NT_CreateInstance
@@ -191,7 +191,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DestroyInstanceFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DestroyInstanceFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_DestroyInstance
@@ -202,7 +202,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetInstanceFromHandleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetInstanceFromHandleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Inst(valuetype FRC.NetworkTables.Core.Interop.NT_Handle)
       ret
   } // end of method Functions::NT_GetInstanceFromHandle
@@ -217,14 +217,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Entry(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                  uint8*,
                                                                                                                                  native uint)
       ret
   } // end of method Functions::NT_GetEntry
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Entry
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Entry*
           NT_GetEntries(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                         uint8* prefix,
                         native uint prefix_len,
@@ -238,8 +238,8 @@
       ldarg.2
       ldarg.3
       ldarg.s    count
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntriesFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Entry(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntriesFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Entry*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                    uint8*,
                                                                                                                                    native uint,
                                                                                                                                    uint32,
@@ -247,15 +247,15 @@
       ret
   } // end of method Functions::NT_GetEntries
 
-  .method public hidebysig static uint8  NT_GetEntryName(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+  .method public hidebysig static uint8*  NT_GetEntryName(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                          native uint* name_len) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryNameFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryNameFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                          native uint*)
       ret
   } // end of method Functions::NT_GetEntryName
@@ -266,7 +266,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryLastChangeFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryLastChangeFunctionPointer
       calli unmanaged cdecl             uint64(valuetype FRC.NetworkTables.Core.Interop.NT_Entry)
       ret
   } // end of method Functions::NT_GetEntryLastChange
@@ -280,7 +280,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryValueFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                          native uint,
                                                                                          valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
@@ -294,7 +294,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryValue2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryValue2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                           valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
@@ -310,7 +310,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryValueFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                             native uint,
                                                                                                                                             valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
@@ -325,7 +325,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryValue2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryValue2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                              valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
@@ -341,7 +341,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryValueFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                      native uint,
                                                                                                                                      valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
@@ -356,7 +356,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryValue2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryValue2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                       valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
@@ -371,7 +371,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryTypeValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryTypeValueFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                              native uint,
                                                                                              valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
@@ -385,7 +385,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryTypeValue2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryTypeValue2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                               valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
@@ -400,7 +400,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryFlagsFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryFlagsFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                          native uint,
                                                                                          uint32)
@@ -414,7 +414,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryFlags2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryFlags2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                           uint32)
       ret
@@ -428,7 +428,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFlagsFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFlagsFunctionPointer
       calli unmanaged cdecl             uint32(uint8*,
                                                                                            native uint)
       ret
@@ -440,7 +440,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFlags2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryFlags2FunctionPointer
       calli unmanaged cdecl             uint32(valuetype FRC.NetworkTables.Core.Interop.NT_Entry)
       ret
   } // end of method Functions::NT_GetEntryFlags2
@@ -452,7 +452,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DeleteEntryFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DeleteEntryFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                        native uint)
       ret
@@ -463,7 +463,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DeleteEntry2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DeleteEntry2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry)
       ret
   } // end of method Functions::NT_DeleteEntry2
@@ -472,7 +472,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DeleteAllEntriesFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DeleteAllEntriesFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_DeleteAllEntries
@@ -482,12 +482,12 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DeleteAllEntries2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DeleteAllEntries2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_DeleteAllEntries2
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo*
           NT_GetEntryInfo(uint8* prefix,
                           native uint prefix_len,
                           uint32 types,
@@ -499,15 +499,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfoFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfoFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo*(uint8*,
                                                                                                                                          native uint,
                                                                                                                                          uint32,
                                                                                                                                          native uint*)
       ret
   } // end of method Functions::NT_GetEntryInfo
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*
           NT_GetEntryInfo2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                            uint8* prefix,
                            native uint prefix_len,
@@ -521,8 +521,8 @@
       ldarg.2
       ldarg.3
       ldarg.s    count
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfo2FunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfo2FunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                            uint8*,
                                                                                                                                            native uint,
                                                                                                                                            uint32,
@@ -530,14 +530,14 @@
       ret
   } // end of method Functions::NT_GetEntryInfo2
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*
           NT_GetEntryInfoHandle(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfoHandleFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryInfoHandleFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry)
       ret
   } // end of method Functions::NT_GetEntryInfoHandle
 
@@ -545,7 +545,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_FlushFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_FlushFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_Flush
@@ -555,7 +555,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_Flush2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_Flush2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_Flush2
@@ -567,7 +567,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStartFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStartFunctionPointer
       calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_OnStart,
                                                                                               void*)
       ret
@@ -582,7 +582,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStart2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStart2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                class FRC.NetworkTables.Core.Interop.NT_OnStart,
                                                                                                void*)
@@ -596,7 +596,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExitFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExitFunctionPointer
       calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_OnExit,
                                                                                              void*)
       ret
@@ -611,7 +611,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExit2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExit2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                               class FRC.NetworkTables.Core.Interop.NT_OnExit,
                                                                                               void*)
@@ -632,7 +632,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    'flags'
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListenerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListenerFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener(uint8*,
                                                                                                                                                  native uint,
                                                                                                                                                  void*,
@@ -657,7 +657,7 @@
       ldarg.3
       ldarg.s    callback
       ldarg.s    'flags'
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListener2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListener2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                                   uint8*,
                                                                                                                                                   native uint,
@@ -679,7 +679,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListenerSingleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListenerSingleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                        void*,
                                                                                                                                                        class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2,
@@ -692,7 +692,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_RemoveEntryListenerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_RemoveEntryListenerFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener)
       ret
   } // end of method Functions::NT_RemoveEntryListener
@@ -707,7 +707,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListenerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListenerFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener(void*,
                                                                                                                                                            class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback,
                                                                                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
@@ -726,7 +726,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListener2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListener2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                                             void*,
                                                                                                                                                             class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback,
@@ -739,7 +739,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_RemoveConnectionListenerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_RemoveConnectionListenerFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener)
       ret
   } // end of method Functions::NT_RemoveConnectionListener
@@ -749,7 +749,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_NotifierDestroyedFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_NotifierDestroyedFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool()
       ret
   } // end of method Functions::NT_NotifierDestroyed
@@ -760,7 +760,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_NotifierDestroyed2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_NotifierDestroyed2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_NotifierDestroyed2
@@ -774,7 +774,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnStartFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnStartFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                class FRC.NetworkTables.Core.Interop.NT_OnStart,
                                                                                                void*)
@@ -790,7 +790,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnExitFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnExitFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                               class FRC.NetworkTables.Core.Interop.NT_OnExit,
                                                                                               void*)
@@ -810,7 +810,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    callback
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_CreateRpcFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_CreateRpcFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                      uint8*,
                                                                                      native uint,
@@ -828,7 +828,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_CreatePolledRpcFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_CreatePolledRpcFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                            uint8*,
                                                                                            native uint)
@@ -843,7 +843,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_PollRpcFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_PollRpcFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo*)
       ret
@@ -859,7 +859,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_PollRpcTimeoutFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_PollRpcTimeoutFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                       valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo*,
                                                                                                                                       float64)
@@ -877,7 +877,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_PostRpcResponseFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_PostRpcResponseFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall,
                                                                                            uint8*,
@@ -895,14 +895,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_CallRpcFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_CallRpcFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                   uint8*,
                                                                                                                                   native uint)
       ret
   } // end of method Functions::NT_CallRpc
 
-  .method public hidebysig static uint8  NT_GetRpcResult(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
+  .method public hidebysig static uint8*  NT_GetRpcResult(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                                                          valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call',
                                                          native uint* result_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -911,14 +911,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetRpcResultFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetRpcResultFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                          valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall,
                                                                                          native uint*)
       ret
   } // end of method Functions::NT_GetRpcResult
 
-  .method public hidebysig static uint8  NT_GetRpcResultTimeout(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
+  .method public hidebysig static uint8*  NT_GetRpcResultTimeout(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                                                                 valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call',
                                                                 native uint* result_len,
                                                                 float64 time_out) cil managed aggressiveinlining aggressiveinlining
@@ -929,8 +929,8 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetRpcResultTimeoutFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetRpcResultTimeoutFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                 valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall,
                                                                                                 native uint*,
                                                                                                 float64)
@@ -944,21 +944,21 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_CancelRpcResultFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_CancelRpcResultFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall)
       ret
   } // end of method Functions::NT_CancelRpcResult
 
-  .method public hidebysig static uint8  NT_PackRpcDefinition(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def,
+  .method public hidebysig static uint8*  NT_PackRpcDefinition(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def,
                                                               native uint* packed_len) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_PackRpcDefinitionFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_PackRpcDefinitionFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition*,
                                                                                               native uint*)
       ret
   } // end of method Functions::NT_PackRpcDefinition
@@ -973,14 +973,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcDefinitionFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcDefinitionFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                            native uint,
                                                                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition*)
       ret
   } // end of method Functions::NT_UnpackRpcDefinition
 
-  .method public hidebysig static uint8  NT_PackRpcValues(valuetype FRC.NetworkTables.Core.Interop.NT_Value** values,
+  .method public hidebysig static uint8*  NT_PackRpcValues(valuetype FRC.NetworkTables.Core.Interop.NT_Value** values,
                                                           native uint values_len,
                                                           native uint* packed_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -989,14 +989,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_PackRpcValuesFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Value**,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_PackRpcValuesFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Value**,
                                                                                           native uint,
                                                                                           native uint*)
       ret
   } // end of method Functions::NT_PackRpcValues
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Value
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Value**
           NT_UnpackRpcValues(uint8* packed,
                              native uint packed_len,
                              valuetype FRC.NetworkTables.Core.Interop.NT_Type* types,
@@ -1008,8 +1008,8 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcValuesFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Value(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcValuesFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Value**(uint8*,
                                                                                                                                         native uint,
                                                                                                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Type*,
                                                                                                                                         native uint)
@@ -1023,7 +1023,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetNetworkIdentityFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetNetworkIdentityFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                               native uint)
       ret
@@ -1038,7 +1038,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetNetworkIdentity2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetNetworkIdentity2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                uint8*,
                                                                                                native uint)
@@ -1050,7 +1050,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetNetworkModeFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetNetworkModeFunctionPointer
       calli unmanaged cdecl             uint32()
       ret
   } // end of method Functions::NT_GetNetworkMode
@@ -1061,7 +1061,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetNetworkMode2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetNetworkMode2FunctionPointer
       calli unmanaged cdecl             uint32(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_GetNetworkMode2
@@ -1075,7 +1075,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartServerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartServerFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                        uint8*,
                                                                                        uint32)
@@ -1093,7 +1093,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartServer2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartServer2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                         uint8*,
                                                                                         uint8*,
@@ -1105,7 +1105,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopServerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopServerFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StopServer
@@ -1115,7 +1115,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopServer2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopServer2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StopServer2
@@ -1124,7 +1124,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClientNoneFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClientNoneFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StartClientNone
@@ -1134,7 +1134,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClientNone2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClientNone2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StartClientNone2
@@ -1146,7 +1146,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClientFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClientFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                        uint32)
       ret
@@ -1161,7 +1161,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClient2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClient2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                         uint8*,
                                                                                         uint32)
@@ -1177,7 +1177,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClientMultiFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClientMultiFunctionPointer
       calli unmanaged cdecl             void(native uint,
                                                                                             uint8**,
                                                                                             uint32*)
@@ -1195,7 +1195,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartClientMulti2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartClientMulti2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                              native uint,
                                                                                              uint8**,
@@ -1207,7 +1207,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopClientFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopClientFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StopClient
@@ -1217,7 +1217,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopClient2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopClient2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StopClient2
@@ -1229,7 +1229,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetServerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetServerFunctionPointer
       calli unmanaged cdecl             void(uint8*,
                                                                                      uint32)
       ret
@@ -1244,7 +1244,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetServer2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetServer2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                       uint8*,
                                                                                       uint32)
@@ -1260,7 +1260,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetServerMultiFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetServerMultiFunctionPointer
       calli unmanaged cdecl             void(native uint,
                                                                                           uint8**,
                                                                                           uint32*)
@@ -1278,7 +1278,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetServerMulti2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetServerMulti2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                            native uint,
                                                                                            uint8**,
@@ -1291,7 +1291,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartDSClientFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartDSClientFunctionPointer
       calli unmanaged cdecl             void(uint32)
       ret
   } // end of method Functions::NT_StartDSClient
@@ -1303,7 +1303,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StartDSClient2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StartDSClient2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                           uint32)
       ret
@@ -1313,7 +1313,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopDSClientFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopDSClientFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StopDSClient
@@ -1323,7 +1323,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopDSClient2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopDSClient2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StopDSClient2
@@ -1332,7 +1332,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopRpcServerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopRpcServerFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StopRpcServer
@@ -1342,7 +1342,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopRpcServer2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopRpcServer2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StopRpcServer2
@@ -1351,7 +1351,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopNotifierFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopNotifierFunctionPointer
       calli unmanaged cdecl             void()
       ret
   } // end of method Functions::NT_StopNotifier
@@ -1361,7 +1361,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_StopNotifier2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_StopNotifier2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst)
       ret
   } // end of method Functions::NT_StopNotifier2
@@ -1371,7 +1371,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetUpdateRateFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetUpdateRateFunctionPointer
       calli unmanaged cdecl             void(float64)
       ret
   } // end of method Functions::NT_SetUpdateRate
@@ -1383,24 +1383,24 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetUpdateRate2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetUpdateRate2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                           float64)
       ret
   } // end of method Functions::NT_SetUpdateRate2
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*
           NT_GetConnections(native uint* count) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetConnectionsFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo(native uint*)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetConnectionsFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*(native uint*)
       ret
   } // end of method Functions::NT_GetConnections
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*
           NT_GetConnections2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                              native uint* count) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1408,49 +1408,49 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetConnections2FunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetConnections2FunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                                  native uint*)
       ret
   } // end of method Functions::NT_GetConnections2
 
-  .method public hidebysig static uint8  NT_SavePersistent(uint8* filename) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static uint8*  NT_SavePersistent(uint8* filename) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SavePersistentFunctionPointer
-      calli unmanaged cdecl             uint8(uint8*)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SavePersistentFunctionPointer
+      calli unmanaged cdecl             uint8*(uint8*)
       ret
   } // end of method Functions::NT_SavePersistent
 
-  .method public hidebysig static uint8  NT_SavePersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
+  .method public hidebysig static uint8*  NT_SavePersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                             uint8* filename) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SavePersistent2FunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SavePersistent2FunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                             uint8*)
       ret
   } // end of method Functions::NT_SavePersistent2
 
-  .method public hidebysig static uint8  NT_LoadPersistent(uint8* filename,
+  .method public hidebysig static uint8*  NT_LoadPersistent(uint8* filename,
                                                            class FRC.NetworkTables.Core.Interop.NT_WarnFunc warn) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistentFunctionPointer
-      calli unmanaged cdecl             uint8(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistentFunctionPointer
+      calli unmanaged cdecl             uint8*(uint8*,
                                                                                            class FRC.NetworkTables.Core.Interop.NT_WarnFunc)
       ret
   } // end of method Functions::NT_LoadPersistent
 
-  .method public hidebysig static uint8  NT_LoadPersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
+  .method public hidebysig static uint8*  NT_LoadPersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                             uint8* filename,
                                                             class FRC.NetworkTables.Core.Interop.NT_WarnFunc warn) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1459,8 +1459,8 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistent2FunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistent2FunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                             uint8*,
                                                                                             class FRC.NetworkTables.Core.Interop.NT_WarnFunc)
       ret
@@ -1471,7 +1471,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeValueFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
   } // end of method Functions::NT_DisposeValue
@@ -1481,7 +1481,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_InitValueFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_InitValueFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Value*)
       ret
   } // end of method Functions::NT_InitValue
@@ -1491,7 +1491,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeStringFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeStringFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_String*)
       ret
   } // end of method Functions::NT_DisposeString
@@ -1501,7 +1501,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_InitStringFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_InitStringFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_String*)
       ret
   } // end of method Functions::NT_InitString
@@ -1513,7 +1513,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryArrayFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry*,
                                                                                              native uint)
       ret
@@ -1526,7 +1526,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeConnectionInfoArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeConnectionInfoArrayFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*,
                                                                                                       native uint)
       ret
@@ -1539,7 +1539,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryInfoArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryInfoArrayFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo*,
                                                                                                  native uint)
       ret
@@ -1552,7 +1552,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryInfoArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeEntryInfoArray2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*,
                                                                                                   native uint)
       ret
@@ -1563,7 +1563,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeRpcDefinitionFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeRpcDefinitionFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition*)
       ret
   } // end of method Functions::NT_DisposeRpcDefinition
@@ -1573,7 +1573,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_DisposeRpcCallInfoFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_DisposeRpcCallInfoFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo*)
       ret
   } // end of method Functions::NT_DisposeRpcCallInfo
@@ -1583,7 +1583,7 @@
   {
     // Code size       6 (0x6)
     .maxstack  1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_NowFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_NowFunctionPointer
       calli unmanaged cdecl             uint64()
       ret
   } // end of method Functions::NT_Now
@@ -1595,7 +1595,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetLoggerFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetLoggerFunctionPointer
       calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_LogFunc,
                                                                                      uint32)
       ret
@@ -1610,53 +1610,53 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetLogger2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetLogger2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                       class FRC.NetworkTables.Core.Interop.NT_LogFunc,
                                                                                       uint32)
       ret
   } // end of method Functions::NT_SetLogger2
 
-  .method public hidebysig static uint8  NT_AllocateCharArray(native uint size) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static uint8*  NT_AllocateCharArray(native uint size) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AllocateCharArrayFunctionPointer
-      calli unmanaged cdecl             uint8(native uint)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AllocateCharArrayFunctionPointer
+      calli unmanaged cdecl             uint8*(native uint)
       ret
   } // end of method Functions::NT_AllocateCharArray
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_AllocateBooleanArray(native uint size) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AllocateBooleanArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(native uint)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AllocateBooleanArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool*(native uint)
       ret
   } // end of method Functions::NT_AllocateBooleanArray
 
-  .method public hidebysig static float64
+  .method public hidebysig static float64*
           NT_AllocateDoubleArray(native uint size) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AllocateDoubleArrayFunctionPointer
-      calli unmanaged cdecl             float64(native uint)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AllocateDoubleArrayFunctionPointer
+      calli unmanaged cdecl             float64*(native uint)
       ret
   } // end of method Functions::NT_AllocateDoubleArray
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_AllocateStringArray(native uint size) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_AllocateStringArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String(native uint)
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AllocateStringArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String*(native uint)
       ret
   } // end of method Functions::NT_AllocateStringArray
 
@@ -1665,7 +1665,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_FreeCharArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_FreeCharArrayFunctionPointer
       calli unmanaged cdecl             void(uint8*)
       ret
   } // end of method Functions::NT_FreeCharArray
@@ -1675,7 +1675,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_FreeDoubleArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_FreeDoubleArrayFunctionPointer
       calli unmanaged cdecl             void(float64*)
       ret
   } // end of method Functions::NT_FreeDoubleArray
@@ -1685,7 +1685,7 @@
     // Code size       7 (0x7)
     .maxstack  2
       ldarg.0
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_FreeBooleanArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_FreeBooleanArrayFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Bool*)
       ret
   } // end of method Functions::NT_FreeBooleanArray
@@ -1697,7 +1697,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_FreeStringArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_FreeStringArrayFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_String*,
                                                                                            native uint)
       ret
@@ -1713,7 +1713,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueBooleanFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueBooleanFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                                                                        uint64*,
                                                                                                                                        valuetype FRC.NetworkTables.Core.Interop.NT_Bool*)
@@ -1730,14 +1730,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueDoubleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueDoubleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                                                                       uint64*,
                                                                                                                                       float64*)
       ret
   } // end of method Functions::NT_GetValueDouble
 
-  .method public hidebysig static uint8  NT_GetValueString(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+  .method public hidebysig static uint8*  NT_GetValueString(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                                            uint64* last_change,
                                                            native uint* str_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1746,14 +1746,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueStringFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueStringFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                            uint64*,
                                                                                            native uint*)
       ret
   } // end of method Functions::NT_GetValueString
 
-  .method public hidebysig static uint8  NT_GetValueRaw(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
+  .method public hidebysig static uint8*  NT_GetValueRaw(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                                         uint64* last_change,
                                                         native uint* raw_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1762,14 +1762,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueRawFunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueRawFunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                         uint64*,
                                                                                         native uint*)
       ret
   } // end of method Functions::NT_GetValueRaw
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_GetValueBooleanArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                   uint64* last_change,
                                   native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -1779,14 +1779,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueBooleanArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueBooleanArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool*(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                                                                             uint64*,
                                                                                                                                             native uint*)
       ret
   } // end of method Functions::NT_GetValueBooleanArray
 
-  .method public hidebysig static float64
+  .method public hidebysig static float64*
           NT_GetValueDoubleArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                  uint64* last_change,
                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -1796,14 +1796,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueDoubleArrayFunctionPointer
-      calli unmanaged cdecl             float64(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueDoubleArrayFunctionPointer
+      calli unmanaged cdecl             float64*(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                                   uint64*,
                                                                                                   native uint*)
       ret
   } // end of method Functions::NT_GetValueDoubleArray
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_GetValueStringArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                  uint64* last_change,
                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -1813,8 +1813,8 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetValueStringArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetValueStringArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String*(valuetype FRC.NetworkTables.Core.Interop.NT_Value*,
                                                                                                                                              uint64*,
                                                                                                                                              native uint*)
       ret
@@ -1832,7 +1832,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                        native uint,
                                                                                                                                        uint64*,
@@ -1850,7 +1850,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBoolean2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBoolean2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                         uint64*,
                                                                                                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Bool*)
@@ -1869,7 +1869,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                       native uint,
                                                                                                                                       uint64*,
@@ -1887,14 +1887,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDouble2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDouble2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                        uint64*,
                                                                                                                                        float64*)
       ret
   } // end of method Functions::NT_GetEntryDouble2
 
-  .method public hidebysig static uint8  NT_GetEntryString(uint8* name,
+  .method public hidebysig static uint8*  NT_GetEntryString(uint8* name,
                                                            native uint name_len,
                                                            uint64* last_change,
                                                            native uint* str_len) cil managed aggressiveinlining aggressiveinlining
@@ -1905,15 +1905,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringFunctionPointer
-      calli unmanaged cdecl             uint8(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringFunctionPointer
+      calli unmanaged cdecl             uint8*(uint8*,
                                                                                            native uint,
                                                                                            uint64*,
                                                                                            native uint*)
       ret
   } // end of method Functions::NT_GetEntryString
 
-  .method public hidebysig static uint8  NT_GetEntryString2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+  .method public hidebysig static uint8*  NT_GetEntryString2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                             uint64* last_change,
                                                             native uint* str_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1922,8 +1922,8 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryString2FunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryString2FunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                             uint64*,
                                                                                             native uint*)
       ret
@@ -1940,15 +1940,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryRawFunctionPointer
-      calli unmanaged cdecl             uint8(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryRawFunctionPointer
+      calli unmanaged cdecl             uint8*(uint8*,
                                                                                         native uint,
                                                                                         uint64*,
                                                                                         native uint*)
       ret
   } // end of method Functions::NT_GetEntryRaw
 
-  .method public hidebysig static uint8  NT_GetEntryRaw2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
+  .method public hidebysig static uint8*  NT_GetEntryRaw2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                          uint64* last_change,
                                                          native uint* raw_len) cil managed aggressiveinlining aggressiveinlining
   {
@@ -1957,14 +1957,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryRaw2FunctionPointer
-      calli unmanaged cdecl             uint8(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryRaw2FunctionPointer
+      calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                          uint64*,
                                                                                          native uint*)
       ret
   } // end of method Functions::NT_GetEntryRaw2
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_GetEntryBooleanArray(uint8* name,
                                   native uint name_len,
                                   uint64* last_change,
@@ -1976,15 +1976,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool*(uint8*,
                                                                                                                                             native uint,
                                                                                                                                             uint64*,
                                                                                                                                             native uint*)
       ret
   } // end of method Functions::NT_GetEntryBooleanArray
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_GetEntryBooleanArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                    uint64* last_change,
                                    native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -1994,14 +1994,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanArray2FunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryBooleanArray2FunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                              uint64*,
                                                                                                                                              native uint*)
       ret
   } // end of method Functions::NT_GetEntryBooleanArray2
 
-  .method public hidebysig static float64
+  .method public hidebysig static float64*
           NT_GetEntryDoubleArray(uint8* name,
                                  native uint name_len,
                                  uint64* last_change,
@@ -2013,15 +2013,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleArrayFunctionPointer
-      calli unmanaged cdecl             float64(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleArrayFunctionPointer
+      calli unmanaged cdecl             float64*(uint8*,
                                                                                                   native uint,
                                                                                                   uint64*,
                                                                                                   native uint*)
       ret
   } // end of method Functions::NT_GetEntryDoubleArray
 
-  .method public hidebysig static float64
+  .method public hidebysig static float64*
           NT_GetEntryDoubleArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   uint64* last_change,
                                   native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -2031,14 +2031,14 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleArray2FunctionPointer
-      calli unmanaged cdecl             float64(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryDoubleArray2FunctionPointer
+      calli unmanaged cdecl             float64*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                    uint64*,
                                                                                                    native uint*)
       ret
   } // end of method Functions::NT_GetEntryDoubleArray2
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_GetEntryStringArray(uint8* name,
                                  native uint name_len,
                                  uint64* last_change,
@@ -2050,15 +2050,15 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringArrayFunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String(uint8*,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringArrayFunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String*(uint8*,
                                                                                                                                              native uint,
                                                                                                                                              uint64*,
                                                                                                                                              native uint*)
       ret
   } // end of method Functions::NT_GetEntryStringArray
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_GetEntryStringArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   uint64* last_change,
                                   native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
@@ -2068,8 +2068,8 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringArray2FunctionPointer
-      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_GetEntryStringArray2FunctionPointer
+      calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_String*(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                               uint64*,
                                                                                                                                               native uint*)
       ret
@@ -2085,7 +2085,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                               native uint,
                                                                                                                                               valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
@@ -2100,7 +2100,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBoolean2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBoolean2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
       ret
@@ -2116,7 +2116,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                              native uint,
                                                                                                                                              float64)
@@ -2131,7 +2131,7 @@
     .maxstack  3
       ldarg.0
       ldarg.1
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDouble2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDouble2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                               float64)
       ret
@@ -2149,7 +2149,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                              native uint,
                                                                                                                                              uint8*,
@@ -2167,7 +2167,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryString2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryString2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                               uint8*,
                                                                                                                                               native uint)
@@ -2186,7 +2186,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryRawFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryRawFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                           native uint,
                                                                                                                                           uint8*,
@@ -2204,7 +2204,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryRaw2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryRaw2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                            uint8*,
                                                                                                                                            native uint)
@@ -2223,7 +2223,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                                    native uint,
                                                                                                                                                    int32*,
@@ -2241,7 +2241,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryBooleanArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                     int32*,
                                                                                                                                                     native uint)
@@ -2260,7 +2260,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                                   native uint,
                                                                                                                                                   float64*,
@@ -2278,7 +2278,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryDoubleArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                    float64*,
                                                                                                                                                    native uint)
@@ -2297,7 +2297,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                                   native uint,
                                                                                                                                                   valuetype FRC.NetworkTables.Core.Interop.NT_String*,
@@ -2315,7 +2315,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetDefaultEntryStringArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                    valuetype FRC.NetworkTables.Core.Interop.NT_String*,
                                                                                                                                                    native uint)
@@ -2334,7 +2334,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                        native uint,
                                                                                                                                        valuetype FRC.NetworkTables.Core.Interop.NT_Bool,
@@ -2352,7 +2352,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBoolean2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBoolean2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Bool,
                                                                                                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
@@ -2371,7 +2371,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                       native uint,
                                                                                                                                       float64,
@@ -2389,7 +2389,7 @@
       ldarg.0
       ldarg.1
       ldarg.2
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDouble2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDouble2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                        float64,
                                                                                                                                        valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
@@ -2410,7 +2410,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    force
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                       native uint,
                                                                                                                                       uint8*,
@@ -2431,7 +2431,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryString2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryString2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                        uint8*,
                                                                                                                                        native uint,
@@ -2453,7 +2453,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    force
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryRawFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryRawFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                    native uint,
                                                                                                                                    uint8*,
@@ -2474,7 +2474,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryRaw2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryRaw2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                     uint8*,
                                                                                                                                     native uint,
@@ -2496,7 +2496,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    force
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                             native uint,
                                                                                                                                             int32*,
@@ -2517,7 +2517,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryBooleanArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                              int32*,
                                                                                                                                              native uint,
@@ -2539,7 +2539,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    force
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                            native uint,
                                                                                                                                            float64*,
@@ -2560,7 +2560,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryDoubleArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                             float64*,
                                                                                                                                             native uint,
@@ -2582,7 +2582,7 @@
       ldarg.2
       ldarg.3
       ldarg.s    force
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringArrayFunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringArrayFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(uint8*,
                                                                                                                                            native uint,
                                                                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_String*,
@@ -2603,7 +2603,7 @@
       ldarg.1
       ldarg.2
       ldarg.3
-      ldfld      int32 FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringArray2FunctionPointer
+      ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetEntryStringArray2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_Bool(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                             valuetype FRC.NetworkTables.Core.Interop.NT_String*,
                                                                                                                                             native uint,

@@ -14,6 +14,14 @@ namespace NetworkTables
             m_handle = handle;
         }
 
-        public 
+        public static implicit operator NetworkTableEntry(NT_Entry handle)
+        {
+            return new NetworkTableEntry(handle);
+        }
+
+        public static explicit operator NT_Entry(NetworkTableEntry entry)
+        {
+            return entry.m_handle;
+        }
     }
 }

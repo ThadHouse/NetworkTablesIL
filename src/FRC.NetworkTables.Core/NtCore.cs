@@ -4,180 +4,236 @@ using System.Collections.Generic;
 using System.Text;
 using FRC;
 using System.Runtime.CompilerServices;
+using NetworkTables;
 
 namespace FRC.NetworkTables.Core
 {
-    public class NtCore
+    public static class NtCore
     {
-        public static NT_Inst NT_GetDefaultInstance()
+
+
+        public static NetworkTableInstance NT_GetDefaultInstance()
         {
             return Functions.NT_GetDefaultInstance();
         }
 
-        public static NT_Inst NT_CreateInstance()
+        public static NetworkTableInstance NT_CreateInstance()
         {
             return Functions.NT_CreateInstance();
         }
 
-        public static void NT_DestroyInstance(NT_Inst inst)
+        public static void NT_DestroyInstance(NetworkTableInstance inst)
         {
-            Functions.NT_DestroyInstance(inst);
+            Functions.NT_DestroyInstance((NT_Inst)inst);
         }
 
-        public static NT_Inst NT_GetInstanceFromHandle(NT_Handle handle)
+        public static NetworkTableInstance NT_GetInstanceFromHandle(NT_Handle handle)
         {
             return Functions.NT_GetInstanceFromHandle(handle);
         }
 
-        public static unsafe NT_Entry NT_GetEntry(NT_Inst inst, string str)
+        public static unsafe NetworkTableEntry NT_GetEntry(NetworkTableInstance inst, string str)
         {
             var nativeStr = UTF8String.CreateCachedUTF8String(str);
-            return Functions.NT_GetEntry(inst, (byte*)nativeStr.Buffer.ToPointer(), nativeStr.Length);
+            return Functions.NT_GetEntry((NT_Inst)inst, nativeStr.Buffer, nativeStr.Length);
         }
 
-        public static unsafe T[] CopyArray<T>(void* source, int len)
-        {
-            T[] arr = new T[len];
-            var size = Unsafe.SizeOf<T>();
-            for (int i = 0; i < len; i++)
-            {
-                Unsafe.Copy((byte*)source + size * i, ref arr[i]);
-            }
-            return arr;
-        }
-
-        public static unsafe NT_Entry[] NT_GetEntries(NT_Inst inst, string prefix, uint types, UIntPtr* count)
+        public static unsafe NetworkTableEntry[] NT_GetEntries(NT_Inst inst, string prefix, uint types, UIntPtr* count)
         {
             var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
             UIntPtr len;
-            var entriesPtr = Functions.NT_GetEntries(inst, (byte*)nativePrefix.Buffer.ToPointer(), nativePrefix.Length, types, &len);
+            var entriesPtr = Functions.NT_GetEntries(inst, nativePrefix.Buffer, nativePrefix.Length, types, &len);
             int lenInt = (int)len;
-            NT_Entry[] entries = new NT_Entry[lenInt];
+            NetworkTableEntry[] entries = new NetworkTableEntry[lenInt];
             
             for (int i = 0; i < lenInt; i++)
             {
-                Unsafe.Copy(ref entries[i], &entriesPtr[i]);
+                entries[i] = new NetworkTableEntry(entriesPtr[i]);
             }
 
-            Functions.
-                NT_DisposeEntryArray(entriesPtr, len);
+            Functions.NT_DisposeEntryArray(entriesPtr, len);
 
             return entries;
         }
 
-        public static unsafe byte* NT_GetEntryName(NT_Entry entry, UIntPtr* name_len)
+        public static unsafe string NT_GetEntryName(NetworkTableEntry entry)
         {
-            throw null;
+            UIntPtr len;
+            var nativeStr = Functions.NT_GetEntryName((NT_Entry)entry, &len);
+            var str = UTF8String.ReadUTF8String(nativeStr);
+            Functions.NT_FreeCharArray(nativeStr);
+            return str;
         }
 
-        public static unsafe ulong NT_GetEntryLastChange(NT_Entry entry)
+        public static ulong NT_GetEntryLastChange(NetworkTableEntry entry)
         {
-            throw null;
+            return Functions.NT_GetEntryLastChange((NT_Entry)entry);
         }
 
-        public static unsafe void NT_GetEntryValue(byte* name, UIntPtr name_len, NT_Value* value)
+        public static unsafe NetworkTableValue NT_GetEntryValue(string name)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            NT_Value val;
+            Functions.NT_GetEntryValue(nativeName.Buffer, nativeName.Length, &val);
+            var retVal = NetworkTableValue.CreateFromNative(&val);
+            Functions.NT_DisposeValue(&val);
+            return retVal;
         }
 
-        public static unsafe void NT_GetEntryValue2(NT_Entry entry, NT_Value* value)
+        public static unsafe NetworkTableValue NT_GetEntryValue(NetworkTableEntry entry)
         {
-            throw null;
+            NT_Value val;
+            Functions.NT_GetEntryValue2((NT_Entry)entry, &val);
+            var retVal = NetworkTableValue.CreateFromNative(&val);
+            Functions.NT_DisposeValue(&val);
+            return retVal;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryValue(byte* name, UIntPtr name_len, NT_Value* default_value)
+        public static unsafe bool NT_SetDefaultEntryValue(string name, NetworkTableValue default_value)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            NT_Value val;
+            NetworkTableValue.CreateNative(default_value, &val);
+            var ret = Functions.NT_SetDefaultEntryValue(nativeName.Buffer, nativeName.Length, &val);
+            NetworkTableValue.DisposeNative(&val);
+            return ret.Get();
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryValue2(NT_Entry entry, NT_Value* default_value)
+        public static unsafe bool NT_SetDefaultEntryValue2(NetworkTableEntry entry, NetworkTableValue default_value)
         {
-            throw null;
+            NT_Value val;
+            NetworkTableValue.CreateNative(default_value, &val);
+            var ret = Functions.NT_SetDefaultEntryValue2((NT_Entry)entry, &val);
+            NetworkTableValue.DisposeNative(&val);
+            return ret.Get();
         }
 
-        public static unsafe NT_Bool NT_SetEntryValue(byte* name, UIntPtr name_len, NT_Value* value)
+        public static unsafe bool NT_SetEntryValue(string name, NetworkTableValue value)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            NT_Value val;
+            NetworkTableValue.CreateNative(value, &val);
+            var ret = Functions.NT_SetEntryValue(nativeName.Buffer, nativeName.Length, &val);
+            NetworkTableValue.DisposeNative(&val);
+            return ret.Get();
         }
 
-        public static unsafe NT_Bool NT_SetEntryValue2(NT_Entry entry, NT_Value* value)
+        public static unsafe bool NT_SetEntryValue2(NetworkTableEntry entry, NetworkTableValue value)
         {
-            throw null;
+            NT_Value val;
+            NetworkTableValue.CreateNative(value, &val);
+            var ret = Functions.NT_SetDefaultEntryValue2((NT_Entry)entry, &val);
+            NetworkTableValue.DisposeNative(&val);
+            return ret.Get();
         }
 
-        public static unsafe void NT_SetEntryTypeValue(byte* name, UIntPtr name_len, NT_Value* value)
+        public static unsafe void NT_SetEntryTypeValue(string name, NetworkTableValue value)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            NT_Value val;
+            NetworkTableValue.CreateNative(value, &val);
+            Functions.NT_SetEntryTypeValue(nativeName.Buffer, nativeName.Length, &val);
+            NetworkTableValue.DisposeNative(&val);
         }
 
-        public static unsafe void NT_SetEntryTypeValue2(NT_Entry entry, NT_Value* value)
+        public static unsafe void NT_SetEntryTypeValue2(NetworkTableEntry entry, NetworkTableValue value)
         {
-            throw null;
+            NT_Value val;
+            NetworkTableValue.CreateNative(value, &val);
+            Functions.NT_SetEntryTypeValue2((NT_Entry)entry, &val);
+            NetworkTableValue.DisposeNative(&val);
+
         }
 
-        public static unsafe void NT_SetEntryFlags(byte* name, UIntPtr name_len, uint flags)
+        public static unsafe void NT_SetEntryFlags(string name, uint flags)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            Functions.NT_SetEntryFlags(nativeName.Buffer, nativeName.Length, flags);
         }
 
-        public static unsafe void NT_SetEntryFlags2(NT_Entry entry, uint flags)
+        public static unsafe void NT_SetEntryFlags2(NetworkTableEntry entry, uint flags)
         {
-            throw null;
+            Functions.NT_SetEntryFlags2((NT_Entry)entry, flags);
         }
 
-        public static unsafe uint NT_GetEntryFlags(byte* name, UIntPtr name_len)
+        public static unsafe uint NT_GetEntryFlags(string name)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            return Functions.NT_GetEntryFlags(nativeName.Buffer, nativeName.Length);
         }
 
-        public static unsafe uint NT_GetEntryFlags2(NT_Entry entry)
+        public static unsafe uint NT_GetEntryFlags2(NetworkTableEntry entry)
         {
-            throw null;
+            return Functions.NT_GetEntryFlags2((NT_Entry)entry);
         }
 
-        public static unsafe void NT_DeleteEntry(byte* name, UIntPtr name_len)
+        public static unsafe void NT_DeleteEntry(string name)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            Functions.NT_DeleteEntry(nativeName.Buffer, nativeName.Length);
         }
 
-        public static unsafe void NT_DeleteEntry2(NT_Entry entry)
+        public static unsafe void NT_DeleteEntry2(NetworkTableEntry entry)
         {
-            throw null;
+            Functions.NT_DeleteEntry2((NT_Entry)entry);
         }
 
         public static unsafe void NT_DeleteAllEntries()
         {
-            throw null;
+            Functions.NT_DeleteAllEntries();
         }
 
-        public static unsafe void NT_DeleteAllEntries2(NT_Inst inst)
+        public static unsafe void NT_DeleteAllEntries2(NetworkTableInstance inst)
         {
-            throw null;
+            Functions.NT_DeleteAllEntries2((NT_Inst)inst);
         }
 
-        public static unsafe NT_EntryInfo* NT_GetEntryInfo(byte* prefix, UIntPtr prefix_len, uint types, UIntPtr* count)
+        public static unsafe EntryInfo[] NT_GetEntryInfo(string prefix, uint types)
         {
-            throw null;
+            var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
+            UIntPtr len;
+            var ret = Functions.NT_GetEntryInfo(nativePrefix.Buffer, nativePrefix.Length, types, &len);
+            int lenInt = (int)len;
+            EntryInfo[] retArr = new EntryInfo[lenInt];
+            for (int i = 0; i < lenInt; i++)
+            {
+                retArr[i] = new EntryInfo(&ret[i]);
+            }
+            Functions.NT_DisposeEntryInfoArray(ret, len);
+            return retArr;
         }
 
-        public static unsafe NT_EntryInfo2* NT_GetEntryInfo2(NT_Inst inst, byte* prefix, UIntPtr prefix_len, uint types, UIntPtr* count)
+        public static unsafe EntryInfo2[] NT_GetEntryInfo2(NetworkTableInstance inst, string prefix, uint types)
         {
-            throw null;
+            var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
+            UIntPtr len;
+            var ret = Functions.NT_GetEntryInfo2((NT_Inst) inst, nativePrefix.Buffer, nativePrefix.Length, types, &len);
+            int lenInt = (int)len;
+            EntryInfo2[] retArr = new EntryInfo2[lenInt];
+            for (int i = 0; i < lenInt; i++)
+            {
+                retArr[i] = new EntryInfo2(&ret[i]);
+            }
+            Functions.NT_DisposeEntryInfoArray2(ret, len);
+            return retArr;
         }
 
-        public static unsafe NT_EntryInfo2* NT_GetEntryInfoHandle(NT_Entry entry)
+        public static unsafe EntryInfo2 NT_GetEntryInfoHandle(NetworkTableEntry entry)
         {
-            throw null;
+            var info = Functions.NT_GetEntryInfoHandle((NT_Entry)entry);
+            var ret = new EntryInfo2(info);
+            Functions.NT_DisposeEntryInfoArray2(info, new UIntPtr(1));
+            return ret;
         }
 
         public static unsafe void NT_Flush()
         {
-            throw null;
+            Functions.NT_Flush();
         }
 
-        public static unsafe void NT_Flush2(NT_Inst inst)
+        public static unsafe void NT_Flush2(NetworkTableInstance inst)
         {
-            throw null;
+            Functions.NT_Flush2((NT_Inst)inst);
         }
 
         public static unsafe void NT_SetListenerOnStart(NT_OnStart onStart, void* data)
@@ -210,7 +266,7 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe NT_EntryListener NT_AddEntryListenerSingle(NT_Entry entry, void* data, NT_EntryListenerCallback2 callback, uint flags)
+        public static unsafe NT_EntryListener NT_AddEntryListenerSingle(NetworkTableEntry entry, void* data, NT_EntryListenerCallback2 callback, uint flags)
         {
             throw null;
         }
@@ -255,12 +311,12 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe void NT_CreateRpc(NT_Entry entry, byte* def, UIntPtr def_len, void* data, NT_RpcCallback callback)
+        public static unsafe void NT_CreateRpc(NetworkTableEntry entry, byte* def, UIntPtr def_len, void* data, NT_RpcCallback callback)
         {
             throw null;
         }
 
-        public static unsafe void NT_CreatePolledRpc(NT_Entry entry, byte* def, UIntPtr def_len)
+        public static unsafe void NT_CreatePolledRpc(NetworkTableEntry entry, byte* def, UIntPtr def_len)
         {
             throw null;
         }
@@ -320,12 +376,12 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe void NT_SetNetworkIdentity(byte* name, UIntPtr name_len)
+        public static unsafe void NT_SetNetworkIdentity(string name)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetNetworkIdentity2(NT_Inst inst, byte* name, UIntPtr name_len)
+        public static unsafe void NT_SetNetworkIdentity2(NT_Inst inst, string name)
         {
             throw null;
         }
@@ -640,212 +696,212 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe NT_Bool NT_GetEntryBoolean(byte* name, UIntPtr name_len, ulong* last_change, NT_Bool* v_boolean)
+        public static unsafe NT_Bool NT_GetEntryBoolean(string name, ulong* last_change, NT_Bool* v_boolean)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_GetEntryBoolean2(NT_Entry entry, ulong* last_change, NT_Bool* v_boolean)
+        public static unsafe NT_Bool NT_GetEntryBoolean2(NetworkTableEntry entry, ulong* last_change, NT_Bool* v_boolean)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_GetEntryDouble(byte* name, UIntPtr name_len, ulong* last_change, double* v_double)
+        public static unsafe NT_Bool NT_GetEntryDouble(string name, ulong* last_change, double* v_double)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_GetEntryDouble2(NT_Entry entry, ulong* last_change, double* v_double)
+        public static unsafe NT_Bool NT_GetEntryDouble2(NetworkTableEntry entry, ulong* last_change, double* v_double)
         {
             throw null;
         }
 
-        public static unsafe byte* NT_GetEntryString(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* str_len)
+        public static unsafe byte* NT_GetEntryString(string name, ulong* last_change, UIntPtr* str_len)
         {
             throw null;
         }
 
-        public static unsafe byte* NT_GetEntryString2(NT_Entry entry, ulong* last_change, UIntPtr* str_len)
+        public static unsafe byte* NT_GetEntryString2(NetworkTableEntry entry, ulong* last_change, UIntPtr* str_len)
         {
             throw null;
         }
 
-        public static unsafe byte* NT_GetEntryRaw(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* raw_len)
+        public static unsafe byte* NT_GetEntryRaw(string name, ulong* last_change, UIntPtr* raw_len)
         {
             throw null;
         }
 
-        public static unsafe byte* NT_GetEntryRaw2(NT_Entry entry, ulong* last_change, UIntPtr* raw_len)
+        public static unsafe byte* NT_GetEntryRaw2(NetworkTableEntry entry, ulong* last_change, UIntPtr* raw_len)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool* NT_GetEntryBooleanArray(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe NT_Bool* NT_GetEntryBooleanArray(string name, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool* NT_GetEntryBooleanArray2(NT_Entry entry, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe NT_Bool* NT_GetEntryBooleanArray2(NetworkTableEntry entry, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe double* NT_GetEntryDoubleArray(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe double* NT_GetEntryDoubleArray(string name, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe double* NT_GetEntryDoubleArray2(NT_Entry entry, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe double* NT_GetEntryDoubleArray2(NetworkTableEntry entry, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe NT_String* NT_GetEntryStringArray(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe NT_String* NT_GetEntryStringArray(string name, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe NT_String* NT_GetEntryStringArray2(NT_Entry entry, ulong* last_change, UIntPtr* arr_size)
+        public static unsafe NT_String* NT_GetEntryStringArray2(NetworkTableEntry entry, ulong* last_change, UIntPtr* arr_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryBoolean(byte* name, UIntPtr name_len, NT_Bool default_boolean)
+        public static unsafe NT_Bool NT_SetDefaultEntryBoolean(string name, NT_Bool default_boolean)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryBoolean2(NT_Entry entry, NT_Bool default_boolean)
+        public static unsafe NT_Bool NT_SetDefaultEntryBoolean2(NetworkTableEntry entry, NT_Bool default_boolean)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryDouble(byte* name, UIntPtr name_len, double default_double)
+        public static unsafe NT_Bool NT_SetDefaultEntryDouble(string name, double default_double)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryDouble2(NT_Entry entry, double default_double)
+        public static unsafe NT_Bool NT_SetDefaultEntryDouble2(NetworkTableEntry entry, double default_double)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryString(byte* name, UIntPtr name_len, byte* default_value, UIntPtr default_len)
+        public static unsafe NT_Bool NT_SetDefaultEntryString(string name, byte* default_value, UIntPtr default_len)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryString2(NT_Entry entry, byte* default_value, UIntPtr default_len)
+        public static unsafe NT_Bool NT_SetDefaultEntryString2(NetworkTableEntry entry, byte* default_value, UIntPtr default_len)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryRaw(byte* name, UIntPtr name_len, byte* default_value, UIntPtr default_len)
+        public static unsafe NT_Bool NT_SetDefaultEntryRaw(string name, byte* default_value, UIntPtr default_len)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryRaw2(NT_Entry entry, byte* default_value, UIntPtr default_len)
+        public static unsafe NT_Bool NT_SetDefaultEntryRaw2(NetworkTableEntry entry, byte* default_value, UIntPtr default_len)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryBooleanArray(byte* name, UIntPtr name_len, int* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryBooleanArray(string name, int* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryBooleanArray2(NT_Entry entry, int* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryBooleanArray2(NetworkTableEntry entry, int* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryDoubleArray(byte* name, UIntPtr name_len, double* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryDoubleArray(string name, double* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryDoubleArray2(NT_Entry entry, double* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryDoubleArray2(NetworkTableEntry entry, double* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryStringArray(byte* name, UIntPtr name_len, NT_String* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryStringArray(string name, NT_String* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetDefaultEntryStringArray2(NT_Entry entry, NT_String* default_value, UIntPtr default_size)
+        public static unsafe NT_Bool NT_SetDefaultEntryStringArray2(NetworkTableEntry entry, NT_String* default_value, UIntPtr default_size)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryBoolean(byte* name, UIntPtr name_len, NT_Bool v_boolean, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryBoolean(string name, NT_Bool v_boolean, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryBoolean2(NT_Entry entry, NT_Bool v_boolean, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryBoolean2(NetworkTableEntry entry, NT_Bool v_boolean, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryDouble(byte* name, UIntPtr name_len, double v_double, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryDouble(string name, double v_double, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryDouble2(NT_Entry entry, double v_double, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryDouble2(NetworkTableEntry entry, double v_double, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryString(byte* name, UIntPtr name_len, byte* str, UIntPtr str_len, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryString(string name, byte* str, UIntPtr str_len, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryString2(NT_Entry entry, byte* str, UIntPtr str_len, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryString2(NetworkTableEntry entry, byte* str, UIntPtr str_len, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryRaw(byte* name, UIntPtr name_len, byte* raw, UIntPtr raw_len, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryRaw(string name, byte* raw, UIntPtr raw_len, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryRaw2(NT_Entry entry, byte* raw, UIntPtr raw_len, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryRaw2(NetworkTableEntry entry, byte* raw, UIntPtr raw_len, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryBooleanArray(byte* name, UIntPtr name_len, int* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryBooleanArray(string name, int* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryBooleanArray2(NT_Entry entry, int* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryBooleanArray2(NetworkTableEntry entry, int* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryDoubleArray(byte* name, UIntPtr name_len, double* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryDoubleArray(string name, double* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryDoubleArray2(NT_Entry entry, double* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryDoubleArray2(NetworkTableEntry entry, double* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryStringArray(byte* name, UIntPtr name_len, NT_String* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryStringArray(string name, NT_String* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryStringArray2(NT_Entry entry, NT_String* arr, UIntPtr size, NT_Bool force)
+        public static unsafe NT_Bool NT_SetEntryStringArray2(NetworkTableEntry entry, NT_String* arr, UIntPtr size, NT_Bool force)
         {
             throw null;
         }

@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FRC.Utilities" Version="2.0.0-alpha2" />
+    <PackageReference Include="FRC.Utilities" Version="2.0.0-alpha3" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.3.0" />
   </ItemGroup>
 

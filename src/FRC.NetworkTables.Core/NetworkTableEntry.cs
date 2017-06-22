@@ -1,10 +1,19 @@
-﻿using System;
+﻿using FRC.NetworkTables.Core.Interop;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FRC.NetworkTables.Core
+namespace NetworkTables
 {
-    class NetworkTableEntry
+    public class NetworkTableEntry
     {
+        private NT_Entry m_handle;
+
+        public NetworkTableEntry(NT_Entry handle)
+        {
+            m_handle = handle;
+        }
+
+        public 
     }
 }

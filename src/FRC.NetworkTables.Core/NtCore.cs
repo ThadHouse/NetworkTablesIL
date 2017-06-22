@@ -59,7 +59,8 @@ namespace FRC.NetworkTables.Core
                 Unsafe.Copy(ref entries[i], &entriesPtr[i]);
             }
 
-            Functions.NT_DisposeEntryArray(entriesPtr, len);
+            Functions.
+                NT_DisposeEntryArray(entriesPtr, len);
 
             return entries;
         }

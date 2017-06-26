@@ -313,37 +313,37 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe void NT_SetListenerOnStart(NT_OnStart onStart, void* data)
+        public static unsafe void NT_SetListenerOnStart(IntPtr onStart, void* data)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetListenerOnStart2(NT_Inst inst, NT_OnStart onStart, void* data)
+        public static unsafe void NT_SetListenerOnStart2(NT_Inst inst, IntPtr onStart, void* data)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetListenerOnExit(NT_OnExit onExit, void* data)
+        public static unsafe void NT_SetListenerOnExit(IntPtr onExit, void* data)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetListenerOnExit2(NT_Inst inst, NT_OnExit onExit, void* data)
+        public static unsafe void NT_SetListenerOnExit2(NT_Inst inst, IntPtr onExit, void* data)
         {
             throw null;
         }
 
-        public static unsafe NT_EntryListener NT_AddEntryListener(byte* prefix, UIntPtr prefix_len, void* data, NT_EntryListenerCallback callback, uint flags)
+        public static unsafe NT_EntryListener NT_AddEntryListener(byte* prefix, UIntPtr prefix_len, void* data, IntPtr callback, uint flags)
         {
             throw null;
         }
 
-        public static unsafe NT_EntryListener NT_AddEntryListener2(NT_Inst inst, byte* prefix, UIntPtr prefix_len, void* data, NT_EntryListenerCallback2 callback, uint flags)
+        public static unsafe NT_EntryListener NT_AddEntryListener2(NT_Inst inst, byte* prefix, UIntPtr prefix_len, void* data, IntPtr callback, uint flags)
         {
             throw null;
         }
 
-        public static unsafe NT_EntryListener NT_AddEntryListenerSingle(NT_Entry entry, void* data, NT_EntryListenerCallback2 callback, uint flags)
+        public static unsafe NT_EntryListener NT_AddEntryListenerSingle(NT_Entry entry, void* data, IntPtr callback, uint flags)
         {
             throw null;
         }
@@ -353,12 +353,12 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe NT_ConnectionListener NT_AddConnectionListener(void* data, NT_ConnectionListenerCallback callback, NT_Bool immediate_notify)
+        public static unsafe NT_ConnectionListener NT_AddConnectionListener(void* data, IntPtr callback, NT_Bool immediate_notify)
         {
             throw null;
         }
 
-        public static unsafe NT_ConnectionListener NT_AddConnectionListener2(NT_Inst inst, void* data, NT_ConnectionListenerCallback callback, NT_Bool immediate_notify)
+        public static unsafe NT_ConnectionListener NT_AddConnectionListener2(NT_Inst inst, void* data, IntPtr callback, NT_Bool immediate_notify)
         {
             throw null;
         }
@@ -378,17 +378,17 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe void NT_SetRpcServerOnStart(NT_Inst inst, NT_OnStart onStart, void* data)
+        public static unsafe void NT_SetRpcServerOnStart(NT_Inst inst, IntPtr onStart, void* data)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetRpcServerOnExit(NT_Inst inst, NT_OnExit onExit, void* data)
+        public static unsafe void NT_SetRpcServerOnExit(NT_Inst inst, IntPtr onExit, void* data)
         {
             throw null;
         }
 
-        public static unsafe void NT_CreateRpc(NT_Entry entry, byte* def, UIntPtr def_len, void* data, NT_RpcCallback callback)
+        public static unsafe void NT_CreateRpc(NT_Entry entry, byte* def, UIntPtr def_len, void* data, IntPtr callback)
         {
             throw null;
         }
@@ -623,12 +623,12 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe byte* NT_LoadPersistent(byte* filename, NT_WarnFunc warn)
+        public static unsafe byte* NT_LoadPersistent(byte* filename, IntPtr warn)
         {
             throw null;
         }
 
-        public static unsafe byte* NT_LoadPersistent2(NT_Inst inst, byte* filename, NT_WarnFunc warn)
+        public static unsafe byte* NT_LoadPersistent2(NT_Inst inst, byte* filename, IntPtr warn)
         {
             throw null;
         }
@@ -688,12 +688,12 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe void NT_SetLogger(NT_LogFunc func, uint min_level)
+        public static unsafe void NT_SetLogger(IntPtr func, uint min_level)
         {
             throw null;
         }
 
-        public static unsafe void NT_SetLogger2(NT_Inst inst, NT_LogFunc func, uint min_level)
+        public static unsafe void NT_SetLogger2(NT_Inst inst, IntPtr func, uint min_level)
         {
             throw null;
         }

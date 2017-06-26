@@ -560,7 +560,7 @@
       ret
   } // end of method Functions::NT_Flush2
 
-  .method public hidebysig static void  NT_SetListenerOnStart(class FRC.NetworkTables.Core.Interop.NT_OnStart onStart,
+  .method public hidebysig static void  NT_SetListenerOnStart(native int onStart,
                                                               void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
@@ -568,13 +568,13 @@
       ldarg.0
       ldarg.1
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStartFunctionPointer
-      calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_OnStart,
+      calli unmanaged cdecl             void(native int,
                                                                                               void*)
       ret
   } // end of method Functions::NT_SetListenerOnStart
 
   .method public hidebysig static void  NT_SetListenerOnStart2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                               class FRC.NetworkTables.Core.Interop.NT_OnStart onStart,
+                                                               native int onStart,
                                                                void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -584,12 +584,12 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnStart2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
-                                                                                               class FRC.NetworkTables.Core.Interop.NT_OnStart,
+                                                                                               native int,
                                                                                                void*)
       ret
   } // end of method Functions::NT_SetListenerOnStart2
 
-  .method public hidebysig static void  NT_SetListenerOnExit(class FRC.NetworkTables.Core.Interop.NT_OnExit onExit,
+  .method public hidebysig static void  NT_SetListenerOnExit(native int onExit,
                                                              void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
@@ -597,13 +597,13 @@
       ldarg.0
       ldarg.1
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExitFunctionPointer
-      calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_OnExit,
+      calli unmanaged cdecl             void(native int,
                                                                                              void*)
       ret
   } // end of method Functions::NT_SetListenerOnExit
 
   .method public hidebysig static void  NT_SetListenerOnExit2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                              class FRC.NetworkTables.Core.Interop.NT_OnExit onExit,
+                                                              native int onExit,
                                                               void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -613,7 +613,7 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetListenerOnExit2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
-                                                                                              class FRC.NetworkTables.Core.Interop.NT_OnExit,
+                                                                                              native int,
                                                                                               void*)
       ret
   } // end of method Functions::NT_SetListenerOnExit2
@@ -622,7 +622,7 @@
           NT_AddEntryListener(uint8* prefix,
                               native uint prefix_len,
                               void* data,
-                              class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback callback,
+                              native int callback,
                               uint32 'flags') cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       12 (0xc)
@@ -636,7 +636,7 @@
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener(uint8*,
                                                                                                                                                  native uint,
                                                                                                                                                  void*,
-                                                                                                                                                 class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback,
+                                                                                                                                                 native int,
                                                                                                                                                  uint32)
       ret
   } // end of method Functions::NT_AddEntryListener
@@ -646,7 +646,7 @@
                                uint8* prefix,
                                native uint prefix_len,
                                void* data,
-                               class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2 callback,
+                               native int callback,
                                uint32 'flags') cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       14 (0xe)
@@ -662,7 +662,7 @@
                                                                                                                                                   uint8*,
                                                                                                                                                   native uint,
                                                                                                                                                   void*,
-                                                                                                                                                  class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2,
+                                                                                                                                                  native int,
                                                                                                                                                   uint32)
       ret
   } // end of method Functions::NT_AddEntryListener2
@@ -670,7 +670,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener
           NT_AddEntryListenerSingle(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                     void* data,
-                                    class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2 callback,
+                                    native int callback,
                                     uint32 'flags') cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       10 (0xa)
@@ -682,7 +682,7 @@
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddEntryListenerSingleFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener(valuetype FRC.NetworkTables.Core.Interop.NT_Entry,
                                                                                                                                                        void*,
-                                                                                                                                                       class FRC.NetworkTables.Core.Interop.NT_EntryListenerCallback2,
+                                                                                                                                                       native int,
                                                                                                                                                        uint32)
       ret
   } // end of method Functions::NT_AddEntryListenerSingle
@@ -699,7 +699,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener
           NT_AddConnectionListener(void* data,
-                                   class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback callback,
+                                   native int callback,
                                    valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -709,7 +709,7 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListenerFunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener(void*,
-                                                                                                                                                           class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback,
+                                                                                                                                                           native int,
                                                                                                                                                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
       ret
   } // end of method Functions::NT_AddConnectionListener
@@ -717,7 +717,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener
           NT_AddConnectionListener2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                     void* data,
-                                    class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback callback,
+                                    native int callback,
                                     valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       10 (0xa)
@@ -729,7 +729,7 @@
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_AddConnectionListener2FunctionPointer
       calli unmanaged cdecl             valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                                                                                             void*,
-                                                                                                                                                            class FRC.NetworkTables.Core.Interop.NT_ConnectionListenerCallback,
+                                                                                                                                                            native int,
                                                                                                                                                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool)
       ret
   } // end of method Functions::NT_AddConnectionListener2
@@ -766,7 +766,7 @@
   } // end of method Functions::NT_NotifierDestroyed2
 
   .method public hidebysig static void  NT_SetRpcServerOnStart(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                               class FRC.NetworkTables.Core.Interop.NT_OnStart onStart,
+                                                               native int onStart,
                                                                void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -776,13 +776,13 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnStartFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
-                                                                                               class FRC.NetworkTables.Core.Interop.NT_OnStart,
+                                                                                               native int,
                                                                                                void*)
       ret
   } // end of method Functions::NT_SetRpcServerOnStart
 
   .method public hidebysig static void  NT_SetRpcServerOnExit(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                              class FRC.NetworkTables.Core.Interop.NT_OnExit onExit,
+                                                              native int onExit,
                                                               void* data) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -792,7 +792,7 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetRpcServerOnExitFunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
-                                                                                              class FRC.NetworkTables.Core.Interop.NT_OnExit,
+                                                                                              native int,
                                                                                               void*)
       ret
   } // end of method Functions::NT_SetRpcServerOnExit
@@ -801,7 +801,7 @@
                                                      uint8* def,
                                                      native uint def_len,
                                                      void* data,
-                                                     class FRC.NetworkTables.Core.Interop.NT_RpcCallback callback) cil managed aggressiveinlining aggressiveinlining
+                                                     native int callback) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -815,7 +815,7 @@
                                                                                      uint8*,
                                                                                      native uint,
                                                                                      void*,
-                                                                                     class FRC.NetworkTables.Core.Interop.NT_RpcCallback)
+                                                                                     native int)
       ret
   } // end of method Functions::NT_CreateRpc
 
@@ -1438,7 +1438,7 @@
   } // end of method Functions::NT_SavePersistent2
 
   .method public hidebysig static uint8*  NT_LoadPersistent(uint8* filename,
-                                                           class FRC.NetworkTables.Core.Interop.NT_WarnFunc warn) cil managed aggressiveinlining aggressiveinlining
+                                                           native int warn) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1446,13 +1446,13 @@
       ldarg.1
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistentFunctionPointer
       calli unmanaged cdecl             uint8*(uint8*,
-                                                                                           class FRC.NetworkTables.Core.Interop.NT_WarnFunc)
+                                                                                           native int)
       ret
   } // end of method Functions::NT_LoadPersistent
 
   .method public hidebysig static uint8*  NT_LoadPersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                             uint8* filename,
-                                                            class FRC.NetworkTables.Core.Interop.NT_WarnFunc warn) cil managed aggressiveinlining aggressiveinlining
+                                                            native int warn) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1462,7 +1462,7 @@
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_LoadPersistent2FunctionPointer
       calli unmanaged cdecl             uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
                                                                                             uint8*,
-                                                                                            class FRC.NetworkTables.Core.Interop.NT_WarnFunc)
+                                                                                            native int)
       ret
   } // end of method Functions::NT_LoadPersistent2
 
@@ -1588,7 +1588,7 @@
       ret
   } // end of method Functions::NT_Now
 
-  .method public hidebysig static void  NT_SetLogger(class FRC.NetworkTables.Core.Interop.NT_LogFunc func,
+  .method public hidebysig static void  NT_SetLogger(native int func,
                                                      uint32 min_level) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       8 (0x8)
@@ -1596,13 +1596,13 @@
       ldarg.0
       ldarg.1
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetLoggerFunctionPointer
-      calli unmanaged cdecl             void(class FRC.NetworkTables.Core.Interop.NT_LogFunc,
+      calli unmanaged cdecl             void(native int,
                                                                                      uint32)
       ret
   } // end of method Functions::NT_SetLogger
 
   .method public hidebysig static void  NT_SetLogger2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                      class FRC.NetworkTables.Core.Interop.NT_LogFunc func,
+                                                      native int func,
                                                       uint32 min_level) cil managed aggressiveinlining aggressiveinlining
   {
     // Code size       9 (0x9)
@@ -1612,7 +1612,7 @@
       ldarg.2
       ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::NT_SetLogger2FunctionPointer
       calli unmanaged cdecl             void(valuetype FRC.NetworkTables.Core.Interop.NT_Inst,
-                                                                                      class FRC.NetworkTables.Core.Interop.NT_LogFunc,
+                                                                                      native int,
                                                                                       uint32)
       ret
   } // end of method Functions::NT_SetLogger2

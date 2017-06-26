@@ -5,40 +5,40 @@ using System.Text;
 using FRC;
 using System.Runtime.CompilerServices;
 using NetworkTables;
+using System.Runtime.InteropServices;
+using System.Collections.Concurrent;
 
 namespace FRC.NetworkTables.Core
 {
     public static class NtCore
     {
-
-
-        public static NetworkTableInstance NT_GetDefaultInstance()
+        public static NT_Inst NT_GetDefaultInstance()
         {
             return Functions.NT_GetDefaultInstance();
         }
 
-        public static NetworkTableInstance NT_CreateInstance()
+        public static NT_Inst NT_CreateInstance()
         {
             return Functions.NT_CreateInstance();
         }
 
-        public static void NT_DestroyInstance(NetworkTableInstance inst)
+        public static void NT_DestroyInstance(NT_Inst inst)
         {
-            Functions.NT_DestroyInstance((NT_Inst)inst);
+            Functions.NT_DestroyInstance(inst);
         }
 
-        public static NetworkTableInstance NT_GetInstanceFromHandle(NT_Handle handle)
+        public static NT_Inst NT_GetInstanceFromHandle(NT_Handle handle)
         {
             return Functions.NT_GetInstanceFromHandle(handle);
         }
 
-        public static unsafe NetworkTableEntry NT_GetEntry(NetworkTableInstance inst, string str)
+        public static unsafe NT_Entry NT_GetEntry(NT_Inst inst, string str)
         {
             var nativeStr = UTF8String.CreateCachedUTF8String(str);
-            return Functions.NT_GetEntry((NT_Inst)inst, nativeStr.Buffer, nativeStr.Length);
+            return Functions.NT_GetEntry(inst, nativeStr.Buffer, nativeStr.Length);
         }
 
-        public static unsafe NetworkTableEntry[] NT_GetEntries(NT_Inst inst, string prefix, uint types, UIntPtr* count)
+        public static unsafe NetworkTableEntry[] NT_GetEntries(NT_Inst inst, string prefix, uint types)
         {
             var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
             UIntPtr len;
@@ -236,14 +236,40 @@ namespace FRC.NetworkTables.Core
             Functions.NT_Flush2((NT_Inst)inst);
         }
 
-        public static unsafe void NT_SetListenerOnStart(NT_OnStart onStart, void* data)
+        private static ConcurrentDictionary<CallbackHandle, NT_OnStart> m_OnStartDelegates = new ConcurrentDictionary<CallbackHandle, NT_OnStart>();
+
+        public static unsafe CallbackHandle NT_SetListenerOnStart<T>(Action<T> onStart, T data)
         {
-            throw null;
+            NT_OnStart func = (vP) =>
+            {
+                onStart?.Invoke(data);
+            };
+
+            var fPtr = Marshal.GetFunctionPointerForDelegate(func);
+            CallbackHandle handle = new CallbackHandle()
+            {
+                Value = fPtr
+            };
+            m_OnStartDelegates.TryAdd(handle, func);
+            Functions.NT_SetListenerOnStart(fPtr, null);
+            return handle;
         }
 
-        public static unsafe void NT_SetListenerOnStart2(NT_Inst inst, NT_OnStart onStart, void* data)
+        public static unsafe CallbackHandle NT_SetListenerOnStart2<T>(NetworkTableInstance inst, Action<T> onStart, T data)
         {
-            throw null;
+            NT_OnStart func = (vP) =>
+            {
+                onStart?.Invoke(data);
+            };
+
+            var fPtr = Marshal.GetFunctionPointerForDelegate(func);
+            CallbackHandle handle = new CallbackHandle()
+            {
+                Value = fPtr
+            };
+            m_OnStartDelegates.TryAdd(handle, func);
+            Functions.NT_SetListenerOnStart2((NT_Inst)inst, fPtr, null);
+            return handle;
         }
 
         public static unsafe void NT_SetListenerOnExit(NT_OnExit onExit, void* data)
@@ -291,14 +317,14 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe NT_Bool NT_NotifierDestroyed()
+        public static bool NT_NotifierDestroyed()
         {
-            throw null;
+            return Functions.NT_NotifierDestroyed().Get();
         }
 
-        public static unsafe NT_Bool NT_NotifierDestroyed2(NT_Inst inst)
+        public static bool NT_NotifierDestroyed2(NetworkTableInstance inst)
         {
-            throw null;
+            return Functions.NT_NotifierDestroyed2((NT_Inst)inst).Get();
         }
 
         public static unsafe void NT_SetRpcServerOnStart(NT_Inst inst, NT_OnStart onStart, void* data)
@@ -556,59 +582,9 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe void NT_DisposeValue(NT_Value* value)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_InitValue(NT_Value* value)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeString(NT_String* str)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_InitString(NT_String* str)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeEntryArray(NT_Entry* arr, UIntPtr count)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeConnectionInfoArray(NT_ConnectionInfo* arr, UIntPtr count)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeEntryInfoArray(NT_EntryInfo* arr, UIntPtr count)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeEntryInfoArray2(NT_EntryInfo2* arr, UIntPtr count)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeRpcDefinition(NT_RpcDefinition* def)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_DisposeRpcCallInfo(NT_RpcCallInfo* call_info)
-        {
-            throw null;
-        }
-
         public static unsafe ulong NT_Now()
         {
-            throw null;
+            return Functions.NT_Now();
         }
 
         public static unsafe void NT_SetLogger(NT_LogFunc func, uint min_level)
@@ -616,47 +592,7 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe void NT_SetLogger2(NT_Inst inst, NT_LogFunc func, uint min_level)
-        {
-            throw null;
-        }
-
-        public static unsafe byte* NT_AllocateCharArray(UIntPtr size)
-        {
-            throw null;
-        }
-
-        public static unsafe NT_Bool* NT_AllocateBooleanArray(UIntPtr size)
-        {
-            throw null;
-        }
-
-        public static unsafe double* NT_AllocateDoubleArray(UIntPtr size)
-        {
-            throw null;
-        }
-
-        public static unsafe NT_String* NT_AllocateStringArray(UIntPtr size)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_FreeCharArray(byte* v_char)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_FreeDoubleArray(double* v_double)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_FreeBooleanArray(NT_Bool* v_boolean)
-        {
-            throw null;
-        }
-
-        public static unsafe void NT_FreeStringArray(NT_String* v_string, UIntPtr arr_size)
+        public static unsafe void NT_SetLogger2(NetworkTableInstance inst, NT_LogFunc func, uint min_level)
         {
             throw null;
         }
@@ -896,14 +832,65 @@ namespace FRC.NetworkTables.Core
             throw null;
         }
 
-        public static unsafe NT_Bool NT_SetEntryStringArray(string name, NT_String* arr, UIntPtr size, NT_Bool force)
+        public static unsafe bool NT_SetEntryStringArray(string name, IList<string> arr, bool force)
         {
-            throw null;
+            var nativeName = UTF8String.CreateCachedUTF8String(name);
+            NT_String* dataPtr = (NT_String*)Marshal.AllocHGlobal(arr.Count * Unsafe.SizeOf<NT_String>());
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                CreateNtString(arr[i], &dataPtr[i]);
+            }
+
+            var ret = Functions.NT_SetEntryStringArray(nativeName.Buffer, nativeName.Length, dataPtr, (UIntPtr)arr.Count, force);
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                DisposeNtString(&dataPtr[i]);
+            }
+
+            Marshal.FreeHGlobal((IntPtr)dataPtr);
+
+            return ret.Get();
         }
 
-        public static unsafe NT_Bool NT_SetEntryStringArray2(NetworkTableEntry entry, NT_String* arr, UIntPtr size, NT_Bool force)
+        public static unsafe bool NT_SetEntryStringArray2(NetworkTableEntry entry, string[] arr, bool force)
         {
-            throw null;
+            NT_String* dataPtr = (NT_String*)Marshal.AllocHGlobal(arr.Length * Unsafe.SizeOf<NT_String>());
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                CreateNtString(arr[i], &dataPtr[i]);
+            }
+
+            var ret = Functions.NT_SetEntryStringArray2((NT_Entry)entry, dataPtr, (UIntPtr)arr.Length, force);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                DisposeNtString(&dataPtr[i]);
+            }
+
+            Marshal.FreeHGlobal((IntPtr)dataPtr);
+
+            return ret.Get();
         }
+
+        private static unsafe void CreateNtString(string vStr, NT_String* nStr)
+        {
+            fixed (char* str = vStr)
+            {
+                var encoding = Encoding.UTF8;
+                int bytes = encoding.GetByteCount(vStr);
+                nStr->str = (byte*)Marshal.AllocHGlobal((bytes) * sizeof(byte));
+                nStr->len = (UIntPtr)bytes;
+                encoding.GetBytes(str, vStr.Length, nStr->str, bytes);
+            }
+        }
+
+        private static unsafe void DisposeNtString(NT_String* str)
+        {
+            Marshal.FreeHGlobal((IntPtr)str->str);
+        }
+
     }
 }

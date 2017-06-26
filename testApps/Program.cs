@@ -28,6 +28,7 @@ namespace testApps
 
         static unsafe void Main(string[] args)
         {
+            /*
             NT_GetEntriesDelegate del = (a, b, c, d, e) =>
             {
                 var size = Unsafe.SizeOf<NT_Entry>();
@@ -55,6 +56,23 @@ namespace testApps
             Functions.NT_DisposeEntryArrayFunctionPointer = dPtr;
 
             var entries = NT_GetEntries(new NT_Inst(1), "", 0);
+            */
+            /*
+            NT_SetListenerOnStartDelegate del = (fP, vP) =>
+            {
+                fP.Invoke(vP);
+            };
+
+            var ptr = Marshal.GetFunctionPointerForDelegate(del);
+
+            Functions.NT_SetListenerOnStartFunctionPointer = ptr;
+
+            Functions.NT_SetListenerOnStart((vP) =>
+            {
+                Console.WriteLine((int)vP);
+                Console.WriteLine("Hello!!!");
+            }, (void*)10);
+            */
 
             Console.WriteLine("Hello World!");
             Console.ReadLine();

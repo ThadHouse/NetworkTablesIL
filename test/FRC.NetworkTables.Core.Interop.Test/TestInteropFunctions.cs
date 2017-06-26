@@ -4,331 +4,331 @@ using Xunit;
 
 namespace FRC.NetworkTables.Core.Interop.Test
 {
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Inst NT_GetDefaultInstanceDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Inst NT_CreateInstanceDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DestroyInstanceDelegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Inst NT_GetInstanceFromHandleDelegate(NT_Handle handle);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Entry NT_GetEntryDelegate(NT_Inst inst, byte* name, UIntPtr name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Entry* NT_GetEntriesDelegate(NT_Inst inst, byte* prefix, UIntPtr prefix_len, uint types, UIntPtr* count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetEntryNameDelegate(NT_Entry entry, UIntPtr* name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate ulong NT_GetEntryLastChangeDelegate(NT_Entry entry);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_GetEntryValueDelegate(byte* name, UIntPtr name_len, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_GetEntryValue2Delegate(NT_Entry entry, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryValueDelegate(byte* name, UIntPtr name_len, NT_Value* default_value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryValue2Delegate(NT_Entry entry, NT_Value* default_value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryValueDelegate(byte* name, UIntPtr name_len, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryValue2Delegate(NT_Entry entry, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetEntryTypeValueDelegate(byte* name, UIntPtr name_len, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetEntryTypeValue2Delegate(NT_Entry entry, NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetEntryFlagsDelegate(byte* name, UIntPtr name_len, uint flags);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetEntryFlags2Delegate(NT_Entry entry, uint flags);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate uint NT_GetEntryFlagsDelegate(byte* name, UIntPtr name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate uint NT_GetEntryFlags2Delegate(NT_Entry entry);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DeleteEntryDelegate(byte* name, UIntPtr name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DeleteEntry2Delegate(NT_Entry entry);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DeleteAllEntriesDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DeleteAllEntries2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_EntryInfo* NT_GetEntryInfoDelegate(byte* prefix, UIntPtr prefix_len, uint types, UIntPtr* count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_EntryInfo2* NT_GetEntryInfo2Delegate(NT_Inst inst, byte* prefix, UIntPtr prefix_len, uint types, UIntPtr* count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_EntryInfo2* NT_GetEntryInfoHandleDelegate(NT_Entry entry);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_FlushDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_Flush2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetListenerOnStartDelegate(NT_OnStart onStart, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetListenerOnStart2Delegate(NT_Inst inst, NT_OnStart onStart, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetListenerOnExitDelegate(NT_OnExit onExit, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetListenerOnExit2Delegate(NT_Inst inst, NT_OnExit onExit, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate NT_EntryListener NT_AddEntryListenerDelegate(byte* prefix, UIntPtr prefix_len, void* data, NT_EntryListenerCallback callback, uint flags);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate NT_EntryListener NT_AddEntryListener2Delegate(NT_Inst inst, byte* prefix, UIntPtr prefix_len, void* data, NT_EntryListenerCallback2 callback, uint flags);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate NT_EntryListener NT_AddEntryListenerSingleDelegate(NT_Entry entry, void* data, NT_EntryListenerCallback2 callback, uint flags);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetListenerOnStartDelegate(IntPtr onStart, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetListenerOnStart2Delegate(NT_Inst inst, IntPtr onStart, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetListenerOnExitDelegate(IntPtr onExit, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetListenerOnExit2Delegate(NT_Inst inst, IntPtr onExit, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate NT_EntryListener NT_AddEntryListenerDelegate(byte* prefix, UIntPtr prefix_len, void* data, IntPtr callback, uint flags);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate NT_EntryListener NT_AddEntryListener2Delegate(NT_Inst inst, byte* prefix, UIntPtr prefix_len, void* data, IntPtr callback, uint flags);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate NT_EntryListener NT_AddEntryListenerSingleDelegate(NT_Entry entry, void* data, IntPtr callback, uint flags);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_RemoveEntryListenerDelegate(NT_EntryListener entry_listener);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate NT_ConnectionListener NT_AddConnectionListenerDelegate(void* data, NT_ConnectionListenerCallback callback, NT_Bool immediate_notify);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate NT_ConnectionListener NT_AddConnectionListener2Delegate(NT_Inst inst, void* data, NT_ConnectionListenerCallback callback, NT_Bool immediate_notify);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate NT_ConnectionListener NT_AddConnectionListenerDelegate(void* data, IntPtr callback, NT_Bool immediate_notify);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate NT_ConnectionListener NT_AddConnectionListener2Delegate(NT_Inst inst, void* data, IntPtr callback, NT_Bool immediate_notify);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_RemoveConnectionListenerDelegate(NT_ConnectionListener conn_listener);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_NotifierDestroyedDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_NotifierDestroyed2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetRpcServerOnStartDelegate(NT_Inst inst, NT_OnStart onStart, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetRpcServerOnExitDelegate(NT_Inst inst, NT_OnExit onExit, void* data);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_CreateRpcDelegate(NT_Entry entry, byte* def, UIntPtr def_len, void* data, NT_RpcCallback callback);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetRpcServerOnStartDelegate(NT_Inst inst, IntPtr onStart, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetRpcServerOnExitDelegate(NT_Inst inst, IntPtr onExit, void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_CreateRpcDelegate(NT_Entry entry, byte* def, UIntPtr def_len, void* data, IntPtr callback);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_CreatePolledRpcDelegate(NT_Entry entry, byte* def, UIntPtr def_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_PollRpcDelegate(NT_Inst inst, NT_RpcCallInfo* call_info);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_PollRpcTimeoutDelegate(NT_Inst inst, NT_RpcCallInfo* call_info, double time_out);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_PostRpcResponseDelegate(NT_Entry rpc, NT_RpcCall call, byte* result, UIntPtr result_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_RpcCall NT_CallRpcDelegate(NT_Entry rpc, byte* @params, UIntPtr params_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetRpcResultDelegate(NT_Entry rpc, NT_RpcCall call, UIntPtr* result_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetRpcResultTimeoutDelegate(NT_Entry rpc, NT_RpcCall call, UIntPtr* result_len, double time_out);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_CancelRpcResultDelegate(NT_Entry rpc, NT_RpcCall call);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_PackRpcDefinitionDelegate(NT_RpcDefinition* def, UIntPtr* packed_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_UnpackRpcDefinitionDelegate(byte* packed, UIntPtr packed_len, NT_RpcDefinition* def);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_PackRpcValuesDelegate(NT_Value** values, UIntPtr values_len, UIntPtr* packed_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Value** NT_UnpackRpcValuesDelegate(byte* packed, UIntPtr packed_len, NT_Type* types, UIntPtr types_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetNetworkIdentityDelegate(byte* name, UIntPtr name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetNetworkIdentity2Delegate(NT_Inst inst, byte* name, UIntPtr name_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate uint NT_GetNetworkModeDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate uint NT_GetNetworkMode2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartServerDelegate(byte* persist_filename, byte* listen_address, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartServer2Delegate(NT_Inst inst, byte* persist_filename, byte* listen_address, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopServerDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopServer2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClientNoneDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClientNone2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClientDelegate(byte* server_name, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClient2Delegate(NT_Inst inst, byte* server_name, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClientMultiDelegate(UIntPtr count, byte** server_names, uint* ports);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartClientMulti2Delegate(NT_Inst inst, UIntPtr count, byte** server_names, uint* ports);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopClientDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopClient2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetServerDelegate(byte* server_name, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetServer2Delegate(NT_Inst inst, byte* server_name, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetServerMultiDelegate(UIntPtr count, byte** server_names, uint* ports);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetServerMulti2Delegate(NT_Inst inst, UIntPtr count, byte** server_names, uint* ports);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartDSClientDelegate(uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StartDSClient2Delegate(NT_Inst inst, uint port);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopDSClientDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopDSClient2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopRpcServerDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopRpcServer2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopNotifierDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_StopNotifier2Delegate(NT_Inst inst);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetUpdateRateDelegate(double interval);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_SetUpdateRate2Delegate(NT_Inst inst, double interval);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_ConnectionInfo* NT_GetConnectionsDelegate(UIntPtr* count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_ConnectionInfo* NT_GetConnections2Delegate(NT_Inst inst, UIntPtr* count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_SavePersistentDelegate(byte* filename);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_SavePersistent2Delegate(NT_Inst inst, byte* filename);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate byte* NT_LoadPersistentDelegate(byte* filename, NT_WarnFunc warn);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate byte* NT_LoadPersistent2Delegate(NT_Inst inst, byte* filename, NT_WarnFunc warn);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate byte* NT_LoadPersistentDelegate(byte* filename, IntPtr warn);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate byte* NT_LoadPersistent2Delegate(NT_Inst inst, byte* filename, IntPtr warn);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeValueDelegate(NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_InitValueDelegate(NT_Value* value);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeStringDelegate(NT_String* str);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_InitStringDelegate(NT_String* str);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeEntryArrayDelegate(NT_Entry* arr, UIntPtr count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeConnectionInfoArrayDelegate(NT_ConnectionInfo* arr, UIntPtr count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeEntryInfoArrayDelegate(NT_EntryInfo* arr, UIntPtr count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeEntryInfoArray2Delegate(NT_EntryInfo2* arr, UIntPtr count);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeRpcDefinitionDelegate(NT_RpcDefinition* def);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_DisposeRpcCallInfoDelegate(NT_RpcCallInfo* call_info);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate ulong NT_NowDelegate();
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetLoggerDelegate(NT_LogFunc func, uint min_level);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void NT_SetLogger2Delegate(NT_Inst inst, NT_LogFunc func, uint min_level);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetLoggerDelegate(IntPtr func, uint min_level);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_SetLogger2Delegate(NT_Inst inst, IntPtr func, uint min_level);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_AllocateCharArrayDelegate(UIntPtr size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool* NT_AllocateBooleanArrayDelegate(UIntPtr size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate double* NT_AllocateDoubleArrayDelegate(UIntPtr size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_String* NT_AllocateStringArrayDelegate(UIntPtr size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_FreeCharArrayDelegate(byte* v_char);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_FreeDoubleArrayDelegate(double* v_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_FreeBooleanArrayDelegate(NT_Bool* v_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_FreeStringArrayDelegate(NT_String* v_string, UIntPtr arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetValueBooleanDelegate(NT_Value* value, ulong* last_change, NT_Bool* v_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetValueDoubleDelegate(NT_Value* value, ulong* last_change, double* v_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetValueStringDelegate(NT_Value* value, ulong* last_change, UIntPtr* str_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetValueRawDelegate(NT_Value* value, ulong* last_change, UIntPtr* raw_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool* NT_GetValueBooleanArrayDelegate(NT_Value* value, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate double* NT_GetValueDoubleArrayDelegate(NT_Value* value, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_String* NT_GetValueStringArrayDelegate(NT_Value* value, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetEntryBooleanDelegate(byte* name, UIntPtr name_len, ulong* last_change, NT_Bool* v_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetEntryBoolean2Delegate(NT_Entry entry, ulong* last_change, NT_Bool* v_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetEntryDoubleDelegate(byte* name, UIntPtr name_len, ulong* last_change, double* v_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_GetEntryDouble2Delegate(NT_Entry entry, ulong* last_change, double* v_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetEntryStringDelegate(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* str_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetEntryString2Delegate(NT_Entry entry, ulong* last_change, UIntPtr* str_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetEntryRawDelegate(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* raw_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate byte* NT_GetEntryRaw2Delegate(NT_Entry entry, ulong* last_change, UIntPtr* raw_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool* NT_GetEntryBooleanArrayDelegate(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool* NT_GetEntryBooleanArray2Delegate(NT_Entry entry, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate double* NT_GetEntryDoubleArrayDelegate(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate double* NT_GetEntryDoubleArray2Delegate(NT_Entry entry, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_String* NT_GetEntryStringArrayDelegate(byte* name, UIntPtr name_len, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_String* NT_GetEntryStringArray2Delegate(NT_Entry entry, ulong* last_change, UIntPtr* arr_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryBooleanDelegate(byte* name, UIntPtr name_len, NT_Bool default_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryBoolean2Delegate(NT_Entry entry, NT_Bool default_boolean);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryDoubleDelegate(byte* name, UIntPtr name_len, double default_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryDouble2Delegate(NT_Entry entry, double default_double);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryStringDelegate(byte* name, UIntPtr name_len, byte* default_value, UIntPtr default_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryString2Delegate(NT_Entry entry, byte* default_value, UIntPtr default_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryRawDelegate(byte* name, UIntPtr name_len, byte* default_value, UIntPtr default_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryRaw2Delegate(NT_Entry entry, byte* default_value, UIntPtr default_len);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryBooleanArrayDelegate(byte* name, UIntPtr name_len, int* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryBooleanArray2Delegate(NT_Entry entry, int* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryDoubleArrayDelegate(byte* name, UIntPtr name_len, double* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryDoubleArray2Delegate(NT_Entry entry, double* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryStringArrayDelegate(byte* name, UIntPtr name_len, NT_String* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetDefaultEntryStringArray2Delegate(NT_Entry entry, NT_String* default_value, UIntPtr default_size);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryBooleanDelegate(byte* name, UIntPtr name_len, NT_Bool v_boolean, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryBoolean2Delegate(NT_Entry entry, NT_Bool v_boolean, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryDoubleDelegate(byte* name, UIntPtr name_len, double v_double, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryDouble2Delegate(NT_Entry entry, double v_double, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryStringDelegate(byte* name, UIntPtr name_len, byte* str, UIntPtr str_len, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryString2Delegate(NT_Entry entry, byte* str, UIntPtr str_len, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryRawDelegate(byte* name, UIntPtr name_len, byte* raw, UIntPtr raw_len, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryRaw2Delegate(NT_Entry entry, byte* raw, UIntPtr raw_len, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryBooleanArrayDelegate(byte* name, UIntPtr name_len, int* arr, UIntPtr size, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryBooleanArray2Delegate(NT_Entry entry, int* arr, UIntPtr size, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryDoubleArrayDelegate(byte* name, UIntPtr name_len, double* arr, UIntPtr size, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryDoubleArray2Delegate(NT_Entry entry, double* arr, UIntPtr size, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryStringArrayDelegate(byte* name, UIntPtr name_len, NT_String* arr, UIntPtr size, NT_Bool force);
-    //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate NT_Bool NT_SetEntryStringArray2Delegate(NT_Entry entry, NT_String* arr, UIntPtr size, NT_Bool force);
 
     public class TestInteropFunctions
@@ -824,7 +824,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetListenerOnStartFunctionPointer;
             Functions.NT_SetListenerOnStartFunctionPointer = ptr;
 
-            Functions.NT_SetListenerOnStart(default(NT_OnStart), default(void*));
+            Functions.NT_SetListenerOnStart(default(IntPtr), default(void*));
 
             Functions.NT_SetListenerOnStartFunctionPointer = tmp;
         }
@@ -840,7 +840,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetListenerOnStart2FunctionPointer;
             Functions.NT_SetListenerOnStart2FunctionPointer = ptr;
 
-            Functions.NT_SetListenerOnStart2(default(NT_Inst), default(NT_OnStart), default(void*));
+            Functions.NT_SetListenerOnStart2(default(NT_Inst), default(IntPtr), default(void*));
 
             Functions.NT_SetListenerOnStart2FunctionPointer = tmp;
         }
@@ -856,7 +856,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetListenerOnExitFunctionPointer;
             Functions.NT_SetListenerOnExitFunctionPointer = ptr;
 
-            Functions.NT_SetListenerOnExit(default(NT_OnExit), default(void*));
+            Functions.NT_SetListenerOnExit(default(IntPtr), default(void*));
 
             Functions.NT_SetListenerOnExitFunctionPointer = tmp;
         }
@@ -872,7 +872,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetListenerOnExit2FunctionPointer;
             Functions.NT_SetListenerOnExit2FunctionPointer = ptr;
 
-            Functions.NT_SetListenerOnExit2(default(NT_Inst), default(NT_OnExit), default(void*));
+            Functions.NT_SetListenerOnExit2(default(NT_Inst), default(IntPtr), default(void*));
 
             Functions.NT_SetListenerOnExit2FunctionPointer = tmp;
         }
@@ -889,7 +889,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_AddEntryListenerFunctionPointer;
             Functions.NT_AddEntryListenerFunctionPointer = ptr;
 
-            var ret = Functions.NT_AddEntryListener(default(byte*), default(UIntPtr), default(void*), default(NT_EntryListenerCallback), default(uint));
+            var ret = Functions.NT_AddEntryListener(default(byte*), default(UIntPtr), default(void*), default(IntPtr), default(uint));
 
             Functions.NT_AddEntryListenerFunctionPointer = tmp;
         }
@@ -906,7 +906,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_AddEntryListener2FunctionPointer;
             Functions.NT_AddEntryListener2FunctionPointer = ptr;
 
-            var ret = Functions.NT_AddEntryListener2(default(NT_Inst), default(byte*), default(UIntPtr), default(void*), default(NT_EntryListenerCallback2), default(uint));
+            var ret = Functions.NT_AddEntryListener2(default(NT_Inst), default(byte*), default(UIntPtr), default(void*), default(IntPtr), default(uint));
 
             Functions.NT_AddEntryListener2FunctionPointer = tmp;
         }
@@ -923,7 +923,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_AddEntryListenerSingleFunctionPointer;
             Functions.NT_AddEntryListenerSingleFunctionPointer = ptr;
 
-            var ret = Functions.NT_AddEntryListenerSingle(default(NT_Entry), default(void*), default(NT_EntryListenerCallback2), default(uint));
+            var ret = Functions.NT_AddEntryListenerSingle(default(NT_Entry), default(void*), default(IntPtr), default(uint));
 
             Functions.NT_AddEntryListenerSingleFunctionPointer = tmp;
         }
@@ -956,7 +956,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_AddConnectionListenerFunctionPointer;
             Functions.NT_AddConnectionListenerFunctionPointer = ptr;
 
-            var ret = Functions.NT_AddConnectionListener(default(void*), default(NT_ConnectionListenerCallback), default(NT_Bool));
+            var ret = Functions.NT_AddConnectionListener(default(void*), default(IntPtr), default(NT_Bool));
 
             Functions.NT_AddConnectionListenerFunctionPointer = tmp;
         }
@@ -973,7 +973,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_AddConnectionListener2FunctionPointer;
             Functions.NT_AddConnectionListener2FunctionPointer = ptr;
 
-            var ret = Functions.NT_AddConnectionListener2(default(NT_Inst), default(void*), default(NT_ConnectionListenerCallback), default(NT_Bool));
+            var ret = Functions.NT_AddConnectionListener2(default(NT_Inst), default(void*), default(IntPtr), default(NT_Bool));
 
             Functions.NT_AddConnectionListener2FunctionPointer = tmp;
         }
@@ -1039,7 +1039,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetRpcServerOnStartFunctionPointer;
             Functions.NT_SetRpcServerOnStartFunctionPointer = ptr;
 
-            Functions.NT_SetRpcServerOnStart(default(NT_Inst), default(NT_OnStart), default(void*));
+            Functions.NT_SetRpcServerOnStart(default(NT_Inst), default(IntPtr), default(void*));
 
             Functions.NT_SetRpcServerOnStartFunctionPointer = tmp;
         }
@@ -1055,7 +1055,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetRpcServerOnExitFunctionPointer;
             Functions.NT_SetRpcServerOnExitFunctionPointer = ptr;
 
-            Functions.NT_SetRpcServerOnExit(default(NT_Inst), default(NT_OnExit), default(void*));
+            Functions.NT_SetRpcServerOnExit(default(NT_Inst), default(IntPtr), default(void*));
 
             Functions.NT_SetRpcServerOnExitFunctionPointer = tmp;
         }
@@ -1071,7 +1071,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_CreateRpcFunctionPointer;
             Functions.NT_CreateRpcFunctionPointer = ptr;
 
-            Functions.NT_CreateRpc(default(NT_Entry), default(byte*), default(UIntPtr), default(void*), default(NT_RpcCallback));
+            Functions.NT_CreateRpc(default(NT_Entry), default(byte*), default(UIntPtr), default(void*), default(IntPtr));
 
             Functions.NT_CreateRpcFunctionPointer = tmp;
         }
@@ -1839,7 +1839,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_LoadPersistentFunctionPointer;
             Functions.NT_LoadPersistentFunctionPointer = ptr;
 
-            var ret = Functions.NT_LoadPersistent(default(byte*), default(NT_WarnFunc));
+            var ret = Functions.NT_LoadPersistent(default(byte*), default(IntPtr));
 
             Functions.NT_LoadPersistentFunctionPointer = tmp;
         }
@@ -1856,7 +1856,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_LoadPersistent2FunctionPointer;
             Functions.NT_LoadPersistent2FunctionPointer = ptr;
 
-            var ret = Functions.NT_LoadPersistent2(default(NT_Inst), default(byte*), default(NT_WarnFunc));
+            var ret = Functions.NT_LoadPersistent2(default(NT_Inst), default(byte*), default(IntPtr));
 
             Functions.NT_LoadPersistent2FunctionPointer = tmp;
         }
@@ -2049,7 +2049,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetLoggerFunctionPointer;
             Functions.NT_SetLoggerFunctionPointer = ptr;
 
-            Functions.NT_SetLogger(default(NT_LogFunc), default(uint));
+            Functions.NT_SetLogger(default(IntPtr), default(uint));
 
             Functions.NT_SetLoggerFunctionPointer = tmp;
         }
@@ -2065,7 +2065,7 @@ namespace FRC.NetworkTables.Core.Interop.Test
             var tmp = Functions.NT_SetLogger2FunctionPointer;
             Functions.NT_SetLogger2FunctionPointer = ptr;
 
-            Functions.NT_SetLogger2(default(NT_Inst), default(NT_LogFunc), default(uint));
+            Functions.NT_SetLogger2(default(NT_Inst), default(IntPtr), default(uint));
 
             Functions.NT_SetLogger2FunctionPointer = tmp;
         }

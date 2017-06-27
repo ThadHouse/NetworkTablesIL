@@ -10,6 +10,23 @@ using System.Collections.Concurrent;
 
 namespace FRC.NetworkTables.Core
 {
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_WarnFunc(UIntPtr line, byte* msg);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_LogFunc(uint level, byte* file, uint line, byte* msg);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_OnStart(void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_OnExit(void* data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate byte* NT_RpcCallback(void* data, NT_Entry entry, byte* name, UIntPtr name_len, byte* param, UIntPtr param_len, UIntPtr* result_len, NT_ConnectionInfo* conn_info);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_EntryListenerCallback(NT_EntryListener entry_listener, void* data, byte* name, UIntPtr name_len, NT_Value* value, uint flags);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_EntryListenerCallback2(NT_EntryListener entry_listener, void* data, NT_Entry entry, byte* name, UIntPtr name_len, NT_Value* value, uint flags);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void NT_ConnectionListenerCallback(NT_ConnectionListener conn_listener, void* data, NT_Bool connected, NT_ConnectionInfo conn);
+
     public static class NtCore
     {
         public static NT_Inst NT_GetDefaultInstance()
@@ -38,6 +55,24 @@ namespace FRC.NetworkTables.Core
             return Functions.NT_GetEntry(inst, nativeStr.Buffer, nativeStr.Length);
         }
 
+        public static unsafe NT_Entry[] NT_GetEntryHandles(NT_Inst inst, string prefix, uint types)
+        {
+            var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
+            UIntPtr len;
+            var entriesPtr = Functions.NT_GetEntries(inst, nativePrefix.Buffer, nativePrefix.Length, types, &len);
+            int lenInt = (int)len;
+            NT_Entry[] entries = new NT_Entry[lenInt];
+            
+            for (int i = 0; i < lenInt; i++)
+            {
+                entries[i] = entriesPtr[i];
+            }
+
+            Functions.NT_DisposeEntryArray(entriesPtr, len);
+
+            return entries;
+        }
+
         public static unsafe NetworkTableEntry[] NT_GetEntries(NT_Inst inst, string prefix, uint types)
         {
             var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
@@ -45,7 +80,7 @@ namespace FRC.NetworkTables.Core
             var entriesPtr = Functions.NT_GetEntries(inst, nativePrefix.Buffer, nativePrefix.Length, types, &len);
             int lenInt = (int)len;
             NetworkTableEntry[] entries = new NetworkTableEntry[lenInt];
-            
+
             for (int i = 0; i < lenInt; i++)
             {
                 entries[i] = new NetworkTableEntry(entriesPtr[i]);
@@ -56,10 +91,10 @@ namespace FRC.NetworkTables.Core
             return entries;
         }
 
-        public static unsafe string NT_GetEntryName(NetworkTableEntry entry)
+        public static unsafe string NT_GetEntryName(NT_Entry entry)
         {
             UIntPtr len;
-            var nativeStr = Functions.NT_GetEntryName((NT_Entry)entry, &len);
+            var nativeStr = Functions.NT_GetEntryName(entry, &len);
             var str = UTF8String.ReadUTF8String(nativeStr);
             Functions.NT_FreeCharArray(nativeStr);
             return str;

@@ -166,8 +166,21 @@
   .field public static native int NT_SetEntryStringArrayFunctionPointer
   .field public static native int NT_SetEntryStringArray2FunctionPointer
 
+  .field public static native int TEST_SUMFP
+
+  .method public hidebysig static int32 TEST_SUM(int32 x, int32 y) cil managed aggressiveinlining
+  {
+	.maxstack 3
+	ldarg.0
+	ldarg.1
+	ldsfld      native int FRC.NetworkTables.Core.Interop.Functions::TEST_SUMFP
+	calli unmanaged cdecl int32(int32,int32)
+	ret
+  }
+
+
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Inst
-          NT_GetDefaultInstance() cil managed aggressiveinlining aggressiveinlining
+          NT_GetDefaultInstance() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -177,7 +190,7 @@
   } // end of method Functions::NT_GetDefaultInstance
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Inst
-          NT_CreateInstance() cil managed aggressiveinlining aggressiveinlining
+          NT_CreateInstance() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -186,7 +199,7 @@
       ret
   } // end of method Functions::NT_CreateInstance
 
-  .method public hidebysig static void  NT_DestroyInstance(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DestroyInstance(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -197,7 +210,7 @@
   } // end of method Functions::NT_DestroyInstance
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Inst
-          NT_GetInstanceFromHandle(valuetype FRC.NetworkTables.Core.Interop.NT_Handle handle) cil managed aggressiveinlining aggressiveinlining
+          NT_GetInstanceFromHandle(valuetype FRC.NetworkTables.Core.Interop.NT_Handle handle) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -210,7 +223,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Entry
           NT_GetEntry(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                       uint8* name,
-                      native uint name_len) cil managed aggressiveinlining aggressiveinlining
+                      native uint name_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -229,7 +242,7 @@
                         uint8* prefix,
                         native uint prefix_len,
                         uint32 types,
-                        native uint* count) cil managed aggressiveinlining aggressiveinlining
+                        native uint* count) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -248,7 +261,7 @@
   } // end of method Functions::NT_GetEntries
 
   .method public hidebysig static uint8*  NT_GetEntryName(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                                         native uint* name_len) cil managed aggressiveinlining aggressiveinlining
+                                                         native uint* name_len) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -261,7 +274,7 @@
   } // end of method Functions::NT_GetEntryName
 
   .method public hidebysig static uint64
-          NT_GetEntryLastChange(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining aggressiveinlining
+          NT_GetEntryLastChange(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -273,7 +286,7 @@
 
   .method public hidebysig static void  NT_GetEntryValue(uint8* name,
                                                          native uint name_len,
-                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                                                         valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -288,7 +301,7 @@
   } // end of method Functions::NT_GetEntryValue
 
   .method public hidebysig static void  NT_GetEntryValue2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                                          valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                                                          valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -303,7 +316,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryValue(uint8* name,
                                   native uint name_len,
-                                  valuetype FRC.NetworkTables.Core.Interop.NT_Value* default_value) cil managed aggressiveinlining aggressiveinlining
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_Value* default_value) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -319,7 +332,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryValue2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                   valuetype FRC.NetworkTables.Core.Interop.NT_Value* default_value) cil managed aggressiveinlining aggressiveinlining
+                                   valuetype FRC.NetworkTables.Core.Interop.NT_Value* default_value) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -334,7 +347,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetEntryValue(uint8* name,
                            native uint name_len,
-                           valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                           valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -350,7 +363,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetEntryValue2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                            valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                            valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -364,7 +377,7 @@
 
   .method public hidebysig static void  NT_SetEntryTypeValue(uint8* name,
                                                              native uint name_len,
-                                                             valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                                                             valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -379,7 +392,7 @@
   } // end of method Functions::NT_SetEntryTypeValue
 
   .method public hidebysig static void  NT_SetEntryTypeValue2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                                              valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+                                                              valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -393,7 +406,7 @@
 
   .method public hidebysig static void  NT_SetEntryFlags(uint8* name,
                                                          native uint name_len,
-                                                         uint32 'flags') cil managed aggressiveinlining aggressiveinlining
+                                                         uint32 'flags') cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -408,7 +421,7 @@
   } // end of method Functions::NT_SetEntryFlags
 
   .method public hidebysig static void  NT_SetEntryFlags2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                                          uint32 'flags') cil managed aggressiveinlining aggressiveinlining
+                                                          uint32 'flags') cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -422,7 +435,7 @@
 
   .method public hidebysig static uint32
           NT_GetEntryFlags(uint8* name,
-                           native uint name_len) cil managed aggressiveinlining aggressiveinlining
+                           native uint name_len) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -435,7 +448,7 @@
   } // end of method Functions::NT_GetEntryFlags
 
   .method public hidebysig static uint32
-          NT_GetEntryFlags2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining aggressiveinlining
+          NT_GetEntryFlags2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -446,7 +459,7 @@
   } // end of method Functions::NT_GetEntryFlags2
 
   .method public hidebysig static void  NT_DeleteEntry(uint8* name,
-                                                       native uint name_len) cil managed aggressiveinlining aggressiveinlining
+                                                       native uint name_len) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -458,7 +471,7 @@
       ret
   } // end of method Functions::NT_DeleteEntry
 
-  .method public hidebysig static void  NT_DeleteEntry2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DeleteEntry2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -468,7 +481,7 @@
       ret
   } // end of method Functions::NT_DeleteEntry2
 
-  .method public hidebysig static void  NT_DeleteAllEntries() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DeleteAllEntries() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -477,7 +490,7 @@
       ret
   } // end of method Functions::NT_DeleteAllEntries
 
-  .method public hidebysig static void  NT_DeleteAllEntries2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DeleteAllEntries2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -491,7 +504,7 @@
           NT_GetEntryInfo(uint8* prefix,
                           native uint prefix_len,
                           uint32 types,
-                          native uint* count) cil managed aggressiveinlining aggressiveinlining
+                          native uint* count) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -512,7 +525,7 @@
                            uint8* prefix,
                            native uint prefix_len,
                            uint32 types,
-                           native uint* count) cil managed aggressiveinlining aggressiveinlining
+                           native uint* count) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -531,7 +544,7 @@
   } // end of method Functions::NT_GetEntryInfo2
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2*
-          NT_GetEntryInfoHandle(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining aggressiveinlining
+          NT_GetEntryInfoHandle(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -541,7 +554,7 @@
       ret
   } // end of method Functions::NT_GetEntryInfoHandle
 
-  .method public hidebysig static void  NT_Flush() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_Flush() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -550,7 +563,7 @@
       ret
   } // end of method Functions::NT_Flush
 
-  .method public hidebysig static void  NT_Flush2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_Flush2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -561,7 +574,7 @@
   } // end of method Functions::NT_Flush2
 
   .method public hidebysig static void  NT_SetListenerOnStart(native int onStart,
-                                                              void* data) cil managed aggressiveinlining aggressiveinlining
+                                                              void* data) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -575,7 +588,7 @@
 
   .method public hidebysig static void  NT_SetListenerOnStart2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                                native int onStart,
-                                                               void* data) cil managed aggressiveinlining aggressiveinlining
+                                                               void* data) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -590,7 +603,7 @@
   } // end of method Functions::NT_SetListenerOnStart2
 
   .method public hidebysig static void  NT_SetListenerOnExit(native int onExit,
-                                                             void* data) cil managed aggressiveinlining aggressiveinlining
+                                                             void* data) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -604,7 +617,7 @@
 
   .method public hidebysig static void  NT_SetListenerOnExit2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                               native int onExit,
-                                                              void* data) cil managed aggressiveinlining aggressiveinlining
+                                                              void* data) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -623,7 +636,7 @@
                               native uint prefix_len,
                               void* data,
                               native int callback,
-                              uint32 'flags') cil managed aggressiveinlining aggressiveinlining
+                              uint32 'flags') cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -647,7 +660,7 @@
                                native uint prefix_len,
                                void* data,
                                native int callback,
-                               uint32 'flags') cil managed aggressiveinlining aggressiveinlining
+                               uint32 'flags') cil managed aggressiveinlining
   {
     // Code size       14 (0xe)
     .maxstack  7
@@ -671,7 +684,7 @@
           NT_AddEntryListenerSingle(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                     void* data,
                                     native int callback,
-                                    uint32 'flags') cil managed aggressiveinlining aggressiveinlining
+                                    uint32 'flags') cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -687,7 +700,7 @@
       ret
   } // end of method Functions::NT_AddEntryListenerSingle
 
-  .method public hidebysig static void  NT_RemoveEntryListener(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_RemoveEntryListener(valuetype FRC.NetworkTables.Core.Interop.NT_EntryListener entry_listener) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -700,7 +713,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener
           NT_AddConnectionListener(void* data,
                                    native int callback,
-                                   valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining aggressiveinlining
+                                   valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -718,7 +731,7 @@
           NT_AddConnectionListener2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                     void* data,
                                     native int callback,
-                                    valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining aggressiveinlining
+                                    valuetype FRC.NetworkTables.Core.Interop.NT_Bool immediate_notify) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -734,7 +747,7 @@
       ret
   } // end of method Functions::NT_AddConnectionListener2
 
-  .method public hidebysig static void  NT_RemoveConnectionListener(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener conn_listener) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_RemoveConnectionListener(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionListener conn_listener) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -745,7 +758,7 @@
   } // end of method Functions::NT_RemoveConnectionListener
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
-          NT_NotifierDestroyed() cil managed aggressiveinlining aggressiveinlining
+          NT_NotifierDestroyed() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -755,7 +768,7 @@
   } // end of method Functions::NT_NotifierDestroyed
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
-          NT_NotifierDestroyed2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+          NT_NotifierDestroyed2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -767,7 +780,7 @@
 
   .method public hidebysig static void  NT_SetRpcServerOnStart(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                                native int onStart,
-                                                               void* data) cil managed aggressiveinlining aggressiveinlining
+                                                               void* data) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -783,7 +796,7 @@
 
   .method public hidebysig static void  NT_SetRpcServerOnExit(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                               native int onExit,
-                                                              void* data) cil managed aggressiveinlining aggressiveinlining
+                                                              void* data) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -801,7 +814,7 @@
                                                      uint8* def,
                                                      native uint def_len,
                                                      void* data,
-                                                     native int callback) cil managed aggressiveinlining aggressiveinlining
+                                                     native int callback) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -821,7 +834,7 @@
 
   .method public hidebysig static void  NT_CreatePolledRpc(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                            uint8* def,
-                                                           native uint def_len) cil managed aggressiveinlining aggressiveinlining
+                                                           native uint def_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -837,7 +850,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_PollRpc(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                     valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo* call_info) cil managed aggressiveinlining aggressiveinlining
+                     valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo* call_info) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -852,7 +865,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_PollRpcTimeout(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                             valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo* call_info,
-                            float64 time_out) cil managed aggressiveinlining aggressiveinlining
+                            float64 time_out) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -869,7 +882,7 @@
   .method public hidebysig static void  NT_PostRpcResponse(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                                                            valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call',
                                                            uint8* result,
-                                                           native uint result_len) cil managed aggressiveinlining aggressiveinlining
+                                                           native uint result_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -888,7 +901,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall
           NT_CallRpc(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                      uint8* params,
-                     native uint params_len) cil managed aggressiveinlining aggressiveinlining
+                     native uint params_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -904,7 +917,7 @@
 
   .method public hidebysig static uint8*  NT_GetRpcResult(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                                                          valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call',
-                                                         native uint* result_len) cil managed aggressiveinlining aggressiveinlining
+                                                         native uint* result_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -921,7 +934,7 @@
   .method public hidebysig static uint8*  NT_GetRpcResultTimeout(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
                                                                 valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call',
                                                                 native uint* result_len,
-                                                                float64 time_out) cil managed aggressiveinlining aggressiveinlining
+                                                                float64 time_out) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -938,7 +951,7 @@
   } // end of method Functions::NT_GetRpcResultTimeout
 
   .method public hidebysig static void  NT_CancelRpcResult(valuetype FRC.NetworkTables.Core.Interop.NT_Entry rpc,
-                                                           valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call') cil managed aggressiveinlining aggressiveinlining
+                                                           valuetype FRC.NetworkTables.Core.Interop.NT_RpcCall 'call') cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -951,7 +964,7 @@
   } // end of method Functions::NT_CancelRpcResult
 
   .method public hidebysig static uint8*  NT_PackRpcDefinition(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def,
-                                                              native uint* packed_len) cil managed aggressiveinlining aggressiveinlining
+                                                              native uint* packed_len) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -966,7 +979,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_UnpackRpcDefinition(uint8* packed,
                                  native uint packed_len,
-                                 valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def) cil managed aggressiveinlining aggressiveinlining
+                                 valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -982,7 +995,7 @@
 
   .method public hidebysig static uint8*  NT_PackRpcValues(valuetype FRC.NetworkTables.Core.Interop.NT_Value** values,
                                                           native uint values_len,
-                                                          native uint* packed_len) cil managed aggressiveinlining aggressiveinlining
+                                                          native uint* packed_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1000,7 +1013,7 @@
           NT_UnpackRpcValues(uint8* packed,
                              native uint packed_len,
                              valuetype FRC.NetworkTables.Core.Interop.NT_Type* types,
-                             native uint types_len) cil managed aggressiveinlining aggressiveinlining
+                             native uint types_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1017,7 +1030,7 @@
   } // end of method Functions::NT_UnpackRpcValues
 
   .method public hidebysig static void  NT_SetNetworkIdentity(uint8* name,
-                                                              native uint name_len) cil managed aggressiveinlining aggressiveinlining
+                                                              native uint name_len) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1031,7 +1044,7 @@
 
   .method public hidebysig static void  NT_SetNetworkIdentity2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                                uint8* name,
-                                                               native uint name_len) cil managed aggressiveinlining aggressiveinlining
+                                                               native uint name_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1046,7 +1059,7 @@
   } // end of method Functions::NT_SetNetworkIdentity2
 
   .method public hidebysig static uint32
-          NT_GetNetworkMode() cil managed aggressiveinlining aggressiveinlining
+          NT_GetNetworkMode() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1056,7 +1069,7 @@
   } // end of method Functions::NT_GetNetworkMode
 
   .method public hidebysig static uint32
-          NT_GetNetworkMode2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+          NT_GetNetworkMode2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1068,7 +1081,7 @@
 
   .method public hidebysig static void  NT_StartServer(uint8* persist_filename,
                                                        uint8* listen_address,
-                                                       uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                       uint32 port) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1085,7 +1098,7 @@
   .method public hidebysig static void  NT_StartServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                         uint8* persist_filename,
                                                         uint8* listen_address,
-                                                        uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                        uint32 port) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1101,7 +1114,7 @@
       ret
   } // end of method Functions::NT_StartServer2
 
-  .method public hidebysig static void  NT_StopServer() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopServer() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1110,7 +1123,7 @@
       ret
   } // end of method Functions::NT_StopServer
 
-  .method public hidebysig static void  NT_StopServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1120,7 +1133,7 @@
       ret
   } // end of method Functions::NT_StopServer2
 
-  .method public hidebysig static void  NT_StartClientNone() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StartClientNone() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1129,7 +1142,7 @@
       ret
   } // end of method Functions::NT_StartClientNone
 
-  .method public hidebysig static void  NT_StartClientNone2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StartClientNone2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1140,7 +1153,7 @@
   } // end of method Functions::NT_StartClientNone2
 
   .method public hidebysig static void  NT_StartClient(uint8* server_name,
-                                                       uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                       uint32 port) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1154,7 +1167,7 @@
 
   .method public hidebysig static void  NT_StartClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                         uint8* server_name,
-                                                        uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                        uint32 port) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1170,7 +1183,7 @@
 
   .method public hidebysig static void  NT_StartClientMulti(native uint count,
                                                             uint8** server_names,
-                                                            uint32* ports) cil managed aggressiveinlining aggressiveinlining
+                                                            uint32* ports) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1187,7 +1200,7 @@
   .method public hidebysig static void  NT_StartClientMulti2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                              native uint count,
                                                              uint8** server_names,
-                                                             uint32* ports) cil managed aggressiveinlining aggressiveinlining
+                                                             uint32* ports) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1203,7 +1216,7 @@
       ret
   } // end of method Functions::NT_StartClientMulti2
 
-  .method public hidebysig static void  NT_StopClient() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopClient() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1212,7 +1225,7 @@
       ret
   } // end of method Functions::NT_StopClient
 
-  .method public hidebysig static void  NT_StopClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1223,7 +1236,7 @@
   } // end of method Functions::NT_StopClient2
 
   .method public hidebysig static void  NT_SetServer(uint8* server_name,
-                                                     uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                     uint32 port) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1237,7 +1250,7 @@
 
   .method public hidebysig static void  NT_SetServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                       uint8* server_name,
-                                                      uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                      uint32 port) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1253,7 +1266,7 @@
 
   .method public hidebysig static void  NT_SetServerMulti(native uint count,
                                                           uint8** server_names,
-                                                          uint32* ports) cil managed aggressiveinlining aggressiveinlining
+                                                          uint32* ports) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1270,7 +1283,7 @@
   .method public hidebysig static void  NT_SetServerMulti2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                            native uint count,
                                                            uint8** server_names,
-                                                           uint32* ports) cil managed aggressiveinlining aggressiveinlining
+                                                           uint32* ports) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1286,7 +1299,7 @@
       ret
   } // end of method Functions::NT_SetServerMulti2
 
-  .method public hidebysig static void  NT_StartDSClient(uint32 port) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StartDSClient(uint32 port) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1297,7 +1310,7 @@
   } // end of method Functions::NT_StartDSClient
 
   .method public hidebysig static void  NT_StartDSClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                          uint32 port) cil managed aggressiveinlining aggressiveinlining
+                                                          uint32 port) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1309,7 +1322,7 @@
       ret
   } // end of method Functions::NT_StartDSClient2
 
-  .method public hidebysig static void  NT_StopDSClient() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopDSClient() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1318,7 +1331,7 @@
       ret
   } // end of method Functions::NT_StopDSClient
 
-  .method public hidebysig static void  NT_StopDSClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopDSClient2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1328,7 +1341,7 @@
       ret
   } // end of method Functions::NT_StopDSClient2
 
-  .method public hidebysig static void  NT_StopRpcServer() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopRpcServer() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1337,7 +1350,7 @@
       ret
   } // end of method Functions::NT_StopRpcServer
 
-  .method public hidebysig static void  NT_StopRpcServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopRpcServer2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1347,7 +1360,7 @@
       ret
   } // end of method Functions::NT_StopRpcServer2
 
-  .method public hidebysig static void  NT_StopNotifier() cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopNotifier() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1356,7 +1369,7 @@
       ret
   } // end of method Functions::NT_StopNotifier
 
-  .method public hidebysig static void  NT_StopNotifier2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_StopNotifier2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1366,7 +1379,7 @@
       ret
   } // end of method Functions::NT_StopNotifier2
 
-  .method public hidebysig static void  NT_SetUpdateRate(float64 interval) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_SetUpdateRate(float64 interval) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1377,7 +1390,7 @@
   } // end of method Functions::NT_SetUpdateRate
 
   .method public hidebysig static void  NT_SetUpdateRate2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                          float64 interval) cil managed aggressiveinlining aggressiveinlining
+                                                          float64 interval) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1390,7 +1403,7 @@
   } // end of method Functions::NT_SetUpdateRate2
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*
-          NT_GetConnections(native uint* count) cil managed aggressiveinlining aggressiveinlining
+          NT_GetConnections(native uint* count) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1402,7 +1415,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo*
           NT_GetConnections2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                             native uint* count) cil managed aggressiveinlining aggressiveinlining
+                             native uint* count) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1414,7 +1427,7 @@
       ret
   } // end of method Functions::NT_GetConnections2
 
-  .method public hidebysig static uint8*  NT_SavePersistent(uint8* filename) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static uint8*  NT_SavePersistent(uint8* filename) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1425,7 +1438,7 @@
   } // end of method Functions::NT_SavePersistent
 
   .method public hidebysig static uint8*  NT_SavePersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
-                                                            uint8* filename) cil managed aggressiveinlining aggressiveinlining
+                                                            uint8* filename) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1438,7 +1451,7 @@
   } // end of method Functions::NT_SavePersistent2
 
   .method public hidebysig static uint8*  NT_LoadPersistent(uint8* filename,
-                                                           native int warn) cil managed aggressiveinlining aggressiveinlining
+                                                           native int warn) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1452,7 +1465,7 @@
 
   .method public hidebysig static uint8*  NT_LoadPersistent2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                             uint8* filename,
-                                                            native int warn) cil managed aggressiveinlining aggressiveinlining
+                                                            native int warn) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1466,7 +1479,7 @@
       ret
   } // end of method Functions::NT_LoadPersistent2
 
-  .method public hidebysig static void  NT_DisposeValue(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DisposeValue(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1476,7 +1489,7 @@
       ret
   } // end of method Functions::NT_DisposeValue
 
-  .method public hidebysig static void  NT_InitValue(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_InitValue(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value') cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1486,7 +1499,7 @@
       ret
   } // end of method Functions::NT_InitValue
 
-  .method public hidebysig static void  NT_DisposeString(valuetype FRC.NetworkTables.Core.Interop.NT_String* str) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DisposeString(valuetype FRC.NetworkTables.Core.Interop.NT_String* str) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1496,7 +1509,7 @@
       ret
   } // end of method Functions::NT_DisposeString
 
-  .method public hidebysig static void  NT_InitString(valuetype FRC.NetworkTables.Core.Interop.NT_String* str) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_InitString(valuetype FRC.NetworkTables.Core.Interop.NT_String* str) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1507,7 +1520,7 @@
   } // end of method Functions::NT_InitString
 
   .method public hidebysig static void  NT_DisposeEntryArray(valuetype FRC.NetworkTables.Core.Interop.NT_Entry* arr,
-                                                             native uint count) cil managed aggressiveinlining aggressiveinlining
+                                                             native uint count) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1520,7 +1533,7 @@
   } // end of method Functions::NT_DisposeEntryArray
 
   .method public hidebysig static void  NT_DisposeConnectionInfoArray(valuetype FRC.NetworkTables.Core.Interop.NT_ConnectionInfo* arr,
-                                                                      native uint count) cil managed aggressiveinlining aggressiveinlining
+                                                                      native uint count) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1533,7 +1546,7 @@
   } // end of method Functions::NT_DisposeConnectionInfoArray
 
   .method public hidebysig static void  NT_DisposeEntryInfoArray(valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo* arr,
-                                                                 native uint count) cil managed aggressiveinlining aggressiveinlining
+                                                                 native uint count) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1546,7 +1559,7 @@
   } // end of method Functions::NT_DisposeEntryInfoArray
 
   .method public hidebysig static void  NT_DisposeEntryInfoArray2(valuetype FRC.NetworkTables.Core.Interop.NT_EntryInfo2* arr,
-                                                                  native uint count) cil managed aggressiveinlining aggressiveinlining
+                                                                  native uint count) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1558,7 +1571,7 @@
       ret
   } // end of method Functions::NT_DisposeEntryInfoArray2
 
-  .method public hidebysig static void  NT_DisposeRpcDefinition(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DisposeRpcDefinition(valuetype FRC.NetworkTables.Core.Interop.NT_RpcDefinition* def) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1568,7 +1581,7 @@
       ret
   } // end of method Functions::NT_DisposeRpcDefinition
 
-  .method public hidebysig static void  NT_DisposeRpcCallInfo(valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo* call_info) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_DisposeRpcCallInfo(valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallInfo* call_info) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1579,7 +1592,7 @@
   } // end of method Functions::NT_DisposeRpcCallInfo
 
   .method public hidebysig static uint64
-          NT_Now() cil managed aggressiveinlining aggressiveinlining
+          NT_Now() cil managed aggressiveinlining
   {
     // Code size       6 (0x6)
     .maxstack  1
@@ -1589,7 +1602,7 @@
   } // end of method Functions::NT_Now
 
   .method public hidebysig static void  NT_SetLogger(native int func,
-                                                     uint32 min_level) cil managed aggressiveinlining aggressiveinlining
+                                                     uint32 min_level) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1603,7 +1616,7 @@
 
   .method public hidebysig static void  NT_SetLogger2(valuetype FRC.NetworkTables.Core.Interop.NT_Inst inst,
                                                       native int func,
-                                                      uint32 min_level) cil managed aggressiveinlining aggressiveinlining
+                                                      uint32 min_level) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1617,7 +1630,7 @@
       ret
   } // end of method Functions::NT_SetLogger2
 
-  .method public hidebysig static uint8*  NT_AllocateCharArray(native uint size) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static uint8*  NT_AllocateCharArray(native uint size) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1628,7 +1641,7 @@
   } // end of method Functions::NT_AllocateCharArray
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
-          NT_AllocateBooleanArray(native uint size) cil managed aggressiveinlining aggressiveinlining
+          NT_AllocateBooleanArray(native uint size) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1639,7 +1652,7 @@
   } // end of method Functions::NT_AllocateBooleanArray
 
   .method public hidebysig static float64*
-          NT_AllocateDoubleArray(native uint size) cil managed aggressiveinlining aggressiveinlining
+          NT_AllocateDoubleArray(native uint size) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1650,7 +1663,7 @@
   } // end of method Functions::NT_AllocateDoubleArray
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
-          NT_AllocateStringArray(native uint size) cil managed aggressiveinlining aggressiveinlining
+          NT_AllocateStringArray(native uint size) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1660,7 +1673,7 @@
       ret
   } // end of method Functions::NT_AllocateStringArray
 
-  .method public hidebysig static void  NT_FreeCharArray(uint8* v_char) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_FreeCharArray(uint8* v_char) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1670,7 +1683,7 @@
       ret
   } // end of method Functions::NT_FreeCharArray
 
-  .method public hidebysig static void  NT_FreeDoubleArray(float64* v_double) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_FreeDoubleArray(float64* v_double) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1680,7 +1693,7 @@
       ret
   } // end of method Functions::NT_FreeDoubleArray
 
-  .method public hidebysig static void  NT_FreeBooleanArray(valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining aggressiveinlining
+  .method public hidebysig static void  NT_FreeBooleanArray(valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining
   {
     // Code size       7 (0x7)
     .maxstack  2
@@ -1691,7 +1704,7 @@
   } // end of method Functions::NT_FreeBooleanArray
 
   .method public hidebysig static void  NT_FreeStringArray(valuetype FRC.NetworkTables.Core.Interop.NT_String* v_string,
-                                                           native uint arr_size) cil managed aggressiveinlining aggressiveinlining
+                                                           native uint arr_size) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -1706,7 +1719,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_GetValueBoolean(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                              uint64* last_change,
-                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining aggressiveinlining
+                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1723,7 +1736,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_GetValueDouble(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                             uint64* last_change,
-                            float64* v_double) cil managed aggressiveinlining aggressiveinlining
+                            float64* v_double) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1739,7 +1752,7 @@
 
   .method public hidebysig static uint8*  NT_GetValueString(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                                            uint64* last_change,
-                                                           native uint* str_len) cil managed aggressiveinlining aggressiveinlining
+                                                           native uint* str_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1755,7 +1768,7 @@
 
   .method public hidebysig static uint8*  NT_GetValueRaw(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                                         uint64* last_change,
-                                                        native uint* raw_len) cil managed aggressiveinlining aggressiveinlining
+                                                        native uint* raw_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1772,7 +1785,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_GetValueBooleanArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                   uint64* last_change,
-                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                  native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1789,7 +1802,7 @@
   .method public hidebysig static float64*
           NT_GetValueDoubleArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                  uint64* last_change,
-                                 native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                 native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1806,7 +1819,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_GetValueStringArray(valuetype FRC.NetworkTables.Core.Interop.NT_Value* 'value',
                                  uint64* last_change,
-                                 native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                 native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1824,7 +1837,7 @@
           NT_GetEntryBoolean(uint8* name,
                              native uint name_len,
                              uint64* last_change,
-                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining aggressiveinlining
+                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1843,7 +1856,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_GetEntryBoolean2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                               uint64* last_change,
-                              valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining aggressiveinlining
+                              valuetype FRC.NetworkTables.Core.Interop.NT_Bool* v_boolean) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1861,7 +1874,7 @@
           NT_GetEntryDouble(uint8* name,
                             native uint name_len,
                             uint64* last_change,
-                            float64* v_double) cil managed aggressiveinlining aggressiveinlining
+                            float64* v_double) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1880,7 +1893,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_GetEntryDouble2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                              uint64* last_change,
-                             float64* v_double) cil managed aggressiveinlining aggressiveinlining
+                             float64* v_double) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1897,7 +1910,7 @@
   .method public hidebysig static uint8*  NT_GetEntryString(uint8* name,
                                                            native uint name_len,
                                                            uint64* last_change,
-                                                           native uint* str_len) cil managed aggressiveinlining aggressiveinlining
+                                                           native uint* str_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1915,7 +1928,7 @@
 
   .method public hidebysig static uint8*  NT_GetEntryString2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                             uint64* last_change,
-                                                            native uint* str_len) cil managed aggressiveinlining aggressiveinlining
+                                                            native uint* str_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1932,7 +1945,7 @@
   .method public hidebysig static uint8  NT_GetEntryRaw(uint8* name,
                                                         native uint name_len,
                                                         uint64* last_change,
-                                                        native uint* raw_len) cil managed aggressiveinlining aggressiveinlining
+                                                        native uint* raw_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1950,7 +1963,7 @@
 
   .method public hidebysig static uint8*  NT_GetEntryRaw2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                                          uint64* last_change,
-                                                         native uint* raw_len) cil managed aggressiveinlining aggressiveinlining
+                                                         native uint* raw_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -1968,7 +1981,7 @@
           NT_GetEntryBooleanArray(uint8* name,
                                   native uint name_len,
                                   uint64* last_change,
-                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                  native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -1987,7 +2000,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool*
           NT_GetEntryBooleanArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                    uint64* last_change,
-                                   native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                   native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2005,7 +2018,7 @@
           NT_GetEntryDoubleArray(uint8* name,
                                  native uint name_len,
                                  uint64* last_change,
-                                 native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                 native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2024,7 +2037,7 @@
   .method public hidebysig static float64*
           NT_GetEntryDoubleArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   uint64* last_change,
-                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                  native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2042,7 +2055,7 @@
           NT_GetEntryStringArray(uint8* name,
                                  native uint name_len,
                                  uint64* last_change,
-                                 native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                 native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2061,7 +2074,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_String*
           NT_GetEntryStringArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   uint64* last_change,
-                                  native uint* arr_size) cil managed aggressiveinlining aggressiveinlining
+                                  native uint* arr_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2078,7 +2091,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryBoolean(uint8* name,
                                     native uint name_len,
-                                    valuetype FRC.NetworkTables.Core.Interop.NT_Bool default_boolean) cil managed aggressiveinlining aggressiveinlining
+                                    valuetype FRC.NetworkTables.Core.Interop.NT_Bool default_boolean) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2094,7 +2107,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryBoolean2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                     valuetype FRC.NetworkTables.Core.Interop.NT_Bool default_boolean) cil managed aggressiveinlining aggressiveinlining
+                                     valuetype FRC.NetworkTables.Core.Interop.NT_Bool default_boolean) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -2109,7 +2122,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryDouble(uint8* name,
                                    native uint name_len,
-                                   float64 default_double) cil managed aggressiveinlining aggressiveinlining
+                                   float64 default_double) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2125,7 +2138,7 @@
 
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryDouble2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
-                                    float64 default_double) cil managed aggressiveinlining aggressiveinlining
+                                    float64 default_double) cil managed aggressiveinlining
   {
     // Code size       8 (0x8)
     .maxstack  3
@@ -2141,7 +2154,7 @@
           NT_SetDefaultEntryString(uint8* name,
                                    native uint name_len,
                                    uint8* default_value,
-                                   native uint default_len) cil managed aggressiveinlining aggressiveinlining
+                                   native uint default_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2160,7 +2173,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryString2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                     uint8* default_value,
-                                    native uint default_len) cil managed aggressiveinlining aggressiveinlining
+                                    native uint default_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2178,7 +2191,7 @@
           NT_SetDefaultEntryRaw(uint8* name,
                                 native uint name_len,
                                 uint8* default_value,
-                                native uint default_len) cil managed aggressiveinlining aggressiveinlining
+                                native uint default_len) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2197,7 +2210,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryRaw2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                  uint8* default_value,
-                                 native uint default_len) cil managed aggressiveinlining aggressiveinlining
+                                 native uint default_len) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2215,7 +2228,7 @@
           NT_SetDefaultEntryBooleanArray(uint8* name,
                                          native uint name_len,
                                          int32* default_value,
-                                         native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                         native uint default_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2234,7 +2247,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryBooleanArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                           int32* default_value,
-                                          native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                          native uint default_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2252,7 +2265,7 @@
           NT_SetDefaultEntryDoubleArray(uint8* name,
                                         native uint name_len,
                                         float64* default_value,
-                                        native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                        native uint default_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2271,7 +2284,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryDoubleArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                          float64* default_value,
-                                         native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                         native uint default_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2289,7 +2302,7 @@
           NT_SetDefaultEntryStringArray(uint8* name,
                                         native uint name_len,
                                         valuetype FRC.NetworkTables.Core.Interop.NT_String* default_value,
-                                        native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                        native uint default_size) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2308,7 +2321,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetDefaultEntryStringArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                          valuetype FRC.NetworkTables.Core.Interop.NT_String* default_value,
-                                         native uint default_size) cil managed aggressiveinlining aggressiveinlining
+                                         native uint default_size) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2326,7 +2339,7 @@
           NT_SetEntryBoolean(uint8* name,
                              native uint name_len,
                              valuetype FRC.NetworkTables.Core.Interop.NT_Bool v_boolean,
-                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2345,7 +2358,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetEntryBoolean2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                               valuetype FRC.NetworkTables.Core.Interop.NT_Bool v_boolean,
-                              valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                              valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2363,7 +2376,7 @@
           NT_SetEntryDouble(uint8* name,
                             native uint name_len,
                             float64 v_double,
-                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2382,7 +2395,7 @@
   .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Bool
           NT_SetEntryDouble2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                              float64 v_double,
-                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       9 (0x9)
     .maxstack  4
@@ -2401,7 +2414,7 @@
                             native uint name_len,
                             uint8* str,
                             native uint str_len,
-                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                            valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -2423,7 +2436,7 @@
           NT_SetEntryString2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                              uint8* str,
                              native uint str_len,
-                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                             valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2444,7 +2457,7 @@
                          native uint name_len,
                          uint8* raw,
                          native uint raw_len,
-                         valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                         valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -2466,7 +2479,7 @@
           NT_SetEntryRaw2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                           uint8* raw,
                           native uint raw_len,
-                          valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                          valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2487,7 +2500,7 @@
                                   native uint name_len,
                                   int32* arr,
                                   native uint size,
-                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -2509,7 +2522,7 @@
           NT_SetEntryBooleanArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                    int32* arr,
                                    native uint size,
-                                   valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                   valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2530,7 +2543,7 @@
                                  native uint name_len,
                                  float64* arr,
                                  native uint size,
-                                 valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                 valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -2552,7 +2565,7 @@
           NT_SetEntryDoubleArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   float64* arr,
                                   native uint size,
-                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5
@@ -2573,7 +2586,7 @@
                                  native uint name_len,
                                  valuetype FRC.NetworkTables.Core.Interop.NT_String* arr,
                                  native uint size,
-                                 valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                 valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       12 (0xc)
     .maxstack  6
@@ -2595,7 +2608,7 @@
           NT_SetEntryStringArray2(valuetype FRC.NetworkTables.Core.Interop.NT_Entry entry,
                                   valuetype FRC.NetworkTables.Core.Interop.NT_String* arr,
                                   native uint size,
-                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining aggressiveinlining
+                                  valuetype FRC.NetworkTables.Core.Interop.NT_Bool force) cil managed aggressiveinlining
   {
     // Code size       10 (0xa)
     .maxstack  5

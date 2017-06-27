@@ -168,6 +168,13 @@ namespace FRC.NetworkTables.Core.Interop
         public static IntPtr NT_SetEntryStringArrayFunctionPointer;
         public static IntPtr NT_SetEntryStringArray2FunctionPointer;
 
+        public static IntPtr TEST_SUMFP;
+
+        public static int TEST_SUM(int x, int y)
+        {
+            throw null;
+        }
+
         public static unsafe NT_Inst NT_GetDefaultInstance()
         {
             throw null;

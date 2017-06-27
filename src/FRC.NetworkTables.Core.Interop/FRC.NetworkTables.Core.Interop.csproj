@@ -3,10 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="dotnet restore $(ProjectDir)\..\..\tools\ILRewriter\ILRewriter.csproj" />
       <Exec Command="dotnet run -p $(ProjectDir)\..\..\tools\ILRewriter\ILRewriter.csproj $(ProjectDir) $(ProjectDir)$(OutDir) $(TargetFileName)" />
     </Target>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" PrivateAssets="All" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices" PrivateAssets="All" Version="4.3.0" />
+  </ItemGroup>
 </Project>

@@ -282,5 +282,81 @@ namespace FRC.NetworkTables.Core.Test
                 Functions.NT_DisposeEntryArrayFunctionPointer = tmpDeletePtr;
             }
         }
+
+        [Fact]
+        public unsafe void TestGetEntryName()
+        {
+            var tmpPtr = Functions.NT_GetEntryNameFunctionPointer;
+            var tmpDeletePtr = Functions.NT_FreeCharArrayFunctionPointer;
+            try
+            {
+                int count = 0;
+                NT_Entry item = default(NT_Entry);
+                Interop.Test.NT_GetEntryNameDelegate del = (i, l) =>
+                {
+                    item = i;
+                    var bytes = Encoding.UTF8.GetBytes(count.ToString());
+                    var buf = (byte*)Marshal.AllocHGlobal(bytes.Length + 1);
+                    for (int j = 0; j < bytes.Length; j++)
+                    {
+                        buf[j] = bytes[j];
+                    }
+                    buf[bytes.Length] = 0;
+                    *l = (UIntPtr)bytes.Length;
+                    return buf;
+                };
+                var delPtr = Marshal.GetFunctionPointerForDelegate(del);
+                Functions.NT_GetEntryNameFunctionPointer = delPtr;
+
+                Interop.Test.NT_FreeCharArrayDelegate dDel = (p) =>
+                {
+                    Marshal.FreeHGlobal((IntPtr)p);
+                };
+
+                var dDelPtr = Marshal.GetFunctionPointerForDelegate(dDel);
+                Functions.NT_FreeCharArrayFunctionPointer = dDelPtr;
+
+                for (count = 0; count < 100; count++)
+                {
+                    var ret = NtCore.NT_GetEntryName(new NT_Entry(count));
+                    Assert.Equal(count, item.Get());
+                    Assert.Equal(ret, count.ToString());
+                }
+            }
+            finally
+            {
+                Functions.NT_GetEntryNameFunctionPointer = tmpPtr;
+                Functions.NT_FreeCharArrayFunctionPointer = tmpDeletePtr;
+            }
+        }
+
+        [Fact]
+        public void TestGetEntryLastChange()
+        {
+            var tmpPtr = Functions.NT_GetEntryLastChangeFunctionPointer;
+            try
+            {
+                int count = 0;
+                NT_Entry info = default(NT_Entry);
+                Interop.Test.NT_GetEntryLastChangeDelegate del = (i) =>
+                {
+                    info = i;
+                    return (ulong)count;
+                };
+                var delPtr = Marshal.GetFunctionPointerForDelegate(del);
+                Functions.NT_GetEntryLastChangeFunctionPointer = delPtr;
+
+                for (count = 0; count < 100; count++)
+                {
+                    var item = NtCore.NT_GetEntryLastChange(new NT_Entry(count));
+                    Assert.Equal(count, info.Get());
+                    Assert.Equal((ulong)count, item);
+                }
+            }
+            finally
+            {
+                Functions.NT_GetEntryLastChangeFunctionPointer = tmpPtr;
+            }
+        }
     }
 }

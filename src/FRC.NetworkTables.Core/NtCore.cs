@@ -100,83 +100,83 @@ namespace FRC.NetworkTables.Core
             return str;
         }
 
-        public static ulong NT_GetEntryLastChange(NetworkTableEntry entry)
+        public static ulong NT_GetEntryLastChange(NT_Entry entry)
         {
-            return Functions.NT_GetEntryLastChange((NT_Entry)entry);
+            return Functions.NT_GetEntryLastChange(entry);
         }
 
-        public static unsafe NetworkTableValue NT_GetEntryValue(string name)
+        public static unsafe NT_ManagedValue NT_GetEntryValue(string name)
         {
             var nativeName = UTF8String.CreateCachedUTF8String(name);
             NT_Value val;
             Functions.NT_GetEntryValue(nativeName.Buffer, nativeName.Length, &val);
-            var retVal = NetworkTableValue.CreateFromNative(&val);
+            var retVal = NT_ManagedValue.CreateManagedFromNative(&val);
             Functions.NT_DisposeValue(&val);
             return retVal;
         }
 
-        public static unsafe NetworkTableValue NT_GetEntryValue(NetworkTableEntry entry)
+        public static unsafe NT_ManagedValue NT_GetEntryValue(NT_Entry entry)
         {
             NT_Value val;
-            Functions.NT_GetEntryValue2((NT_Entry)entry, &val);
-            var retVal = NetworkTableValue.CreateFromNative(&val);
+            Functions.NT_GetEntryValue2(entry, &val);
+            var retVal = NT_ManagedValue.CreateManagedFromNative(&val);
             Functions.NT_DisposeValue(&val);
             return retVal;
         }
 
-        public static unsafe bool NT_SetDefaultEntryValue(string name, NetworkTableValue default_value)
+        public static unsafe bool NT_SetDefaultEntryValue(string name, NT_ManagedValue default_value)
         {
             var nativeName = UTF8String.CreateCachedUTF8String(name);
             NT_Value val;
-            NetworkTableValue.CreateNative(default_value, &val);
+            NT_ManagedValue.CreateNativeFromManaged(default_value, &val);
             var ret = Functions.NT_SetDefaultEntryValue(nativeName.Buffer, nativeName.Length, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
             return ret.Get();
         }
 
-        public static unsafe bool NT_SetDefaultEntryValue2(NetworkTableEntry entry, NetworkTableValue default_value)
+        public static unsafe bool NT_SetDefaultEntryValue2(NT_Entry entry, NT_ManagedValue default_value)
         {
             NT_Value val;
-            NetworkTableValue.CreateNative(default_value, &val);
-            var ret = Functions.NT_SetDefaultEntryValue2((NT_Entry)entry, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.CreateNativeFromManaged(default_value, &val);
+            var ret = Functions.NT_SetDefaultEntryValue2(entry, &val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
             return ret.Get();
         }
 
-        public static unsafe bool NT_SetEntryValue(string name, NetworkTableValue value)
+        public static unsafe bool NT_SetEntryValue(string name, NT_ManagedValue value)
         {
             var nativeName = UTF8String.CreateCachedUTF8String(name);
             NT_Value val;
-            NetworkTableValue.CreateNative(value, &val);
+            NT_ManagedValue.CreateNativeFromManaged(value, &val);
             var ret = Functions.NT_SetEntryValue(nativeName.Buffer, nativeName.Length, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
             return ret.Get();
         }
 
-        public static unsafe bool NT_SetEntryValue2(NetworkTableEntry entry, NetworkTableValue value)
+        public static unsafe bool NT_SetEntryValue2(NT_Entry entry, NT_ManagedValue value)
         {
             NT_Value val;
-            NetworkTableValue.CreateNative(value, &val);
+            NT_ManagedValue.CreateNativeFromManaged(value, &val);
             var ret = Functions.NT_SetDefaultEntryValue2((NT_Entry)entry, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
             return ret.Get();
         }
 
-        public static unsafe void NT_SetEntryTypeValue(string name, NetworkTableValue value)
+        public static unsafe void NT_SetEntryTypeValue(string name, NT_ManagedValue value)
         {
             var nativeName = UTF8String.CreateCachedUTF8String(name);
             NT_Value val;
-            NetworkTableValue.CreateNative(value, &val);
+            NT_ManagedValue.CreateNativeFromManaged(value, &val);
             Functions.NT_SetEntryTypeValue(nativeName.Buffer, nativeName.Length, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
         }
 
-        public static unsafe void NT_SetEntryTypeValue2(NetworkTableEntry entry, NetworkTableValue value)
+        public static unsafe void NT_SetEntryTypeValue2(NT_Entry entry, NT_ManagedValue value)
         {
             NT_Value val;
-            NetworkTableValue.CreateNative(value, &val);
+            NT_ManagedValue.CreateNativeFromManaged(value, &val);
             Functions.NT_SetEntryTypeValue2((NT_Entry)entry, &val);
-            NetworkTableValue.DisposeNative(&val);
+            NT_ManagedValue.DisposeCreatedNative(&val);
 
         }
 
@@ -186,7 +186,7 @@ namespace FRC.NetworkTables.Core
             Functions.NT_SetEntryFlags(nativeName.Buffer, nativeName.Length, flags);
         }
 
-        public static unsafe void NT_SetEntryFlags2(NetworkTableEntry entry, uint flags)
+        public static unsafe void NT_SetEntryFlags2(NT_Entry entry, uint flags)
         {
             Functions.NT_SetEntryFlags2((NT_Entry)entry, flags);
         }
@@ -197,7 +197,7 @@ namespace FRC.NetworkTables.Core
             return Functions.NT_GetEntryFlags(nativeName.Buffer, nativeName.Length);
         }
 
-        public static unsafe uint NT_GetEntryFlags2(NetworkTableEntry entry)
+        public static unsafe uint NT_GetEntryFlags2(NT_Entry entry)
         {
             return Functions.NT_GetEntryFlags2((NT_Entry)entry);
         }
@@ -208,7 +208,7 @@ namespace FRC.NetworkTables.Core
             Functions.NT_DeleteEntry(nativeName.Buffer, nativeName.Length);
         }
 
-        public static unsafe void NT_DeleteEntry2(NetworkTableEntry entry)
+        public static unsafe void NT_DeleteEntry2(NT_Entry entry)
         {
             Functions.NT_DeleteEntry2((NT_Entry)entry);
         }
@@ -218,7 +218,7 @@ namespace FRC.NetworkTables.Core
             Functions.NT_DeleteAllEntries();
         }
 
-        public static unsafe void NT_DeleteAllEntries2(NetworkTableInstance inst)
+        public static unsafe void NT_DeleteAllEntries2(NT_Inst inst)
         {
             Functions.NT_DeleteAllEntries2((NT_Inst)inst);
         }
@@ -910,7 +910,7 @@ namespace FRC.NetworkTables.Core
             return ret.Get();
         }
 
-        private static unsafe void CreateNtString(string vStr, NT_String* nStr)
+        internal static unsafe void CreateNtString(string vStr, NT_String* nStr)
         {
             fixed (char* str = vStr)
             {
@@ -922,7 +922,7 @@ namespace FRC.NetworkTables.Core
             }
         }
 
-        private static unsafe void DisposeNtString(NT_String* str)
+        internal static unsafe void DisposeNtString(NT_String* str)
         {
             Marshal.FreeHGlobal((IntPtr)str->str);
         }

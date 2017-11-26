@@ -80,7 +80,8 @@ namespace ILRewriter
                             }
                             if (bracketCount == 0)
                             {
-
+                                inFunctionsDecl = false;
+                                continue;
                             }
 
                         }

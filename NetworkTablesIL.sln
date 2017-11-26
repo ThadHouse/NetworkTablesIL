@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AF2B867C-C2EE-4AE2-898E-78260D2F3555}"
 EndProject
@@ -19,8 +19,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FRC.NetworkTables.Core.Interop.Test", "test\FRC.NetworkTables.Core.Interop.Test\FRC.NetworkTables.Core.Interop.Test.csproj", "{99BB8938-DC02-407F-B727-4D64AD4DF287}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FRC.NetworkTables.Core.Test", "test\FRC.NetworkTables.Core.Test\FRC.NetworkTables.Core.Test.csproj", "{45300C1D-549C-429E-A6D1-F85AD3CA7674}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{844B3835-20ED-4A22-93B6-1505E9EC6AE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,18 +100,6 @@ Global
 		{45300C1D-549C-429E-A6D1-F85AD3CA7674}.Release|x64.Build.0 = Release|Any CPU
 		{45300C1D-549C-429E-A6D1-F85AD3CA7674}.Release|x86.ActiveCfg = Release|Any CPU
 		{45300C1D-549C-429E-A6D1-F85AD3CA7674}.Release|x86.Build.0 = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|x64.Build.0 = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Debug|x86.Build.0 = Debug|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|x64.ActiveCfg = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|x64.Build.0 = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|x86.ActiveCfg = Release|Any CPU
-		{844B3835-20ED-4A22-93B6-1505E9EC6AE6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,5 +111,8 @@ Global
 		{13336B88-02C0-416B-98D9-43E0635F68D6} = {AF2B867C-C2EE-4AE2-898E-78260D2F3555}
 		{99BB8938-DC02-407F-B727-4D64AD4DF287} = {CD52809E-E055-4705-98D8-8415E3B4FB64}
 		{45300C1D-549C-429E-A6D1-F85AD3CA7674} = {CD52809E-E055-4705-98D8-8415E3B4FB64}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCF5B2FC-B3D4-420A-B959-6E2351E23145}
 	EndGlobalSection
 EndGlobal

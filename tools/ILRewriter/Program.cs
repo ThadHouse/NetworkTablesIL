@@ -52,17 +52,42 @@ namespace ILRewriter
 
                 string[] lines = File.ReadAllLines(ilFilePath);
 
+                bool inFunctionsDecl = false;
+                int bracketCount = 0;
+
                 using (FileStream fs = File.Open(ilFilePath, FileMode.Create))
                 using (StreamWriter writer = new StreamWriter(fs))
                 {
-                    foreach (var line in lines)
+                    for(int i = 0; i < lines.Length; i++)
+                    //foreach (var line in lines)
                     {
-                        if (line.Contains("=============== CLASS MEMBERS DECLARATION ==================="))
+                        var line = lines[i];
+                        if (line.Contains(".class public abstract auto ansi sealed beforefieldinit FRC.NetworkTables.Core.Interop.Functions"))
                         {
-                            writer.WriteLine();
-                            break;
+                            inFunctionsDecl = true;
+                            i++;
+                            continue;
                         }
-                        writer.WriteLine(line);
+                        if (inFunctionsDecl)
+                        {
+                            if (line.Trim().StartsWith("{"))
+                            {
+                                bracketCount++;
+                            }
+                            if (line.Trim().StartsWith("}"))
+                            {
+                                bracketCount--;
+                            }
+                            if (bracketCount == 0)
+                            {
+
+                            }
+
+                        }
+                        else
+                        {
+                            writer.WriteLine(line);
+                        }
                     }
                 }
 

@@ -30,124 +30,6 @@ namespace FRC.NetworkTables.Core.Interop
         }
     }
 
-    public struct NT_Handle
-    {
-        private int m_value;
-
-        public NT_Handle(int value)
-        {
-            m_value = value;
-        }
-
-        public int Get()
-        {
-            return m_value;
-        }
-    }
-
-    public struct NT_Inst
-    {
-        private NT_Handle m_value;
-
-        public NT_Inst(int value)
-        {
-            m_value = new NT_Handle(value);
-        }
-
-        public int Get()
-        {
-            return m_value.Get();
-        }
-
-        public static implicit operator NT_Handle(NT_Inst value)
-        {
-            return value.m_value;
-        }
-    }
-
-    public struct NT_Entry
-    {
-        private NT_Handle m_value;
-
-        public NT_Entry(int value)
-        {
-            m_value = new NT_Handle(value);
-        }
-
-        public int Get()
-        {
-            return m_value.Get();
-        }
-
-        public static implicit operator NT_Handle(NT_Entry value)
-        {
-            return value.m_value;
-        }
-    }
-
-    public struct NT_EntryListener
-    {
-        private NT_Handle m_value;
-
-        public NT_EntryListener(int value)
-        {
-            m_value = new NT_Handle(value);
-        }
-
-        public int Get()
-        {
-            return m_value.Get();
-        }
-
-
-        public static implicit operator NT_Handle(NT_EntryListener value)
-        {
-            return value.m_value;
-        }
-    }
-
-    public struct NT_ConnectionListener
-    {
-        private NT_Handle m_value;
-
-        public NT_ConnectionListener(int value)
-        {
-            m_value = new NT_Handle(value);
-        }
-
-        public int Get()
-        {
-            return m_value.Get();
-        }
-
-
-        public static implicit operator NT_Handle(NT_ConnectionListener value)
-        {
-            return value.m_value;
-        }
-    }
-
-    public struct NT_RpcCall
-    {
-        private NT_Handle m_value;
-
-        public NT_RpcCall(int value)
-        {
-            m_value = new NT_Handle(value);
-        }
-
-        public int Get()
-        {
-            return m_value.Get();
-        }
-
-
-        public static implicit operator NT_Handle(NT_RpcCall value)
-        {
-            return value.m_value;
-        }
-    }
-
     public unsafe struct NT_String
     {
         public byte* str;
@@ -200,14 +82,6 @@ namespace FRC.NetworkTables.Core.Interop
 
     public struct NT_EntryInfo
     {
-        public NT_String name;
-        public NT_Type type;
-        public uint flags;
-        public ulong last_change;
-    }
-
-    public struct NT_EntryInfo2
-    {
         public NT_Entry entry;
         public NT_String name;
         public NT_Type type;
@@ -241,17 +115,42 @@ namespace FRC.NetworkTables.Core.Interop
         public uint version;
         public NT_String name;
         public UIntPtr num_params;
-        public NT_RpcParamDef* param;
+        public NT_RpcParamDef* @params;
         public UIntPtr num_results;
         public NT_RpcResultDef* results;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
-    public struct NT_RpcCallInfo
+    public struct NT_RpcAnswer
     {
-        public NT_Entry rpc;
+        public NT_Entry entry;
         public NT_RpcCall call;
         public NT_String name;
-        public NT_String param;
+        public NT_String @params;
+        public NT_ConnectionInfo conn;
+    }
+
+    public struct NT_EntryNotification
+    {
+        public NT_EntryListener listener;
+        public NT_Entry entry;
+        public NT_String name;
+        public NT_Value value;
+        public uint flags;
+    }
+
+    public struct NT_ConnectionNotification
+    {
+        public NT_ConnectionListener listener;
+        public NT_Bool connected;
+        public NT_ConnectionInfo conn;
+    }
+
+    public unsafe struct NT_LogMessage
+    {
+        public NT_Logger logger;
+        public uint level;
+        public byte* filename;
+        public uint line;
+        public byte* message;
     }
 }

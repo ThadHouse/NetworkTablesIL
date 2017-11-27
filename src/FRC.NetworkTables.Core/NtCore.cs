@@ -27,7 +27,7 @@ namespace FRC.NetworkTables.Core
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void NT_ConnectionListenerCallback(NT_ConnectionListener conn_listener, void* data, NT_Bool connected, NT_ConnectionInfo conn);
 
-    public static class NtCore
+    public static class NtCore2222
     {
         public static NT_Inst NT_GetDefaultInstance()
         {
@@ -238,25 +238,25 @@ namespace FRC.NetworkTables.Core
             return retArr;
         }
 
-        public static unsafe EntryInfo2[] NT_GetEntryInfo2(NetworkTableInstance inst, string prefix, uint types)
+        public static unsafe EntryInfo[] NT_GetEntryInfo2(NetworkTableInstance inst, string prefix, uint types)
         {
             var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
             UIntPtr len;
             var ret = Functions.NT_GetEntryInfo2((NT_Inst) inst, nativePrefix.Buffer, nativePrefix.Length, types, &len);
             int lenInt = (int)len;
-            EntryInfo2[] retArr = new EntryInfo2[lenInt];
+            EntryInfo[] retArr = new EntryInfo[lenInt];
             for (int i = 0; i < lenInt; i++)
             {
-                retArr[i] = new EntryInfo2(&ret[i]);
+                retArr[i] = new EntryInfo(&ret[i]);
             }
             Functions.NT_DisposeEntryInfoArray2(ret, len);
             return retArr;
         }
 
-        public static unsafe EntryInfo2 NT_GetEntryInfoHandle(NetworkTableEntry entry)
+        public static unsafe EntryInfo NT_GetEntryInfoHandle(NetworkTableEntry entry)
         {
             var info = Functions.NT_GetEntryInfoHandle((NT_Entry)entry);
-            var ret = new EntryInfo2(info);
+            var ret = new EntryInfo(info);
             Functions.NT_DisposeEntryInfoArray2(info, new UIntPtr(1));
             return ret;
         }

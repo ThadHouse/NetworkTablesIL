@@ -8,20 +8,12 @@ namespace NetworkTables
     public class NetworkTableEntry
     {
         private NT_Entry m_handle;
+        private NetworkTableInstance m_inst;
 
-        public NetworkTableEntry(NT_Entry handle)
+        public NetworkTableEntry(NetworkTableInstance inst, NT_Entry handle)
         {
+            m_inst = inst;
             m_handle = handle;
-        }
-
-        public static implicit operator NetworkTableEntry(NT_Entry handle)
-        {
-            return new NetworkTableEntry(handle);
-        }
-
-        public static explicit operator NT_Entry(NetworkTableEntry entry)
-        {
-            return entry.m_handle;
         }
     }
 }

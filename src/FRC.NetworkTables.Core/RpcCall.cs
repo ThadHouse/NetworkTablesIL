@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetworkTables
+namespace FRC.NetworkTables
 {
-    public class NetworkTableRpcCall
+    public class RpcCall
     {
     }
 }

@@ -1,11 +1,12 @@
 ﻿using FRC.NetworkTables.Core.Interop;
-using NetworkTables;
+using FRC.NetworkTables.Core.Native;
+using FRC.NetworkTables.Native;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace FRC.NetworkTables.Core
+namespace FRC.NetworkTables
 {
     public struct NT_ManagedValue
     {
@@ -26,7 +27,7 @@ namespace FRC.NetworkTables.Core
                     value->data.v_double = v.Data.VDouble;
                     break;
                 case NtType.String:
-                    NtCore.CreateNtString(v.Data.VString, &value->data.v_string);
+                    Utilities.CreateNtString(v.Data.VString, &value->data.v_string);
                     break;
                 case NtType.Rpc:
                 case NtType.Raw:
@@ -58,7 +59,7 @@ namespace FRC.NetworkTables.Core
                     value->data.arr_string.len = (UIntPtr)v.Data.VStringArray.Length;
                     for (int i = 0; i < v.Data.VStringArray.Length; i++)
                     {
-                        NtCore.CreateNtString(v.Data.VStringArray[i], &value->data.arr_string.arr[i]);
+                        Utilities.CreateNtString(v.Data.VStringArray[i], &value->data.arr_string.arr[i]);
                     }
                     break;
             }
@@ -69,7 +70,7 @@ namespace FRC.NetworkTables.Core
             switch (v->type)
             {
                 case NT_Type.NT_STRING:
-                    NtCore.DisposeNtString(&v->data.v_string);
+                    Utilities.DisposeNtString(&v->data.v_string);
                     break;
                 case NT_Type.NT_RPC:
                 case NT_Type.NT_RAW:
@@ -85,7 +86,7 @@ namespace FRC.NetworkTables.Core
                     int len = (int)v->data.arr_string.len;
                     for (int i = 0; i < len; i++)
                     {
-                        NtCore.DisposeNtString(&v->data.arr_string.arr[i]);
+                        Utilities.DisposeNtString(&v->data.arr_string.arr[i]);
                     }
                     Marshal.FreeHGlobal((IntPtr)v->data.arr_string.arr);
                     break;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetworkTables
+namespace FRC.NetworkTables
 {
     /// <summary>
     /// An enumeration of all types allowed in the NetworkTables.

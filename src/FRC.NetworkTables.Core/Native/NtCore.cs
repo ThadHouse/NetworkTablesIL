@@ -1,5 +1,4 @@
 ﻿using FRC.NetworkTables.Core.Interop;
-using NetworkTables;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -41,7 +40,7 @@ namespace FRC.NetworkTables.Core.Native
             UIntPtr count = UIntPtr.Zero;
             var data = NT_GetEntries(inst, ns.Buffer, ns.Length, (uint)types, &count);
             List<NT_Entry> entries = new List<NT_Entry>((int)count);
-            for(int i = 0; i < (int)count; i++)
+            for (int i = 0; i < (int)count; i++)
             {
                 entries.Add(data[i]);
             }
@@ -149,6 +148,39 @@ namespace FRC.NetworkTables.Core.Native
             }
             NT_DisposeEntryInfoArray(data, count);
             return entries;
+        }
+
+        public static unsafe EntryInfo? GetEntryInfoHandle(NetworkTableInstance inst, NT_Entry entry)
+        {
+            NT_EntryInfo info = new NT_EntryInfo();
+            var ret = NT_GetEntryInfoHandle(entry, &info);
+            if (!ret.Get())
+            {
+                NT_DisposeEntryInfo(&info);
+                return null;
+            }
+            EntryInfo infoM = new EntryInfo(inst, &info);
+            NT_DisposeEntryInfo(&info);
+            return infoM;
+        }
+
+        public static NT_EntryListenerPoller CreateEntryListenerPoller(NT_Inst inst)
+        {
+            return NT_CreateEntryListenerPoller(inst);
+        }
+
+        public static void DestroyEntryListenerPoller(NT_EntryListenerPoller poller)
+        {
+            NT_DestroyEntryListenerPoller(poller);
+        }
+
+        public static unsafe void PostRpcResponse(NT_Entry entry, NT_RpcCall call, byte[] result)
+        {
+            fixed (byte* p = result)
+            {
+                UIntPtr len = (UIntPtr)result.Length;
+                NT_PostRpcResponse(entry, call, p, len);
+            }
         }
     }
 }

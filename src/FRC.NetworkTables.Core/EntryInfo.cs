@@ -1,7 +1,7 @@
 ﻿using FRC;
 using FRC.NetworkTables.Core.Interop;
 
-namespace NetworkTables
+namespace FRC.NetworkTables
 {
     /// <summary>
     /// This class contains all info for a given entry.

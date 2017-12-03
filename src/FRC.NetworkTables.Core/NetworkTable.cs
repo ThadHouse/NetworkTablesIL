@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FRC.NetworkTables.Core
+namespace FRC.NetworkTables
 {
-    class NetworkTable
+    public class NetworkTable
     {
+        public static readonly int DefaultPort = 1735;
+        public static readonly char PathSeparator = '/';
     }
 }

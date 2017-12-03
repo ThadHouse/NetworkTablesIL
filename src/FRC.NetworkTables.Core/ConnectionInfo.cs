@@ -1,4 +1,4 @@
-﻿namespace NetworkTables
+﻿namespace FRC.NetworkTables
 {
     /// <summary>
     /// This class contains all info needed for a given connection.

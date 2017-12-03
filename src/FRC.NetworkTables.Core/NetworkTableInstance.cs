@@ -5,7 +5,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace NetworkTables
+namespace FRC.NetworkTables
 {
     public class NetworkTableInstance : IDisposable
     {
@@ -86,7 +86,7 @@ namespace NetworkTables
 
         public void DeleteAllEntries()
         {
-            return NtCore.DeleteAllEntries(m_handle);
+            NtCore.DeleteAllEntries(m_handle);
         }
     }
 }

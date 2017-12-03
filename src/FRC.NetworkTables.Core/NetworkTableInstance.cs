@@ -79,7 +79,7 @@ namespace FRC.NetworkTables
 
             NetworkTable table = m_tables.GetOrAdd(theKey, (s) =>
             {
-                return new NetworkTable(s);
+                return new NetworkTable();
             });
             return table;
         }

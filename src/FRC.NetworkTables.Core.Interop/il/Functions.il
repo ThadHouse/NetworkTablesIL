@@ -62,7 +62,7 @@
   .field public static native int NT_WaitForConnectionListenerQueueFunctionPointer
   .field public static native int NT_CreateRpcCallPollerFunctionPointer
   .field public static native int NT_DestroyRpcCallPollerFunctionPointer
-  .field public static native int NT_CreatePollerPrcFunctionPointer
+  .field public static native int NT_CreatePolledRpcFunctionPointer
   .field public static native int NT_PollRpcFunctionPointer
   .field public static native int NT_PollRpcTimeoutFunctionPointer
   .field public static native int NT_CancelPollRpcFunctionPointer
@@ -75,7 +75,7 @@
   .field public static native int NT_PackRpcDefinitionFunctionPointer
   .field public static native int NT_UnpackRpcDefinitionFunctionPointer
   .field public static native int NT_PackRpcValuesFunctionPointer
-  .field public static native int NT_UnpackRpcValueSFunctionPointer
+  .field public static native int NT_UnpackRpcValuesFunctionPointer
   .field public static native int NT_SetNetworkIdentityFunctionPointer
   .field public static native int NT_GetNetworkModeFunctionPointer
   .field public static native int NT_StartServerFunctionPointer
@@ -97,7 +97,7 @@
   .field public static native int NT_SavePersistentFunctionPointer
   .field public static native int NT_LoadPersistentFunctionPointer
   .field public static native int NT_SaveEntriesFunctionPointer
-  .field public static native int N_LoadEntriesFunctionPointer
+  .field public static native int NT_LoadEntriesFunctionPointer
   .field public static native int NT_DisposeValueFunctionPointer
   .field public static native int NT_InitValueFunctionPointer
   .field public static native int NT_DisposeStringFunctionPointer
@@ -701,14 +701,14 @@
     ret
   }
 
-  .method public hidebysig static void NT_CreatePollerPrc(valuetype FRC.NetworkTables.Core.Interop.NT_Entry 'entry', uint8* 'def', native uint 'def_len', valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallPoller 'poller') cil managed aggressiveinlining
+  .method public hidebysig static void NT_CreatePolledRpc(valuetype FRC.NetworkTables.Core.Interop.NT_Entry 'entry', uint8* 'def', native uint 'def_len', valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallPoller 'poller') cil managed aggressiveinlining
   {
     .maxstack 5
     ldarg.0
     ldarg.1
     ldarg.2
     ldarg.3
-    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::NT_CreatePollerPrcFunctionPointer
+    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::NT_CreatePolledRpcFunctionPointer
     calli unmanaged cdecl void(valuetype FRC.NetworkTables.Core.Interop.NT_Entry 'entry', uint8* 'def', native uint 'def_len', valuetype FRC.NetworkTables.Core.Interop.NT_RpcCallPoller 'poller')
     ret
   }
@@ -843,14 +843,14 @@
     ret
   }
 
-  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Value** NT_UnpackRpcValueS(uint8* 'packed', native uint 'packed_len', valuetype FRC.NetworkTables.Core.Interop.NT_Type* 'types', native uint 'types_len') cil managed aggressiveinlining
+  .method public hidebysig static valuetype FRC.NetworkTables.Core.Interop.NT_Value** NT_UnpackRpcValues(uint8* 'packed', native uint 'packed_len', valuetype FRC.NetworkTables.Core.Interop.NT_Type* 'types', native uint 'types_len') cil managed aggressiveinlining
   {
     .maxstack 5
     ldarg.0
     ldarg.1
     ldarg.2
     ldarg.3
-    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcValueSFunctionPointer
+    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::NT_UnpackRpcValuesFunctionPointer
     calli unmanaged cdecl valuetype FRC.NetworkTables.Core.Interop.NT_Value**(uint8* 'packed', native uint 'packed_len', valuetype FRC.NetworkTables.Core.Interop.NT_Type* 'types', native uint 'types_len')
     ret
   }
@@ -1072,7 +1072,7 @@
     ret
   }
 
-  .method public hidebysig static uint8* N_LoadEntries(valuetype FRC.NetworkTables.Core.Interop.NT_Inst 'inst', uint8* 'filename', uint8* 'prefix', native uint 'prefix_len', native int 'warnFunc') cil managed aggressiveinlining
+  .method public hidebysig static uint8* NT_LoadEntries(valuetype FRC.NetworkTables.Core.Interop.NT_Inst 'inst', uint8* 'filename', uint8* 'prefix', native uint 'prefix_len', native int 'warnFunc') cil managed aggressiveinlining
   {
     .maxstack 6
     ldarg.0
@@ -1080,7 +1080,7 @@
     ldarg.2
     ldarg.3
     ldarg 4
-    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::N_LoadEntriesFunctionPointer
+    ldsfld native int FRC.NetworkTables.Core.Interop.Functions::NT_LoadEntriesFunctionPointer
     calli unmanaged cdecl uint8*(valuetype FRC.NetworkTables.Core.Interop.NT_Inst 'inst', uint8* 'filename', uint8* 'prefix', native uint 'prefix_len', native int 'warnFunc')
     ret
   }

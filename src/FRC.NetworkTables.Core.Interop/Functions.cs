@@ -65,7 +65,7 @@ namespace FRC.NetworkTables.Core.Interop
         public static IntPtr NT_WaitForConnectionListenerQueueFunctionPointer;
         public static IntPtr NT_CreateRpcCallPollerFunctionPointer;
         public static IntPtr NT_DestroyRpcCallPollerFunctionPointer;
-        public static IntPtr NT_CreatePollerPrcFunctionPointer;
+        public static IntPtr NT_CreatePolledRpcFunctionPointer;
         public static IntPtr NT_PollRpcFunctionPointer;
         public static IntPtr NT_PollRpcTimeoutFunctionPointer;
         public static IntPtr NT_CancelPollRpcFunctionPointer;
@@ -78,7 +78,7 @@ namespace FRC.NetworkTables.Core.Interop
         public static IntPtr NT_PackRpcDefinitionFunctionPointer;
         public static IntPtr NT_UnpackRpcDefinitionFunctionPointer;
         public static IntPtr NT_PackRpcValuesFunctionPointer;
-        public static IntPtr NT_UnpackRpcValueSFunctionPointer;
+        public static IntPtr NT_UnpackRpcValuesFunctionPointer;
         public static IntPtr NT_SetNetworkIdentityFunctionPointer;
         public static IntPtr NT_GetNetworkModeFunctionPointer;
         public static IntPtr NT_StartServerFunctionPointer;
@@ -100,7 +100,7 @@ namespace FRC.NetworkTables.Core.Interop
         public static IntPtr NT_SavePersistentFunctionPointer;
         public static IntPtr NT_LoadPersistentFunctionPointer;
         public static IntPtr NT_SaveEntriesFunctionPointer;
-        public static IntPtr N_LoadEntriesFunctionPointer;
+        public static IntPtr NT_LoadEntriesFunctionPointer;
         public static IntPtr NT_DisposeValueFunctionPointer;
         public static IntPtr NT_InitValueFunctionPointer;
         public static IntPtr NT_DisposeStringFunctionPointer;
@@ -303,7 +303,7 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe void NT_CreatePollerPrc(NT_Entry entry, byte* def, UIntPtr def_len, NT_RpcCallPoller poller)
+        public static unsafe void NT_CreatePolledRpc(NT_Entry entry, byte* def, UIntPtr def_len, NT_RpcCallPoller poller)
         {
             throw null;
         }
@@ -368,7 +368,7 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe NT_Value** NT_UnpackRpcValueS(byte* packed, UIntPtr packed_len, NT_Type* types, UIntPtr types_len)
+        public static unsafe NT_Value** NT_UnpackRpcValues(byte* packed, UIntPtr packed_len, NT_Type* types, UIntPtr types_len)
         {
             throw null;
         }
@@ -478,7 +478,7 @@ namespace FRC.NetworkTables.Core.Interop
             throw null;
         }
 
-        public static unsafe byte* N_LoadEntries(NT_Inst inst, byte* filename, byte* prefix, UIntPtr prefix_len, IntPtr warnFunc)
+        public static unsafe byte* NT_LoadEntries(NT_Inst inst, byte* filename, byte* prefix, UIntPtr prefix_len, IntPtr warnFunc)
         {
             throw null;
         }

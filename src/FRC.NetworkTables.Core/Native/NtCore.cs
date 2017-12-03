@@ -1,6 +1,10 @@
-﻿using FRC.NetworkTables.Core.Interop;
+﻿using FRC.NativeLibraryUtilities;
+using FRC.NetworkTables.Core.Interop;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using static FRC.NetworkTables.Core.Interop.Functions;
 
@@ -8,6 +12,103 @@ namespace FRC.NetworkTables.Core.Native
 {
     public class NtCore
     {
+        // ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
+        internal static NativeLibraryLoader NativeLoader { get; }
+        private static readonly string s_libraryLocation;
+        private static readonly bool s_useCommandLineFile;
+        // ReSharper restore PrivateFieldCanBeConvertedToLocalVariable
+        private static readonly bool s_runFinalizer;
+
+        static NtCore()
+        { 
+            EventHandler h = (o, e) =>
+            {
+                if (!s_runFinalizer) return;
+                NativeLoader.LibraryLoader.UnloadLibrary();
+
+                try
+                {
+                    if (!s_useCommandLineFile && File.Exists(s_libraryLocation))
+                    {
+                        File.Delete(s_libraryLocation);
+                    }
+                }
+                catch
+                {
+
+                }
+            };
+            AppDomain.CurrentDomain.DomainUnload += h;
+            AppDomain.CurrentDomain.ProcessExit += h;
+
+            try
+            {
+                string[] commandArgs = Environment.GetCommandLineArgs();
+                foreach (var commandArg in commandArgs)
+                {
+                    //search for a line with the prefix "-ntcore:"
+                    if (commandArg.ToLower().Contains("-ntcore:"))
+                    {
+                        //Split line to get the library.
+                        int splitLoc = commandArg.IndexOf(':');
+                        string file = commandArg.Substring(splitLoc + 1);
+
+                        //If the file exists, just return it so dlopen can load it.
+                        if (File.Exists(file))
+                        {
+                            s_libraryLocation = file;
+                            s_useCommandLineFile = true;
+                        }
+                    }
+                }
+
+                const string resourceRoot = "FRC.NetworkTables.Core.DesktopLibraries.Libraries.";
+
+                NativeLoader = new NativeLibraryLoader();
+                NativeLoader.AddLibraryLocation(OsType.Windows32,
+                    resourceRoot + "Windows.x86.ntcore.dll");
+                NativeLoader.AddLibraryLocation(OsType.Windows64,
+                    resourceRoot + "Windows.amd64.ntcore.dll");
+                NativeLoader.AddLibraryLocation(OsType.Linux32,
+                    resourceRoot + "Linux.x86.libntcore.so");
+                NativeLoader.AddLibraryLocation(OsType.Linux64,
+                    resourceRoot + "Linux.amd64.libntcore.so");
+                NativeLoader.AddLibraryLocation(OsType.MacOs32,
+                    resourceRoot + "Mac_OS_X.x86.libntcore.dylib");
+                NativeLoader.AddLibraryLocation(OsType.MacOs64,
+                    resourceRoot + "Mac_OS_X.x86_64.libntcore.dylib");
+                NativeLoader.AddLibraryLocation(OsType.roboRIO, "libntcore.so");
+
+                if (s_useCommandLineFile)
+                {
+                    NativeLoader.LoadNativeLibrary<NtCore>(s_libraryLocation, true);
+                }
+                else
+                {
+                    NativeLoader.LoadNativeLibraryFromReflectedAssembly("FRC.NetworkTables.Core.DesktopLibraries");
+                    s_libraryLocation = NativeLoader.LibraryLocation;
+                }
+
+                var type = typeof(Functions).GetTypeInfo();
+
+
+                foreach (var field in type.GetFields(BindingFlags.Static | BindingFlags.Public))
+                {
+                    if (field.FieldType == typeof(IntPtr) && field.Name.EndsWith("FunctionPointer"))
+                    {
+                        field.SetValue(null, NativeLoader.LibraryLoader.GetProcAddress(field.Name.Replace("FunctionPointer", "")));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+                Environment.Exit(1);
+            }
+            s_runFinalizer = true;
+        }
+
         public static NT_Inst GetDefaultInstance()
         {
             return NT_GetDefaultInstance();

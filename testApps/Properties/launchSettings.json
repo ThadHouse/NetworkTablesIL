@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "testApps": {
+      "commandName": "Project",
+      "commandLineArgs": "-ntcore:C:\\Users\\thadh\\Documents\\GitHub\\thadhouse\\ntcore\\build\\libs\\ntcoreJNI\\shared\\x86-64\\ntcore.dll"
+    }
+  }
+}

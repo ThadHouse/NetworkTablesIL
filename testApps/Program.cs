@@ -1,5 +1,6 @@
 ﻿using FRC;
 using FRC.NetworkTables.Core.Interop;
+using FRC.NetworkTables.Core.Native;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -8,6 +9,7 @@ namespace testApps
 {
     class Program
     {
+        /*
         public static unsafe NT_Entry[] NT_GetEntries(NT_Inst inst, string prefix, uint types)
         {
             var nativePrefix = UTF8String.CreateCachedUTF8String(prefix);
@@ -25,9 +27,12 @@ namespace testApps
 
             return entries;
         }
+        */
 
         static unsafe void Main(string[] args)
         {
+            var instance = NtCore.GetDefaultInstance();
+            Console.WriteLine(instance.Get());
             /*
             NT_GetEntriesDelegate del = (a, b, c, d, e) =>
             {
